@@ -7,7 +7,7 @@ function prefersColorTest(systemInitiatedDark) {
 	   // document.getElementById("theme-toggle").innerHTML = "Light Mode";
    	sessionStorage.setItem('theme', '');
   } else {
-	  document.documentElement.setAttribute('data-theme', 'light');
+	  document.documentElement.setAttribute('data-theme', 'dark');
     // document.getElementById("theme-toggle").innerHTML = "Dark Mode";
     sessionStorage.setItem('theme', '');
   }
