@@ -1,24 +1,8 @@
-I"�<p>As security audit of web application are performed for multiple organization, a draw of interest can be made in Mobile applications as well.</p>
+I"�<p>This guide assumes that you already have created your blog and tested locally. If not please follow this tutorial : <a href="https://devlopr.netlify.com/guides/2017/11/19/build-a-blog-using-devlopr-jekyll">Create a Blog using devlopr jekyll</a>. Then come back and proceed with the deployment process.</p>
 
-<p>The primary objective for a mobile application penetration test is to identify exploitable vulnerabilities in code, system, network, application, databases, Api’s etc before hackers are able to discover and exploit them. Application penetration testing will reveal real-world opportunities for hackers to be able to compromise application and databases in such a way that allows for unauthorized access to sensitive data or even take-over application for malicious/non-business purposes.</p>
+<p>In this Guide, we are using Github Pages and Travis CI for deploying our blog. Sometimes Github Pages does not support external third party plugins. In that case we deploy our blog using Travis CI, it automatically builds our website and pushes the static files of the site to a deployment branch. Which then Github Pages uses to render the site. Hope you get it :P !</p>
 
-<p>Android Penetration testing can be implemented in any organization:</p>
-
-<p><code class="highlighter-rouge">1)Static:</code> Checks with respect to code levels will be performed</p>
-
-<p><code class="highlighter-rouge">2)Network:</code> Intercepting the request sent by the android application and interaction between the application and server is audited.</p>
-
-<p><code class="highlighter-rouge">3)Interactive:</code> While the applications provide its service, they tend to store a lot of confidential data in the respective mobile device itselfdynamically. An audit of the internal storage of the device is performed.</p>
-
-<p>The Mobile Security Series will be divided into the following chapters:</p>
-
-<p>–&gt; <a href="">Chapter 1: Android Fundamentals (Basics)</a></p>
-
-<p>–&gt; <a href="">Chapter 2: Static Analysis</a></p>
-
-<p>–&gt; <a href="">Chapter 3: Dynamic Analysis</a></p>
-
-<p>–&gt; <a href="">Chapter 4: Interactive Analysis</a></p>
+<p>We might need to instruct Travis CI to follow deployment instructions. Copy the below content in <code class="highlighter-rouge">.travis.yml</code> file:</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">language</span><span class="pi">:</span> <span class="s">ruby</span>
 <span class="na">cache</span><span class="pi">:</span> <span class="s">bundler</span>
