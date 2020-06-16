@@ -8,13 +8,13 @@ layout: default
       <a href="/">
         <img src="{{site.url}}{{site.baseurl}}/assets/img/{{ site.author_logo }}" class="profile-img" />
       </a>
-      <h1 class="profile-name">{{ site.subtitle }}</h1>
+      <h1 class="profile-name">{{ site.title }}</h1>
       <p class="profile-bio">{{ site.subtitle }}</p>
       {% if site.github_username %} {%- include github_follow_button.html -%} {%
       endif %}
 
       <p class="profile-links">
-		{% if site.facebook_username %}
+        {% if site.facebook_username %}
         <a
           class="social-link"
           href="http://facebook.com/{{ site.facebook_username }}"
@@ -42,7 +42,7 @@ layout: default
         >
           <i class="fab fa-linkedin-in"></i>
         </a>
-        {% endif %} 
+        {% endif %}
       </p>
 
       {% if site.author_location %}
@@ -60,7 +60,7 @@ layout: default
       {%- include author_skills.html -%}
     </div>
 
-
+    
   </div>
   <div class="col-lg-7">
     {% if site.author_bio %}
@@ -68,7 +68,7 @@ layout: default
       <h1 class="card-title">About</h1>
       <p>{{ site.author_bio }}</p>
     </div>
-    {% endif %}  {% if site.show_author_work_experiences == true %}
+    {% endif %} {% if site.show_author_work_experiences == true %}
     <div class="card">
       <h1 class="card-title">Work Experience</h1>
       <br />
