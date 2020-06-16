@@ -1,0 +1,14 @@
+I"Ê<h5> Posts by Category : Guides </h5>
+
+<div class="card">
+
+ <li class="category-posts"><span>10 Jun 2020</span> &nbsp; <a href="/guides/tutorials/2020/06/10/Mobile-Security/">Mobile Security</a></li>
+
+ <li class="category-posts"><span>10 Jun 2020</span> &nbsp; <a href="/guides/tutorials/2020/06/10/Mobile-Security-part-1/">Mobile Security</a></li>
+
+ <li class="category-posts"><span>04 Jun 2020</span> &nbsp; <a href="/guides/2020/06/04/using-siteleaf/">HackTheBox Remote</a></li>
+
+ <li class="category-posts"><span>21 May 2019</span> &nbsp; <a href="/guides/tutorials/2019/05/21/deploy-blog-using-devlopr-jekyll-and-github-pages/">How to deploy devlopr-jekyll Blog using Github Pages and Travis</a></li>
+
+</div>
+:ET
