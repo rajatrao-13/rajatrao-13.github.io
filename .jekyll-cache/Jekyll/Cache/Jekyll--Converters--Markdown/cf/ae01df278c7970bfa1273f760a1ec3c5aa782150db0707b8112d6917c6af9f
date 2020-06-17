@@ -1,0 +1,131 @@
+I"�#<h2 id="brief">Brief</h2>
+<p>    On enumerating different services of <code class="highlighter-rouge">Monteverde</code> machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using <code class="highlighter-rouge">smb_login</code> module from <code class="highlighter-rouge">metasploit</code>. Levering the misconfiguration, we were able to login to <code class="highlighter-rouge">SMB</code> with the help of <code class="highlighter-rouge">smbclient</code> and on further enumeration, we were able to extract a file named <code class="highlighter-rouge">azure.xml</code> under <code class="highlighter-rouge">mhope</code> user folder consisting of credentails of the same user. Making the use of credential found, we were able to get <code class="highlighter-rouge">Windows Remote Management</code> shell with the help of tool named <code class="highlighter-rouge">evil-winrm</code> which targets on port <code class="highlighter-rouge">5985</code> port. Here, we were able to get basic shell and were able pwn the <code class="highlighter-rouge">user.txt</code> part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has <code class="highlighter-rouge">Azure Active Directory Connect</code>. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting <code class="highlighter-rouge">root.txt</code></p>
+
+<p> </p>
+
+<h2 id="flow">Flow</h2>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">enum4linux</code> reveals list of users name</p>
+  </li>
+  <li>
+    <p>Brute Forcing <code class="highlighter-rouge">SMb</code> via <code class="highlighter-rouge">metasploit</code> using the usernames as password identifies a legit credential (<code class="highlighter-rouge">SABatchJobs:SABatchJobs</code>)</p>
+  </li>
+  <li>
+    <p>Login as <code class="highlighter-rouge">SABatchJobs</code> in <code class="highlighter-rouge">SMB</code> via <code class="highlighter-rouge">smbcleint</code></p>
+  </li>
+  <li>
+    <p>Enumerate <code class="highlighter-rouge">mhope</code> folder and download <code class="highlighter-rouge">azure.xml</code> which consists of mhope credentials (<code class="highlighter-rouge">mhope:4n0therD4y@n0th3r$</code>)</p>
+  </li>
+  <li>
+    <p>Login as <code class="highlighter-rouge">mhope</code> in Win-RM Service (5985) using <code class="highlighter-rouge">evil-winrm</code></p>
+  </li>
+  <li>
+    <p>Get <code class="highlighter-rouge">user.txt</code></p>
+  </li>
+  <li>
+    <p>Local enumeramation discloses usage of <code class="highlighter-rouge">Azure AD Connect</code> in target machine</p>
+  </li>
+  <li>
+    <p>Search for Azure AD exploit leads to powershell script (module) to generate new <code class="highlighter-rouge">administrator</code> password in the target machine</p>
+  </li>
+  <li>
+    <p>Use newly generated <code class="highlighter-rouge">administrator</code> credentials and login as <code class="highlighter-rouge">administrator</code> in <code class="highlighter-rouge">Win-RM service</code> (5985) using <code class="highlighter-rouge">evil-winrm</code></p>
+  </li>
+  <li>
+    <p>Get <code class="highlighter-rouge">root.txt</code></p>
+  </li>
+</ul>
+
+<p> </p>
+
+<p>Below is a detail writeup of the machine following the below steps:</p>
+
+<ol>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering">Information Gathering</a></p>
+  </li>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell">Low-Privilege Shell</a></p>
+  </li>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion">Privilege Escalation</a></p>
+  </li>
+</ol>
+
+<p> </p>
+
+<h2 id="1-information-gathering">1. Information Gathering</h2>
+<p> </p>
+<h3 id="11--nmap">1.1 || Nmap</h3>
+
+<p>-&gt; <code class="highlighter-rouge">Run nmap</code></p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ nmap -sC -sV -p- -oA full 10.10.10.172</span>
+</code></pre></div></div>
+<p>where,</p>
+
+<p>    -sC : Run Default Scripts</p>
+
+<p>    -sV : Enumerate different versions</p>
+
+<p>    -sC : Store the output in all format (.nmap, .xml and .gnmap) having name full</p>
+
+<p><strong>Result:</strong></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># Nmap 7.80 scan initiated Tue May 26 14:02:41 2020 as: nmap -sC -sV -p- -oA full -Pn 10.10.10.172</span>
+<span class="s">Nmap scan report for 10.10.10.172</span>
+<span class="s">Host is up (0.13s latency).</span>
+<span class="na">Not shown</span><span class="pi">:</span> <span class="s">65516 filtered ports</span>
+<span class="s">PORT      STATE SERVICE       VERSION</span>
+<span class="s">53/tcp    open  domain?</span>
+   <span class="s">fingerprint-strings</span><span class="pi">:</span> 
+   <span class="na">DNSVersionBindReqTCP</span><span class="pi">:</span> 
+     <span class="s">version</span>
+<span class="s">_    bind</span>
+<span class="s">88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time</span><span class="pi">:</span> <span class="s">2020-05-26 07:53:02Z)</span>
+<span class="s">135/tcp   open  msrpc         Microsoft Windows RPC</span>
+<span class="s">139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn</span>
+<span class="s">389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain</span><span class="pi">:</span> <span class="s">MEGABANK.LOCAL0., Site</span><span class="pi">:</span> <span class="s">Default-First-Site-Name)</span>
+<span class="s">445/tcp   open  microsoft-ds?</span>
+<span class="s">464/tcp   open  kpasswd5?</span>
+<span class="s">593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP </span><span class="m">1.0</span>
+<span class="s">636/tcp   open  tcpwrapped</span>
+<span class="s">3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain</span><span class="pi">:</span> <span class="s">MEGABANK.LOCAL0., Site</span><span class="pi">:</span> <span class="s">Default-First-Site-Name)</span>
+<span class="s">3269/tcp  open  tcpwrapped</span>
+<span class="s">5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)</span>
+ <span class="s">_http-server-header</span><span class="pi">:</span> <span class="s">Microsoft-HTTPAPI/2.0</span>
+ <span class="s">_http-title</span><span class="pi">:</span> <span class="s">Not Found</span>
+<span class="s">9389/tcp  open  mc-nmf        .NET Message Framing</span>
+<span class="s">49667/tcp open  msrpc         Microsoft Windows RPC</span>
+<span class="s">49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP </span><span class="m">1.0</span>
+<span class="s">49674/tcp open  msrpc         Microsoft Windows RPC</span>
+<span class="s">49675/tcp open  msrpc         Microsoft Windows RPC</span>
+<span class="s">49706/tcp open  msrpc         Microsoft Windows RPC</span>
+<span class="s">49778/tcp open  msrpc         Microsoft Windows RPC</span>
+<span class="s">1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service</span> <span class="pi">:</span>
+<span class="s">SF-Port53-TCP:V=7.80%I=7%D=5/26%Time=5ECCD5D6%P=x86_64-pc-linux-gnu%r(DNSV</span>
+<span class="s">SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\</span>
+<span class="s">SF:x04bind\0\0\x10\0\x03");</span>
+<span class="na">Service Info</span><span class="pi">:</span> <span class="na">Host</span><span class="pi">:</span> <span class="s">MONTEVERDE; OS</span><span class="pi">:</span> <span class="s">Windows; CPE</span><span class="pi">:</span> <span class="s">cpe:/o:microsoft:windows</span>
+
+<span class="na">Host script results</span><span class="pi">:</span>
+ <span class="na">_clock-skew</span><span class="pi">:</span> <span class="s">-46m43s</span>
+  <span class="s">smb2-security-mode</span><span class="pi">:</span> 
+    <span class="s">2.02</span><span class="pi">:</span> 
+ <span class="s">_    Message signing enabled and required</span>
+  <span class="s">smb2-time</span><span class="pi">:</span> 
+    <span class="na">date</span><span class="pi">:</span> <span class="s">2020-05-26T07:55:26</span>
+ <span class="na">_  start_date</span><span class="pi">:</span> <span class="s">N/A</span>
+
+<span class="s">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span>
+<span class="c1"># Nmap done at Tue May 26 14:14:49 2020 -- 1 IP address (1 host up) scanned in 728.28 seconds</span>
+
+</code></pre></div></div>
+<p> </p>
+
+<h3 id="11--enum4linux">1.1 || enum4linux</h3>
+
+<p><strong>Enum4linux</strong> is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com.</p>
+
+:ET

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T18:18:00+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T20:59:14+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
 </subtitle><author><name>Rajat Rao</name></author><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/">&lt;style&gt;
 * {
   box-sizing: border-box;
@@ -385,9 +385,363 @@ row::after {
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.provider.query content://com.mwr.example.sieve.DBContentProvider/Keys&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/26.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;HackTheBox&quot;]" /><summary type="html"></summary></entry><entry><title type="html">HackTheBox Remote</title><link href="http://localhost:4000/jekyll/2020/06/05/HackTheBox-Remote/" rel="alternate" type="text/html" title="HackTheBox Remote" /><published>2020-06-05T15:22:20+05:30</published><updated>2020-06-05T15:22:20+05:30</updated><id>http://localhost:4000/jekyll/2020/06/05/HackTheBox-Remote</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/06/05/HackTheBox-Remote/">&lt;h1 id=&quot;hello-world-&quot;&gt;Hello World ,&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/26.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;HackTheBox&quot;]" /><summary type="html"></summary></entry><entry><title type="html">HackTheBox Monteverde Writeup</title><link href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/" rel="alternate" type="text/html" title="HackTheBox Monteverde Writeup" /><published>2020-06-05T15:22:20+05:30</published><updated>2020-06-05T15:22:20+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
+&lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;Monteverde&lt;/code&gt; machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using &lt;code class=&quot;highlighter-rouge&quot;&gt;smb_login&lt;/code&gt; module from &lt;code class=&quot;highlighter-rouge&quot;&gt;metasploit&lt;/code&gt;. Levering the misconfiguration, we were able to login to &lt;code class=&quot;highlighter-rouge&quot;&gt;SMB&lt;/code&gt; with the help of &lt;code class=&quot;highlighter-rouge&quot;&gt;smbclient&lt;/code&gt; and on further enumeration, we were able to extract a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;azure.xml&lt;/code&gt; under &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; user folder consisting of credentails of the same user. Making the use of credential found, we were able to get &lt;code class=&quot;highlighter-rouge&quot;&gt;Windows Remote Management&lt;/code&gt; shell with the help of tool named &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt; which targets on port &lt;code class=&quot;highlighter-rouge&quot;&gt;5985&lt;/code&gt; port. Here, we were able to get basic shell and were able pwn the &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt; part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure Active Directory Connect&lt;/code&gt;. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;This is a &lt;strong&gt;&lt;em&gt;Test Post&lt;/em&gt;&lt;/strong&gt; that is created by &lt;strong&gt;Netlify&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;h1&amp;gt; Test Code &amp;lt;/h1&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Rajat Rao</name></author><category term="jekyll" /><summary type="html">Hello World ,</summary></entry></feed>
+&lt;h2 id=&quot;flow&quot;&gt;Flow&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;enum4linux&lt;/code&gt; reveals list of users name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Brute Forcing &lt;code class=&quot;highlighter-rouge&quot;&gt;SMb&lt;/code&gt; via &lt;code class=&quot;highlighter-rouge&quot;&gt;metasploit&lt;/code&gt; using the usernames as password identifies a legit credential (&lt;code class=&quot;highlighter-rouge&quot;&gt;SABatchJobs:SABatchJobs&lt;/code&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Login as &lt;code class=&quot;highlighter-rouge&quot;&gt;SABatchJobs&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;SMB&lt;/code&gt; via &lt;code class=&quot;highlighter-rouge&quot;&gt;smbcleint&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enumerate &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; folder and download &lt;code class=&quot;highlighter-rouge&quot;&gt;azure.xml&lt;/code&gt; which consists of mhope credentials (&lt;code class=&quot;highlighter-rouge&quot;&gt;mhope:4n0therD4y@n0th3r$&lt;/code&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Login as &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; in Win-RM Service (5985) using &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Local enumeramation discloses usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure AD Connect&lt;/code&gt; in target machine&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Search for Azure AD exploit leads to powershell script (module) to generate new &lt;code class=&quot;highlighter-rouge&quot;&gt;administrator&lt;/code&gt; password in the target machine&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use newly generated &lt;code class=&quot;highlighter-rouge&quot;&gt;administrator&lt;/code&gt; credentials and login as &lt;code class=&quot;highlighter-rouge&quot;&gt;administrator&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;Win-RM service&lt;/code&gt; (5985) using &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Below is a detail writeup of the machine following the below steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering&quot;&gt;Information Gathering&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell&quot;&gt;Low-Privilege Shell&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion&quot;&gt;Privilege Escalation&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p id=&quot;informationgathering&quot;&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-information-gathering&quot;&gt;1. Information Gathering&lt;/h2&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h3 id=&quot;11--nmap&quot;&gt;1.1 || Nmap&lt;/h3&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run nmap&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ nmap -sC -sV -p- -oA full 10.10.10.172&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;p&gt;    -sC : Run Default Scripts&lt;/p&gt;
+
+&lt;p&gt;    -sV : Enumerate different versions&lt;/p&gt;
+
+&lt;p&gt;    -sC : Store the output in all format (.nmap, .xml and .gnmap) having name full&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c1&quot;&gt;# Nmap 7.80 scan initiated Tue May 26 14:02:41 2020 as: nmap -sC -sV -p- -oA full -Pn 10.10.10.172&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Nmap scan report for 10.10.10.172&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Host is up (0.13s latency).&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Not shown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;65516 filtered ports&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;PORT      STATE SERVICE       VERSION&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;53/tcp    open  domain?&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;fingerprint-strings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+   &lt;span class=&quot;na&quot;&gt;DNSVersionBindReqTCP&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+     &lt;span class=&quot;s&quot;&gt;version&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;_    bind&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-05-26 07:53:02Z)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;135/tcp   open  msrpc         Microsoft Windows RPC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MEGABANK.LOCAL0., Site&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Default-First-Site-Name)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;445/tcp   open  microsoft-ds?&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;464/tcp   open  kpasswd5?&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1.0&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;636/tcp   open  tcpwrapped&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MEGABANK.LOCAL0., Site&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Default-First-Site-Name)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;3269/tcp  open  tcpwrapped&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;_http-server-header&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Microsoft-HTTPAPI/2.0&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;_http-title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Not Found&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;9389/tcp  open  mc-nmf        .NET Message Framing&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;49667/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1.0&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;49674/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;49675/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;49706/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;49778/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF-Port53-TCP:V=7.80%I=7%D=5/26%Time=5ECCD5D6%P=x86_64-pc-linux-gnu%r(DNSV&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:ersionBindReqTCP,20,&quot;\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:x04bind\0\0\x10\0\x03&quot;);&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Service Info&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Host&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MONTEVERDE; OS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Windows; CPE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cpe:/o:microsoft:windows&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;Host script results&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_clock-skew&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-46m43s&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;smb2-security-mode&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;2.02&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+ &lt;span class=&quot;s&quot;&gt;_    Message signing enabled and required&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;smb2-time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-05-26T07:55:26&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_  start_date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;N/A&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Nmap done at Tue May 26 14:14:49 2020 -- 1 IP address (1 host up) scanned in 728.28 seconds&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;11--enum4linux&quot;&gt;1.1 || enum4linux&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Enum4linux&lt;/strong&gt; is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com. 
+ &lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run enum4linux&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;enum4linux 10.10.10.172&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;enum4linux 10.10.10.172&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue May 26 13:41:48 &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2020&lt;/span&gt;
+
+ &lt;span class=&quot;s&quot;&gt;==========================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Information&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;========================== &lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Target ........... 10.10.10.172&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;RID Range ........ 500-550,1000-1050&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Username ......... ''&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Password ......... ''&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none&lt;/span&gt;
+
+
+ &lt;span class=&quot;s&quot;&gt;====================================================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Enumerating&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Workgroup/Domain&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;==================================================== &lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Can't find workgroup/domain&lt;/span&gt;
+
+
+ &lt;span class=&quot;s&quot;&gt;============================================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Nbtstat&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Information&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;============================================ &lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Looking up status of 10.10.10.172&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;No reply from 10.10.10.172&lt;/span&gt;
+
+ &lt;span class=&quot;s&quot;&gt;=====================================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Session&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Check&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;===================================== &lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 437.&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server 10.10.10.172 allows sessions using username '', password ''&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 451.&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Got domain/workgroup name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+
+ &lt;span class=&quot;s&quot;&gt;===========================================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Getting&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;SID&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;=========================================== &lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 359.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Domain Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MEGABANK&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Domain Sid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;S-1-5-21-391775091-850290835-3566037492&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Host is part of a domain (not a workgroup)&lt;/span&gt;
+
+ &lt;span class=&quot;s&quot;&gt;======================================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;OS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;information&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;====================================== &lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 458.&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $os_info in concatenation (.) or string at ./enum4linux.pl line 464.&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Got OS info for 10.10.10.172 from smbclient&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 467.&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Got OS info for 10.10.10.172 from srvinfo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED&lt;/span&gt;
+
+ &lt;span class=&quot;s&quot;&gt;=============================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;============================= &lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 866.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfb6 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x450 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Service account for the Synchronization Service with installation identifier 05c97990-7587-4a3d-b312-309adfc172d9 running on computer MONTEVERDE.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfd0 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa35 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;dgalanos&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Dimitris Galanos&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xedb RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x1f5 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000215 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Guest&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Built-in account for guest access to the computer/domain&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc3 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x641 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mhope&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Mike Hope&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfd1 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa36 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;roleary&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Ray O'Leary&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc5 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2a acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;SABatchJobs&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;SABatchJobs&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfd2 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa37 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;smorgan&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Sally MorganDesc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc6 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2b acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-ata&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-ata&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc7 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2c acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-bexec&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-bexec&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc8 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2d acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-netapp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-netapp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 881.&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[Guest] rid:[0x1f5]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[AAD_987d7f2f57d2] rid:[0x450]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[mhope] rid:[0x641]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[SABatchJobs] rid:[0xa2a]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[svc-ata] rid:[0xa2b]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[svc-bexec] rid:[0xa2c]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[svc-netapp] rid:[0xa2d]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[dgalanos] rid:[0xa35]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[roleary] rid:[0xa36]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;user:[smorgan] rid:[0xa37]&lt;/span&gt;
+
+ &lt;span class=&quot;s&quot;&gt;=========================================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Share&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Enumeration&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;========================================= &lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 640.&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Sharename       Type      Comment&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;---------       ----      -------&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SMB1 disabled -- no workgroup available&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Attempting to map shares on 10.10.10.172&lt;/span&gt;
+
+ &lt;span class=&quot;s&quot;&gt;====================================================&lt;/span&gt; 
+&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Password&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Policy&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Information&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;==================================================== &lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Unexpected error from polenum&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Attaching to 10.10.10.172 using a NULL share&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Trying protocol 139/SMB...&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;!]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Protocol failed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Cannot request session (Called Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;10.10.10.172)&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Trying protocol 445/SMB...&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;!]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Protocol failed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Missing required parameter 'digestmod'.&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 501.&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Retieved partial password policy with rpcclient&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;Password Complexity&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Disabled&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Minimum Password Length&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;7&lt;/span&gt;
+
+
+ &lt;span class=&quot;nv&quot;&gt;==============================&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;|    Groups on 10.10.10.172    |&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;==============================&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 542.&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting builtin groups&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting builtin group memberships&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 542.&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting local groups&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Cert Publishers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x205&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RAS and IAS Servers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x229&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Allowed RODC Password Replication Group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x23b&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Denied RODC Password Replication Group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x23c&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DnsAdmins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x44d&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SQLServer2005SQLBrowserUser$MONTEVERDE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x44f&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncAdmins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x451&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncOperators&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x452&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncBrowse&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x453&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncPasswordSet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x454&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting local group memberships&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Denied RODC Password Replication Group' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;572) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Couldn't lookup SIDs&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'ADSyncAdmins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;1105) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Couldn't lookup SIDs&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 593.&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting domain groups&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Enterprise Read-only Domain Controllers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x1f2&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Domain Users&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x201&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Domain Guests&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x202&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Domain Computers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x203&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Group Policy Creator Owners&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x208&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Cloneable Domain Controllers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x20a&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Protected Users&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x20d&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DnsUpdateProxy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x44e&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Azure Admins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa29&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;File Server Admins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa2e&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Call Recording Admins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa2f&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Reception&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa30&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Operations&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa31&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Trading&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa32&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;HelpDesk&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa33&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Developers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa34&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting domain group memberships&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Guests' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;514) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Guest&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Trading' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2610) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\dgalanos&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'HelpDesk' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2611) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\roleary&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Azure Admins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2601) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Administrator&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Azure Admins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2601) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\AAD_987d7f2f57d2&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Azure Admins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2601) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\mhope&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Administrator&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\krbtgt&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\AAD_987d7f2f57d2&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\mhope&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\SABatchJobs&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\svc-ata&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\svc-bexec&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\svc-netapp&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\dgalanos&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\roleary&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\smorgan&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Group Policy Creator Owners' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;520) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Administrator&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Group 'Operations' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2609) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\smorgan&lt;/span&gt;
+
+ &lt;span class=&quot;nv&quot;&gt;=======================================================================&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;|    Users on 10.10.10.172 via RID cycling (RIDS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;500-550&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;1000-1050)    |&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;=======================================================================&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 710.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 710.&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Couldn't get SID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;NT_STATUS_ACCESS_DENIED.  RID cycling not possible.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 742.&lt;/span&gt;
+
+ &lt;span class=&quot;nv&quot;&gt;=============================================&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;|    Getting printer info for 10.10.10.172    |&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;=============================================&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 991.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED&lt;/span&gt;
+
+
+&lt;span class=&quot;nv&quot;&gt;enum4linux complete on Tue May 26 13&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;46&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;08 2020&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Rajat Rao</name></author><category term="HackTheBox" /><summary type="html">Brief     On enumerating different services of Monteverde machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using smb_login module from metasploit. Levering the misconfiguration, we were able to login to SMB with the help of smbclient and on further enumeration, we were able to extract a file named azure.xml under mhope user folder consisting of credentails of the same user. Making the use of credential found, we were able to get Windows Remote Management shell with the help of tool named evil-winrm which targets on port 5985 port. Here, we were able to get basic shell and were able pwn the user.txt part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has Azure Active Directory Connect. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting root.txt</summary></entry></feed>
