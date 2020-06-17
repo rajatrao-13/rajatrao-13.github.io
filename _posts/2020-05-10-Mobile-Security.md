@@ -53,6 +53,53 @@ The Mobile Security Series will be divided into the following chapters:
 
 * [Chapter 5: Interactive Analysis]({{site.url}}/hackthebox/2020/06/10/Mobile-Security/#chapter5)
 
+<p id="chapter1">&nbsp;</p>
+
+<h2 id="chapter1">Chapter 1: Android Application Fundamentals (Basics)</h2>
+
+An **APK** is an archive that usually contains the following directories:
+
+- **AndroidManifest.xml**: It is a control file that tells the system what to do with all top-level components (**service, activity, broadcast receiver and content provider**). It also contains the permission required for an application to run
+
+- **META-INF** directory:
+
+	&nbsp; ◦ MANIFEST.MF: The Manifest File
+
+	&nbsp; ◦  CERT.RSA: The certificate of the applications
+
+	&nbsp; ◦  CERT.SF: The list of resources and SHA-1 digest of the corresponding lines in the MANIFEST.MF file.
+
+- **lib**: The directory containing the compiled code that is specific to a software layer of a processor, the directory is split into more directories within it
+
+	&nbsp; ◦  armeabi: compiled code for all ARM based processors only
+
+	&nbsp; ◦  armeabi-v7a: compiled code for all ARMv7 and above based processors only
+
+	&nbsp; ◦  x86: compiled code for X86
+
+	&nbsp; ◦  mips: compiled code for MIPS processors only
+
+- **res**: The directory containing resources not compiled into resources.arsc (see below).
+
+- **assets**: A directory containing applications assets, which can be retrieved by AssetManager.
+
+- **classes.dex**: The classes compiled in the dex file format understandable by the Dalvik virtual machine
+
+- **resources.arsc**: A file containing precompiled resources, such as binary XML for example.
+
+&nbsp; 
+
+Android Application assessment focuses on the below components:
+
+- **Content Provider**: It supplies data from one application to another. It can store the data in the file system, an SQLite Database, or the web, or any persistent storage location your app can access. It is used to share data among applications via queries such as insert(), update(), delete() and query()
+
+- **Activity**: An activity represents a single screen with a user interface. For example, a login page can be called as an activity.
+
+- **Services**: A service is a component that runs in the background to perform long-running operations or to perform for remote processes and it does not have user interface. For example, Maps service running in the background
+
+- **Broadcast Receivers**: A broadcast receiver is a component that responds to system-wide broadcast announcements
+
+&nbsp; 
 <p id="chapter2">&nbsp;</p>
 
 <h2 id="chapter2">Chapter 2: Setup Mobile Testing Platform  </h2>

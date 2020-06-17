@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T15:18:59+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T18:18:00+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
 </subtitle><author><name>Rajat Rao</name></author><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/">&lt;style&gt;
 * {
   box-sizing: border-box;
@@ -49,6 +49,70 @@ row::after {
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p id=&quot;chapter1&quot;&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&quot;chapter1&quot;&gt;Chapter 1: Android Application Fundamentals (Basics)&lt;/h2&gt;
+
+&lt;p&gt;An &lt;strong&gt;APK&lt;/strong&gt; is an archive that usually contains the following directories:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;AndroidManifest.xml&lt;/strong&gt;: It is a control file that tells the system what to do with all top-level components (&lt;strong&gt;service, activity, broadcast receiver and content provider&lt;/strong&gt;). It also contains the permission required for an application to run&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;META-INF&lt;/strong&gt; directory:&lt;/p&gt;
+
+    &lt;p&gt;  ◦ MANIFEST.MF: The Manifest File&lt;/p&gt;
+
+    &lt;p&gt;  ◦  CERT.RSA: The certificate of the applications&lt;/p&gt;
+
+    &lt;p&gt;  ◦  CERT.SF: The list of resources and SHA-1 digest of the corresponding lines in the MANIFEST.MF file.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;lib&lt;/strong&gt;: The directory containing the compiled code that is specific to a software layer of a processor, the directory is split into more directories within it&lt;/p&gt;
+
+    &lt;p&gt;  ◦  armeabi: compiled code for all ARM based processors only&lt;/p&gt;
+
+    &lt;p&gt;  ◦  armeabi-v7a: compiled code for all ARMv7 and above based processors only&lt;/p&gt;
+
+    &lt;p&gt;  ◦  x86: compiled code for X86&lt;/p&gt;
+
+    &lt;p&gt;  ◦  mips: compiled code for MIPS processors only&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;res&lt;/strong&gt;: The directory containing resources not compiled into resources.arsc (see below).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;assets&lt;/strong&gt;: A directory containing applications assets, which can be retrieved by AssetManager.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;classes.dex&lt;/strong&gt;: The classes compiled in the dex file format understandable by the Dalvik virtual machine&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;resources.arsc&lt;/strong&gt;: A file containing precompiled resources, such as binary XML for example.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Android Application assessment focuses on the below components:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Content Provider&lt;/strong&gt;: It supplies data from one application to another. It can store the data in the file system, an SQLite Database, or the web, or any persistent storage location your app can access. It is used to share data among applications via queries such as insert(), update(), delete() and query()&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Activity&lt;/strong&gt;: An activity represents a single screen with a user interface. For example, a login page can be called as an activity.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Services&lt;/strong&gt;: A service is a component that runs in the background to perform long-running operations or to perform for remote processes and it does not have user interface. For example, Maps service running in the background&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Broadcast Receivers&lt;/strong&gt;: A broadcast receiver is a component that responds to system-wide broadcast announcements&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
 &lt;p id=&quot;chapter2&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2 id=&quot;chapter2&quot;&gt;Chapter 2: Setup Mobile Testing Platform  &lt;/h2&gt;
