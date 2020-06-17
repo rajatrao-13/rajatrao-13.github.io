@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/guides/tutorials/2019/05/21/deploy-blog-using-devlopr-jekyll-and-github-pages/</loc>
-<lastmod>2019-05-21T14:35:23+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/jekyll/2019/05/22/welcome-to-jekyll/</loc>
-<lastmod>2019-05-22T14:35:23+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/jekyll/2020/05/23/netlify-cms-created-this-article/</loc>
-<lastmod>2020-05-23T15:22:20+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/guides/2020/06/04/using-siteleaf/</loc>
-<lastmod>2020-06-04T14:35:23+05:30</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/jekyll/2020/06/05/HackTheBox-Remote/</loc>
 <lastmod>2020-06-05T15:22:20+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/guides/tutorials/2020/06/10/Mobile-Security-part-1/</loc>
-<lastmod>2020-06-10T14:35:23+05:30</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/</loc>
@@ -72,9 +52,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/styleguide/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/blog/page/2/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/assets/bower_components/icono/</loc>
