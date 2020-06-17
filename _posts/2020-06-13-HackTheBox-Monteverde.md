@@ -117,7 +117,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 ```
 &nbsp;
 
-### 1.1 || enum4linux
+### 1.2 || enum4linux
 
 **Enum4linux** is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com. 
 &nbsp;
@@ -354,3 +354,47 @@ enum4linux complete on Tue May 26 13:46:08 2020
 
 ```
 
+On examining the above output, we were able to identify usernames being revealed in the output. To get the list of users, we issued the following command:
+
+```yml
+cat enum4linux | grep MEGABANK | cut -d ":" -f3 | cut -d '\' -f2 > user_list.txt
+```
+**Result**
+```yml
+Guest
+dgalanos
+roleary
+Administrator
+AAD_987d7f2f57d2
+mhope
+Administrator
+krbtgt
+AAD_987d7f2f57d2
+mhope
+SABatchJobs
+svc-ata
+svc-bexec
+svc-netapp
+dgalanos
+roleary
+smorgan
+Administrator
+smorgan
+```
+&nbsp;
+
+### 1.3 || SMB Brute Force
+
+As the list of usernames was extracted, we'll be trying to brute force the SMB service using ***metasploit***. Using `auxiliary/scanner/smb/smb_login` in metasploit and setting the options as shown in below screenshot:
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/1.png){:class="img-fluid"}  
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/2.png){:class="img-fluid"}  
+
+&nbsp;
+
+### 1.4 || SMB Enumeration
+
+On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we'll be using [smbclient]()
+
+asd

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T20:59:14+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T21:59:03+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
 </subtitle><author><name>Rajat Rao</name></author><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/">&lt;style&gt;
 * {
   box-sizing: border-box;
@@ -511,7 +511,7 @@ row::after {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt; &lt;/p&gt;
 
-&lt;h3 id=&quot;11--enum4linux&quot;&gt;1.1 || enum4linux&lt;/h3&gt;
+&lt;h3 id=&quot;12--enum4linux&quot;&gt;1.2 || enum4linux&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;Enum4linux&lt;/strong&gt; is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com. 
  &lt;/p&gt;
@@ -744,4 +744,47 @@ row::after {
 
 &lt;span class=&quot;nv&quot;&gt;enum4linux complete on Tue May 26 13&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;46&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;08 2020&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Rajat Rao</name></author><category term="HackTheBox" /><summary type="html">Brief     On enumerating different services of Monteverde machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using smb_login module from metasploit. Levering the misconfiguration, we were able to login to SMB with the help of smbclient and on further enumeration, we were able to extract a file named azure.xml under mhope user folder consisting of credentails of the same user. Making the use of credential found, we were able to get Windows Remote Management shell with the help of tool named evil-winrm which targets on port 5985 port. Here, we were able to get basic shell and were able pwn the user.txt part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has Azure Active Directory Connect. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting root.txt</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;On examining the above output, we were able to identify usernames being revealed in the output. To get the list of users, we issued the following command:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;cat enum4linux | grep MEGABANK | cut -d &quot;:&quot; -f3 | cut -d '\' -f2 &amp;gt; user_list.txt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;Guest&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;dgalanos&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;roleary&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Administrator&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;mhope&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Administrator&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;krbtgt&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;mhope&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SABatchJobs&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;svc-ata&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;svc-bexec&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;svc-netapp&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;dgalanos&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;roleary&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;smorgan&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Administrator&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;smorgan&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;13--smb-brute-force&quot;&gt;1.3 || SMB Brute Force&lt;/h3&gt;
+
+&lt;p&gt;As the list of usernames was extracted, we’ll be trying to brute force the SMB service using &lt;strong&gt;&lt;em&gt;metasploit&lt;/em&gt;&lt;/strong&gt;. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;auxiliary/scanner/smb/smb_login&lt;/code&gt; in metasploit and setting the options as shown in below screenshot:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/1.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/2.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;14--smb-enumeration&quot;&gt;1.4 || SMB Enumeration&lt;/h3&gt;
+
+&lt;p&gt;On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we’ll be using &lt;a href=&quot;&quot;&gt;smbclient&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;asd&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="HackTheBox" /><summary type="html">Brief     On enumerating different services of Monteverde machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using smb_login module from metasploit. Levering the misconfiguration, we were able to login to SMB with the help of smbclient and on further enumeration, we were able to extract a file named azure.xml under mhope user folder consisting of credentails of the same user. Making the use of credential found, we were able to get Windows Remote Management shell with the help of tool named evil-winrm which targets on port 5985 port. Here, we were able to get basic shell and were able pwn the user.txt part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has Azure Active Directory Connect. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting root.txt</summary></entry></feed>
