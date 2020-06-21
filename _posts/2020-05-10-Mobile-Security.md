@@ -4,7 +4,7 @@ title: Mobile Security
 author: Rajat Rao
 date: '2020-06-10 14:35:23 +0530'
 category:
-        - HackTheBox
+        - learning
 summary: Beginners guide to mobile security (Android).
 thumbnail: /assets/img/posts/mobile_security.png
 ---

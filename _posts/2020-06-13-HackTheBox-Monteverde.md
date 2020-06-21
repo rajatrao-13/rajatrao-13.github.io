@@ -4,7 +4,7 @@ author: Rajat Rao
 title: HackTheBox Monteverde Writeup
 date: 2020-06-05T09:52:20.613Z
 thumbnail: /assets/img/posts/HTB/Monteverde/card.png
-category: HackTheBox
+category: HTB
 summary: HackTheBox Monteverde Writeup
 ---
 
