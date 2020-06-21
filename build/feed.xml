@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T21:59:03+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-21T07:24:26+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
 </subtitle><author><name>Rajat Rao</name></author><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/">&lt;style&gt;
 * {
   box-sizing: border-box;
@@ -787,4 +787,71 @@ row::after {
 
 &lt;p&gt;On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we’ll be using &lt;a href=&quot;&quot;&gt;smbclient&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;asd&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="HackTheBox" /><summary type="html">Brief     On enumerating different services of Monteverde machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using smb_login module from metasploit. Levering the misconfiguration, we were able to login to SMB with the help of smbclient and on further enumeration, we were able to extract a file named azure.xml under mhope user folder consisting of credentails of the same user. Making the use of credential found, we were able to get Windows Remote Management shell with the help of tool named evil-winrm which targets on port 5985 port. Here, we were able to get basic shell and were able pwn the user.txt part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has Azure Active Directory Connect. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting root.txt</summary></entry></feed>
+&lt;p&gt;&lt;strong&gt;Command Issued&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/3.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On enumeration, we were able to access &lt;code class=&quot;highlighter-rouge&quot;&gt;users&lt;/code&gt; sharename and find a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;azure.xml&lt;/code&gt; under &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; users folder consisting of password of the same user.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Command Issued&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/users$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/4.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/5.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;2-low-privilege-shell&quot;&gt;2. Low-Privilege Shell&lt;/h2&gt;
+
+&lt;p&gt;We were able get Win-RM (Low-privilege) shell with the help of credentials found in the ealier stage using a tool name &lt;a href=&quot;&quot;&gt;evil-winrm&lt;/a&gt; and get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt; accordingly.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/6.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;3-privilege-escalation&quot;&gt;3. Privilege Escalation&lt;/h2&gt;
+
+&lt;h3 id=&quot;31--enumerate-local-system&quot;&gt;3.1 || Enumerate local system&lt;/h3&gt;
+
+&lt;p&gt;Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure AD&lt;/code&gt;. On searching for exploits with respect to &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure AD&lt;/code&gt;, we were able to discover a script to create a new set of administrator credentials.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/7.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Uploading the script by using the upload functionality of evil-winrm and executing it by using the following steps and the scripts produces the administrator credentials:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/8.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Command Issued&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;./Azure-ADConnect.ps1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;import-module ./Azure-ADConnect.ps1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Azure-ADConnect -server 127.0.0.1 -db ADSync&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/9.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;32--privileged-shell&quot;&gt;3.2 || Privileged Shell&lt;/h3&gt;
+
+&lt;p&gt;Using the genrated credentials by the script (&lt;code class=&quot;highlighter-rouge&quot;&gt;administrator:d0m@in4adminyeah!&lt;/code&gt;), we were able to get the highest level of privilege of the machine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/10.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;33--roottxt&quot;&gt;3.3 || root.txt&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/11.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;key-takeway&quot;&gt;Key Takeway:&lt;/h2&gt;
+
+&lt;p&gt;As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.&lt;/p&gt;
+
+&lt;p&gt;For me, the key takeway was a reminder for basic routine check of security misconfiguration where the password of one the users were set as the username itself.&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="HackTheBox" /><summary type="html">Brief     On enumerating different services of Monteverde machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using smb_login module from metasploit. Levering the misconfiguration, we were able to login to SMB with the help of smbclient and on further enumeration, we were able to extract a file named azure.xml under mhope user folder consisting of credentails of the same user. Making the use of credential found, we were able to get Windows Remote Management shell with the help of tool named evil-winrm which targets on port 5985 port. Here, we were able to get basic shell and were able pwn the user.txt part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has Azure Active Directory Connect. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting root.txt</summary></entry></feed>

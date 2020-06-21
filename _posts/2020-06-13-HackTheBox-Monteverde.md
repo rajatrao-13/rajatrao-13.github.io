@@ -397,4 +397,79 @@ As the list of usernames was extracted, we'll be trying to brute force the SMB s
 
 On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we'll be using [smbclient]()
 
-asd
+**Command Issued**
+
+```yml
+smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/
+```
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/3.png){:class="img-fluid"}  
+
+On enumeration, we were able to access `users` sharename and find a file named `azure.xml` under `mhope` users folder consisting of password of the same user.
+
+**Command Issued**
+
+```yml
+smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/users$
+```
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/4.png){:class="img-fluid"}  
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/5.png){:class="img-fluid"}  
+
+&nbsp;
+
+## 2. Low-Privilege Shell 
+
+We were able get Win-RM (Low-privilege) shell with the help of credentials found in the ealier stage using a tool name [evil-winrm]() and get `user.txt` accordingly.
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/6.png){:class="img-fluid"}  
+
+&nbsp;
+
+## 3. Privilege Escalation
+
+### 3.1 || Enumerate local system
+
+Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses `Azure AD`. On searching for exploits with respect to `Azure AD`, we were able to discover a script to create a new set of administrator credentials.
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/7.png){:class="img-fluid"}  
+
+Uploading the script by using the upload functionality of evil-winrm and executing it by using the following steps and the scripts produces the administrator credentials:
+
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/8.png){:class="img-fluid"}  
+
+**Command Issued**
+
+```yml
+./Azure-ADConnect.ps1
+import-module ./Azure-ADConnect.ps1
+Azure-ADConnect -server 127.0.0.1 -db ADSync 
+```
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/9.png){:class="img-fluid"}  
+
+&nbsp;
+
+### 3.2 || Privileged Shell
+
+Using the genrated credentials by the script (`administrator:d0m@in4adminyeah!`), we were able to get the highest level of privilege of the machine.
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/10.png){:class="img-fluid"}  
+
+&nbsp;
+
+### 3.3 || root.txt
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/11.png){:class="img-fluid"}  
+
+## Key Takeway:
+
+As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.
+
+For me, the key takeway was a reminder for basic routine check of security misconfiguration where the password of one the users were set as the username itself.
+
+
+
+
