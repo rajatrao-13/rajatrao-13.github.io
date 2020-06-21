@@ -27,17 +27,17 @@ row::after {
 }
 </style>
 
-As security audit of web application are performed for multiple organization, a draw of interest can be made in Mobile applications as well.
+Just as security audits of web applications are performed for multiple organizations, a draw of interest can be made in Mobile applications as well.
 
 The primary objective for a mobile application penetration test is to identify exploitable vulnerabilities in code, system, network, application, databases, Api's etc before hackers are able to discover and exploit them. Application penetration testing will reveal real-world opportunities for hackers to be able to compromise application and databases in such a way that allows for unauthorized access to sensitive data or even take-over application for malicious/non-business purposes.
 
-Android Penetration testing can be implemented in any organization:
+Android Penetration focuses on three level on analysis
 
 `1)Static:` Checks with respect to code levels will be performed
 
 `2)Network:` Intercepting the request sent by the android application and interaction between the application and server is audited.
 
-`3)Interactive:` While the applications provide its service, they tend to store a lot of confidential data in the respective mobile device itselfdynamically. An audit of the internal storage of the device is performed.
+`3)Interactive:` While the applications provide its service, they tend to store a lot of confidential data in the respective mobile device itself dynamically. An audit of the internal storage of the device is performed.
 	
 	
 The Mobile Security Series will be divided into the following chapters:
@@ -114,7 +114,7 @@ The very first step is to install Virtual Kali Linux/Android Tamer on Vmware. Fo
 
 <b>Android Tamer</b>: [https://androidtamer.com/tamer4-release](https://androidtamer.com/tamer4-release)
 
-For newbies into cyber security, we'll be creating content for installation steps for <b>VMWare</b> and <b>virtual machines</b> (.iso and .ova)
+For newbies into cyber security, we'll be creating a dedicated post for installation steps for <b>VMWare</b> and <b>virtual machines</b> (.iso and .ova) in near future.
 
 For assessing Mobile application, we need a dedicated android testing device to perform assessments. However, the same can be performed by creating a virtual Android environment with the help of a tool named Genymotion. It is a Cross-platform Android Emulator for developers & QA engineers. It is dependent on VirtualBox. Following is the list of URL for downloads-
 
@@ -161,7 +161,7 @@ Once genymotion is installed, the next step for android security assessments is 
 
 <h2>Chapter 3: Static Analysis  </h2>
 
-Static Application Security Testing is a set of technologies designed to analyze the application source code that are indicative of security vulnerabilities. Now as required tools are installed, we can start with security assessment of Android Applications/
+Static Application Security Testing is a set of technologies designed to analyze the application source code that are indicative of security vulnerabilities. Now as required tools are installed, we can start with security assessment of Android Applications.
 
 <h3>3.1 || Mobsf (Docker)</h3>
 
@@ -236,7 +236,7 @@ Network analysis deals with communication of application with the server providi
 
 <h3>4.2 || SSL Pinning and Root Detection Bypass </h3>
 
-Here, SSL Pinning allows the application to only trust the valid or pre-definedcertificate or Public Key. The application developer uses SSL Pinning technique as an additional layer for application traffic.
+Here, SSL Pinning allows the application to only trust the valid or pre-defined certificate or Public Key. The application developer uses SSL Pinning technique as an additional layer for application traffic.
 
 Below we are going to discuss about steps to bypass SSL Pinning.
 

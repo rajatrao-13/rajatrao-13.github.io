@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Guides
-permalink: /blog/categories/HackTheBox
+title: HTB
+permalink: /blog/categories/HTB
 ---
  
 <h5> Posts by Category : {{ page.title }} </h5>

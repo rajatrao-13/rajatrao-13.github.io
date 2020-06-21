@@ -1,5 +1,5 @@
-title: rajatrao13  
-subtitle: rajatrao13 | OSCP
+title: Rajat.Rao  
+subtitle: Cyber Security Sepcialist | OSCP 
 description: ># this means to ignore newlines until "baseurl:"
   devlopr-jekyll is a Jekyll Theme Built For Developers
 
@@ -19,7 +19,7 @@ urls:
 
 author_logo: profile.png
 author: Rajat Rao
-author_bio: Hi, my name is Rajat Rao. My professional IT career exapnds over 3 years as a Cyber Security Consultant.I am OSCP certified and I am an active user on HackTheBox. This site focuses on Information Security blogs and writeups.
+author_bio: Hi,this is Rajat Rao. My professional IT career exapnds over 3 years as a Cyber Security Consultant.I am OSCP certified and I am an active user on HackTheBox. This site focuses on Information Security blogs and writeups.
 author_email: "rajatrao13@gmail.com"
 author_location: India
 author_website_url: "https://rajatrao13.github.io/"
@@ -49,16 +49,12 @@ author_education_details:
 
 
 # social links
-twitter_username: johndoe
-github_username:  sujaykundu777
+github_username:  rajatrao13@gmail.com
 facebook_username: rajatarao@yahoo.com
-linkedin_username: rajatrao13
+linkedin_username: rajat-rao-a5a6a1160
 behance_username: johndoe
 instagram_username: rajatrao13@gmail.com
-medium_username: johndoe
-telegram_username: johndoe
-dribbble_username: johndoe
-flickr_username: johndoe
+
 
 
 
