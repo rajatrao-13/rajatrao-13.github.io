@@ -1,0 +1,58 @@
+I"Ÿ<h3>   </h3>
+
+<div id="categories">
+
+  <div class="category-box">
+    
+    <div id="#HTB"></div>
+    <h4 class="category-head"><a href="/blog/categories/HTB">HTB</a></h4>
+    <a name="HTB"></a>
+     
+    <article class="center">
+      <h6><a href="/htb/2020/06/21/HackTheBox-ServMon/">HackTheBox ServMon Writeup</a></h6>
+    </article>
+
+
+    
+    <article class="center">
+      <h6><a href="/htb/2020/06/05/HackTheBox-Monteverde/">HackTheBox Monteverde Writeup</a></h6>
+    </article>
+
+
+    
+    
+  </div>
+
+  <div class="category-box">
+    
+    <div id="#learning"></div>
+    <h4 class="category-head"><a href="/blog/categories/learning">learning</a></h4>
+    <a name="learning"></a>
+     
+    <article class="center">
+      <h6><a href="/learning/2020/06/10/Mobile-Security/">Mobile Security</a></h6>
+    </article>
+
+
+    
+    
+  </div>
+
+  <div class="category-box">
+    
+    <div id="#OSCP"></div>
+    <h4 class="category-head"><a href="/blog/categories/OSCP">OSCP</a></h4>
+    <a name="OSCP"></a>
+     
+    <article class="center">
+      <h6><a href="/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">OSCP Journey &amp; Guidance</a></h6>
+    </article>
+
+
+    
+    
+  </div>
+
+</div>
+
+:ET
