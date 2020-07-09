@@ -479,7 +479,7 @@ tml, html[data-theme="dark"], html[data-theme="light"] { height: 100%; -moz-osx-
 
 #myBtn:hover { background-color: #555; }
 
-table, th, td { border: 1px solid black; border-collapse: collapse; }
+table, th, td { border: 1px solid black; border-collapse: collapse; empty-cells: show; }
 
 th, td { padding: 15px; }
 

@@ -29,7 +29,7 @@ Below is my 4 months journey of OSCP preparation. I have divided into 3 parts as
 
 * [Post-Enrollment Phase]()
 
-* [Buffer Phase]()
+* [Pre-Examination Phase]()
 
 <p id="Pre-Enrollment-Phase">&nbsp;</p>
 
@@ -41,30 +41,107 @@ Prior enrolling for OSCP, I had decided to clear out my the very basic of Pentes
 
 - **Basics of CTF**: Once done with the above, I decided to understand the structure of CTF and how different scenarios and exploit environment are developed for CTF players. This step will make you understand the CTF environment. I was able to get a list of machines from my colleague [Pratik Jadhav](). Following is the list of machines I solved before enrolling for OSCP:
 
+&nbsp; 
+
 ### List
 
-1. hackfest series -> hackfest2016 : Quaoar,hackfest2016 : Sedna and hackfest2016 : Orcus
-2. Kioptrix Series
-3. SkyDog Series: Skydog, SkyDog 2016
-4. billu box
-5. sickos series 1 and 2
-6. Fristileak 
-7. droopy 
-8. Milnet 
-9. Necromance 
-10. Troll 1 
-11. Acid Series: Server, Reloaded 
-12. Lord of the root
-13. Sokar and Pwnlab machines
-14. Darknet
-15. DonkyDocker 
-16. Mr ROBOT -> Easy to Medium
-17. Minotaur - > Medium
-18. pipe machine 
-19. Zico machine. Great Machine - Easy to medium
-20. LazySysAdmin to
-21. covfefe - Very Easy machine.
-22. Breach SeriesBreach 1 and Breach 2 and Breach 3
+<table style="width:100%">
+  <tr>
+    <th><b>Sr.No</b></th>
+    <th><b>Machines</b></th> 
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>hackfest series -> hackfest2016 : Quaoar,hackfest2016 : Sedna and hackfest2016 : Orcus</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td> Kioptrix Series</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>SkyDog Series: Skydog, Skydog 2016</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>billu box</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>sickos:Series 1 and 2</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Fristileak</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>droopy</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Milnet</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Necromance</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Troll 1</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Acid Series: Server & Reloaded</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Lord of the root</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Sokar and Pwnlab machines</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Darknet</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>DonkyDocker</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Mr ROBOT -> Easy to Medium</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>Minotaur - > Medium</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>pipe machine </td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>Zico machine. Great Machine</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>LazySysAdmin</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>covfefe</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>hBreach Series:Breach 1 and Breach 2 and Breach 3</td>
+  </tr>
+
+  
+</table>
+
 
 Out of the above, I was able to understand and solve 15 machines. 
 
@@ -86,9 +163,9 @@ In the 60 days of access, I was able to solve around 35 machines. In the given p
 
 
 &nbsp; 
-<p id="Buffer-Phase">&nbsp;</p>
+<p id="Pre-Examination Phase">&nbsp;</p>
 
-## Buffer Phase
+## Pre-Examination Phase
 
 Once the Lab access is over, make sure you set an exam date 14 days post the lab access get expired. Exam date can be selected anytime once the lab access is provided. 
 
@@ -118,16 +195,16 @@ Post Buffer Overflow, we can again finish off the remainder machines which were 
   <tr>
     <td rowspan="2">Pre-Enrollment</td>
     <td>Linux Basics</td>
-    <td>15 <br>
+    <td>7<br>
     </td>
   </tr>
   <tr>
-    <td>Basics of CTF</td>
-    <td>15-20 (17 avg)</td>
+    <td>Basics of CTF (10-12 machines)</td>
+    <td>13</td>
   </tr>
   <tr>
     <td rowspan="3">Post-Enrollment</td>
-    <td>HackTheBox Machines (2-3 easy machines)</td>
+    <td>HackTheBox Machines (2-3 easy machines without hint)</td>
     <td>7</td>
   </tr>
   <tr>
@@ -141,19 +218,26 @@ Post Buffer Overflow, we can again finish off the remainder machines which were 
   <tr>
     <td rowspan="3">Pre-Examination</td>
     <td>Buffer Overflow</td>
-    <td>4</td>
+    <td>2</td>
   </tr>
   <tr>
     <td>Remainder Machines</td>
-    <td>7</td>
+    <td>6</td>
   </tr>
   <tr>
     <td>Notes + Revision + Attacking Machine Through Setup</td>
-    <td>3</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td>Total</td>
+    <td>94</td>
   </tr>
 </table>
 
+&nbsp;
 
+It is roughly going to take 3 months of preparation and appearing for OSCP certification. Candidates following these schedule are requested to sincerly follow the TimeTable given above. For any doubts/queries, you can contact me from [About-Me](https://rajatrao-13.github.io//about#/)
 
 
 

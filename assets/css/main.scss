@@ -36,6 +36,8 @@ html, html[data-theme="light"] { --bold-color: rgb(188, 188, 188); --box-backgro
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+  empty-cells: show;
+
 }
 th, td {
   padding: 15px;

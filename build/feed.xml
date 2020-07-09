@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-09T21:16:56+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-06-23T14:35:23+05:30</published><updated>2020-06-23T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-09T22:28:00+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-06-23T14:35:23+05:30</published><updated>2020-06-23T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
 
 &lt;p&gt;Speaking about my OSCP journey, I received my OSCP certificate in November 2019 and I was able to clear it in my second attempt. A lot of miscalculaltions,  improper time management, inadequate pentesting environment lead me to failure as well as success. Not only OSCP helped me honing my Pentesting Skills but also attributes such time-management, never-give up attitude and most importantly, PATIENCE.&lt;/p&gt;
 
@@ -22,7 +22,7 @@
     &lt;p&gt;&lt;a href=&quot;&quot;&gt;Post-Enrollment Phase&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Buffer Phase&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Pre-Examination Phase&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -41,32 +41,106 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt; &lt;/p&gt;
+
 &lt;h3 id=&quot;list&quot;&gt;List&lt;/h3&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;hackfest series -&amp;gt; hackfest2016 : Quaoar,hackfest2016 : Sedna and hackfest2016 : Orcus&lt;/li&gt;
-  &lt;li&gt;Kioptrix Series&lt;/li&gt;
-  &lt;li&gt;SkyDog Series: Skydog, SkyDog 2016&lt;/li&gt;
-  &lt;li&gt;billu box&lt;/li&gt;
-  &lt;li&gt;sickos series 1 and 2&lt;/li&gt;
-  &lt;li&gt;Fristileak&lt;/li&gt;
-  &lt;li&gt;droopy&lt;/li&gt;
-  &lt;li&gt;Milnet&lt;/li&gt;
-  &lt;li&gt;Necromance&lt;/li&gt;
-  &lt;li&gt;Troll 1&lt;/li&gt;
-  &lt;li&gt;Acid Series: Server, Reloaded&lt;/li&gt;
-  &lt;li&gt;Lord of the root&lt;/li&gt;
-  &lt;li&gt;Sokar and Pwnlab machines&lt;/li&gt;
-  &lt;li&gt;Darknet&lt;/li&gt;
-  &lt;li&gt;DonkyDocker&lt;/li&gt;
-  &lt;li&gt;Mr ROBOT -&amp;gt; Easy to Medium&lt;/li&gt;
-  &lt;li&gt;Minotaur - &amp;gt; Medium&lt;/li&gt;
-  &lt;li&gt;pipe machine&lt;/li&gt;
-  &lt;li&gt;Zico machine. Great Machine - Easy to medium&lt;/li&gt;
-  &lt;li&gt;LazySysAdmin to&lt;/li&gt;
-  &lt;li&gt;covfefe - Very Easy machine.&lt;/li&gt;
-  &lt;li&gt;Breach SeriesBreach 1 and Breach 2 and Breach 3&lt;/li&gt;
-&lt;/ol&gt;
+&lt;table style=&quot;width:100%&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;b&gt;Sr.No&lt;/b&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;b&gt;Machines&lt;/b&gt;&lt;/th&gt; 
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;hackfest series -&amp;gt; hackfest2016 : Quaoar,hackfest2016 : Sedna and hackfest2016 : Orcus&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt; Kioptrix Series&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;3&lt;/td&gt;
+    &lt;td&gt;SkyDog Series: Skydog, Skydog 2016&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;4&lt;/td&gt;
+    &lt;td&gt;billu box&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;5&lt;/td&gt;
+    &lt;td&gt;sickos:Series 1 and 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;6&lt;/td&gt;
+    &lt;td&gt;Fristileak&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;7&lt;/td&gt;
+    &lt;td&gt;droopy&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;Milnet&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;9&lt;/td&gt;
+    &lt;td&gt;Necromance&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;10&lt;/td&gt;
+    &lt;td&gt;Troll 1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;11&lt;/td&gt;
+    &lt;td&gt;Acid Series: Server &amp;amp; Reloaded&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;12&lt;/td&gt;
+    &lt;td&gt;Lord of the root&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;13&lt;/td&gt;
+    &lt;td&gt;Sokar and Pwnlab machines&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;14&lt;/td&gt;
+    &lt;td&gt;Darknet&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;15&lt;/td&gt;
+    &lt;td&gt;DonkyDocker&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;16&lt;/td&gt;
+    &lt;td&gt;Mr ROBOT -&amp;gt; Easy to Medium&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;17&lt;/td&gt;
+    &lt;td&gt;Minotaur - &amp;gt; Medium&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;18&lt;/td&gt;
+    &lt;td&gt;pipe machine &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;19&lt;/td&gt;
+    &lt;td&gt;Zico machine. Great Machine&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;20&lt;/td&gt;
+    &lt;td&gt;LazySysAdmin&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;21&lt;/td&gt;
+    &lt;td&gt;covfefe&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;22&lt;/td&gt;
+    &lt;td&gt;hBreach Series:Breach 1 and Breach 2 and Breach 3&lt;/td&gt;
+  &lt;/tr&gt;
+
+  
+&lt;/table&gt;
 
 &lt;p&gt;Out of the above, I was able to understand and solve 15 machines.&lt;/p&gt;
 
@@ -86,9 +160,9 @@
 &lt;p&gt;In the 60 days of access, I was able to solve around 35 machines. In the given period of time, I would ask to ones appearing for OSCP to solve atleast 30 machines.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
-&lt;p id=&quot;Buffer-Phase&quot;&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p id=&quot;Pre-Examination Phase&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;h2 id=&quot;buffer-phase&quot;&gt;Buffer Phase&lt;/h2&gt;
+&lt;h2 id=&quot;pre-examination-phase&quot;&gt;Pre-Examination Phase&lt;/h2&gt;
 
 &lt;p&gt;Once the Lab access is over, make sure you set an exam date 14 days post the lab access get expired. Exam date can be selected anytime once the lab access is provided.&lt;/p&gt;
 
@@ -120,16 +194,16 @@
   &lt;tr&gt;
     &lt;td rowspan=&quot;2&quot;&gt;Pre-Enrollment&lt;/td&gt;
     &lt;td&gt;Linux Basics&lt;/td&gt;
-    &lt;td&gt;15 &lt;br /&gt;
+    &lt;td&gt;7&lt;br /&gt;
     &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Basics of CTF&lt;/td&gt;
-    &lt;td&gt;15-20 (17 avg)&lt;/td&gt;
+    &lt;td&gt;Basics of CTF (10-12 machines)&lt;/td&gt;
+    &lt;td&gt;13&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td rowspan=&quot;3&quot;&gt;Post-Enrollment&lt;/td&gt;
-    &lt;td&gt;HackTheBox Machines (2-3 easy machines)&lt;/td&gt;
+    &lt;td&gt;HackTheBox Machines (2-3 easy machines without hint)&lt;/td&gt;
     &lt;td&gt;7&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
@@ -143,17 +217,26 @@
   &lt;tr&gt;
     &lt;td rowspan=&quot;3&quot;&gt;Pre-Examination&lt;/td&gt;
     &lt;td&gt;Buffer Overflow&lt;/td&gt;
-    &lt;td&gt;4&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td&gt;Remainder Machines&lt;/td&gt;
-    &lt;td&gt;7&lt;/td&gt;
+    &lt;td&gt;6&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td&gt;Notes + Revision + Attacking Machine Through Setup&lt;/td&gt;
-    &lt;td&gt;3&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
   &lt;/tr&gt;
-&lt;/table&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;OSCP&quot;]" /><summary type="html">Offensive Security Certified Professional (OSCP) is a foundational course of Offensive Security. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</summary></entry><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt;94&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;It is roughly going to take 3 months of preparation and appearing for OSCP certification. Candidates following these schedule are requested to sincerly follow the TimeTable given above. For any doubts/queries, you can contact me from &lt;a href=&quot;https://rajatrao-13.github.io//about#/&quot;&gt;About-Me&lt;/a&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;OSCP&quot;]" /><summary type="html">Offensive Security Certified Professional (OSCP) is a foundational course of Offensive Security. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</summary></entry><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
 &lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;ServMon&lt;/code&gt; machine, we were able to find few confidentail files from &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service which disclosed a hint saying that a file consisting of passwords being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; users desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. Assessing the software, it was vulnerable to &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory Traversal&lt;/code&gt; vulnerability which helped us to conquer the &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop by using exploit available on exploit-db.As we have got a list of passsword and two usersnames ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ), we try to brute force the available &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service on target machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;Hydra&lt;/code&gt;. Brute Forcing helped us to find credentails of &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; and taking leverage of it, we ssh’ed to the machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; cracked password and get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;. Once we got the local access, enumeration helped us to find &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; running and on exploitation of it using publicly available script, we were able to get maximum level of privelege and get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
