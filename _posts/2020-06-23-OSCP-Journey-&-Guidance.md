@@ -108,27 +108,51 @@ Post Buffer Overflow, we can again finish off the remainder machines which were 
 
 ## Summary
 
+<table style="width:100%">
+  <tr>
+    <th><b>Phase</b></th>
+    <th><b>Topic</b></th> 
+    <th><b>Timeline (Days)</b></th> 
 
-| Topic           	   | Timeline  |
-|:--------------------:|:---------:|
-| Pre-Enrollment Phase | $1600     |
-| Post-Enrollment Phase|  $12      |
-| Buffer Phase         |    $1     |
+  </tr>
+  <tr>
+    <td rowspan="2">Pre-Enrollment</td>
+    <td>Linux Basics</td>
+    <td>15 <br>
+    </td>
+  </tr>
+  <tr>
+    <td>Basics of CTF</td>
+    <td>15-20 (17 avg)</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Post-Enrollment</td>
+    <td>HackTheBox Machines (2-3 easy machines)</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>Lab notes (full) + Lab Machines</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>Lab Machines</td>
+    <td>53 (60-7)</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Pre-Examination</td>
+    <td>Buffer Overflow</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Remainder Machines</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>Notes + Revision + Attacking Machine Through Setup</td>
+    <td>3</td>
+  </tr>
+</table>
 
-
-
-
-
-
-
-
-
-
-<h3>2.1 || Genymotion</h3>
-
---> `Start Genymotion`
-
-![deploy using travis](/assets/img/posts/Mobile_Security/1.png){:class="img-fluid"}
 
 
 

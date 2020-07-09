@@ -479,8 +479,8 @@ tml, html[data-theme="dark"], html[data-theme="light"] { height: 100%; -moz-osx-
 
 #myBtn:hover { background-color: #555; }
 
-table { font-family: arial, sans-serif; border-collapse: collapse; width: 100%; }
+table, th, td { border: 1px solid black; border-collapse: collapse; }
 
-td, th { border: 1px solid #dddddd; text-align: center; padding: 3px; }
+th, td { padding: 15px; }
 
 /*# sourceMappingURL=main.css.map */

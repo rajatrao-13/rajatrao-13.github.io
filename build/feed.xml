@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-09T15:22:25+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-06-23T14:35:23+05:30</published><updated>2020-06-23T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-09T21:16:56+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-06-23T14:35:23+05:30</published><updated>2020-06-23T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
 
 &lt;p&gt;Speaking about my OSCP journey, I received my OSCP certificate in November 2019 and I was able to clear it in my second attempt. A lot of miscalculaltions,  improper time management, inadequate pentesting environment lead me to failure as well as success. Not only OSCP helped me honing my Pentesting Skills but also attributes such time-management, never-give up attitude and most importantly, PATIENCE.&lt;/p&gt;
 
@@ -110,34 +110,50 @@
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Topic&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Timeline&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Pre-Enrollment Phase&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;$1600&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Post-Enrollment Phase&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;$12&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Buffer Phase&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;$1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;table style=&quot;width:100%&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;b&gt;Phase&lt;/b&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;b&gt;Topic&lt;/b&gt;&lt;/th&gt; 
+    &lt;th&gt;&lt;b&gt;Timeline (Days)&lt;/b&gt;&lt;/th&gt; 
 
-&lt;h3&gt;2.1 || Genymotion&lt;/h3&gt;
-
-&lt;p&gt;–&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Genymotion&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Mobile_Security/1.png&quot; alt=&quot;deploy using travis&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;OSCP&quot;]" /><summary type="html">Offensive Security Certified Professional (OSCP) is a foundational course of Offensive Security. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</summary></entry><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan=&quot;2&quot;&gt;Pre-Enrollment&lt;/td&gt;
+    &lt;td&gt;Linux Basics&lt;/td&gt;
+    &lt;td&gt;15 &lt;br /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Basics of CTF&lt;/td&gt;
+    &lt;td&gt;15-20 (17 avg)&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan=&quot;3&quot;&gt;Post-Enrollment&lt;/td&gt;
+    &lt;td&gt;HackTheBox Machines (2-3 easy machines)&lt;/td&gt;
+    &lt;td&gt;7&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Lab notes (full) + Lab Machines&lt;/td&gt;
+    &lt;td&gt;7&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Lab Machines&lt;/td&gt;
+    &lt;td&gt;53 (60-7)&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan=&quot;3&quot;&gt;Pre-Examination&lt;/td&gt;
+    &lt;td&gt;Buffer Overflow&lt;/td&gt;
+    &lt;td&gt;4&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Remainder Machines&lt;/td&gt;
+    &lt;td&gt;7&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Notes + Revision + Attacking Machine Through Setup&lt;/td&gt;
+    &lt;td&gt;3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;OSCP&quot;]" /><summary type="html">Offensive Security Certified Professional (OSCP) is a foundational course of Offensive Security. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</summary></entry><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
 &lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;ServMon&lt;/code&gt; machine, we were able to find few confidentail files from &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service which disclosed a hint saying that a file consisting of passwords being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; users desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. Assessing the software, it was vulnerable to &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory Traversal&lt;/code&gt; vulnerability which helped us to conquer the &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop by using exploit available on exploit-db.As we have got a list of passsword and two usersnames ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ), we try to brute force the available &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service on target machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;Hydra&lt;/code&gt;. Brute Forcing helped us to find credentails of &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; and taking leverage of it, we ssh’ed to the machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; cracked password and get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;. Once we got the local access, enumeration helped us to find &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; running and on exploitation of it using publicly available script, we were able to get maximum level of privelege and get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;

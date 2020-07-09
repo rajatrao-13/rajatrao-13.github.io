@@ -33,16 +33,12 @@ html, html[data-theme="light"] { --bold-color: rgb(188, 188, 188); --box-backgro
   background-color: #555;
 }
 
-table {
-  font-family: arial, sans-serif;
+table, th, td {
+  border: 1px solid black;
   border-collapse: collapse;
-  width: 100%;
 }
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  padding: 3px;
+th, td {
+  padding: 15px;
 }
 
 
