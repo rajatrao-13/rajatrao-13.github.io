@@ -232,3 +232,4 @@ It is roughly going to take 3 months of preparation and appearing for OSCP certi
 
 Apart from the above steps, I recommend you'all to watch one video per day of [Ippsec](https://www.youtube.com/playlist?list=PLidcsTyj9JXK-fnabFLVEvHinQ14Jy5tf)
 
+I dedicate my certificate and this post to my mentor, [Vijay Kumar](https://www.linkedin.com/in/vk12122) who introducted me to Pentesting, CTF platform, [Pradnya Patil](https://www.linkedin.com/in/pradnyapatil603) for supporting and solving all the doubts I have had throughout my journey and [Avadhut Bambarkar]() for guiding me for examination and suggestions.
