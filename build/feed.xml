@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-09T22:28:00+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-06-23T14:35:23+05:30</published><updated>2020-06-23T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-13T19:37:53+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-06-23T14:35:23+05:30</published><updated>2020-06-23T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/06/23/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
 
-&lt;p&gt;Speaking about my OSCP journey, I received my OSCP certificate in November 2019 and I was able to clear it in my second attempt. A lot of miscalculaltions,  improper time management, inadequate pentesting environment lead me to failure as well as success. Not only OSCP helped me honing my Pentesting Skills but also attributes such time-management, never-give up attitude and most importantly, PATIENCE.&lt;/p&gt;
+&lt;p&gt;Speaking about my OSCP journey, I received my OSCP certificate in November 2019 and I was able to clear it in my second attempt. A lot of miscalculaltions,  improper time management, inadequate pentesting environment lead me to failure as well as success. Not only OSCP helped me in honing my Pentesting Skills but also attributes such time-management, never-give up attitude and most importantly, PATIENCE.&lt;/p&gt;
 
 &lt;p&gt;A person planning to enroll OSCP needs to have a lot of patience as at times (ALMOST EVERY TIME!), you get stuck, confused and reach a dead-end while practicing machines. Just like in school/college days, when get stuck in solving mathematical problem and the only person to look for are our professors (Kidding, your best friend always has the solution;P). My role would be something similar like a professor/friend to help you schedule and prepare for OSCP certification.&lt;/p&gt;
 
@@ -10,9 +10,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2)Labs&lt;/code&gt;: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentestig skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.&lt;/p&gt;
 
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Below is my 4 months journey of OSCP preparation. I have divided into 3 parts as follows:&lt;/p&gt;
+&lt;p&gt;Below is my 3 months journey of OSCP preparation. I segregated into 3 parts as follows:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -34,10 +32,10 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Linux Basics (Temrinal command usage)&lt;/strong&gt;: One needs to have a good hands on experience on Linux operating system. To get familiar with the commands and working of Kali linux, I practiced challenges provided over &lt;a href=&quot;https://overthewire.org/wargames/bandit/&quot;&gt;Bandit Overthewire&lt;/a&gt;. There are a total of &lt;code class=&quot;highlighter-rouge&quot;&gt;34 levels&lt;/code&gt; and I set a deadline of 15 days to finish it off. This will not only help you to make you familiar with terminal commands but also helps one to learn security topics.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Linux Basics (Temrinal command usage)&lt;/strong&gt;: One needs to have a good hands on experience on &lt;code class=&quot;highlighter-rouge&quot;&gt;Linux operating system&lt;/code&gt;. To get familiar with the commands and working of Kali linux, I practiced challenges provided over &lt;a href=&quot;https://overthewire.org/wargames/bandit/&quot;&gt;Bandit Overthewire&lt;/a&gt;. There are a total of &lt;code class=&quot;highlighter-rouge&quot;&gt;34 levels&lt;/code&gt; and I set a deadline of &lt;code class=&quot;highlighter-rouge&quot;&gt;7 days&lt;/code&gt; to finish. This will not only help you to make you familiar with terminal commands but also help one to learn security concepts.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Basics of CTF&lt;/strong&gt;: Once done with the above, I decided to understand the structure of CTF and how different scenarios and exploit environment are developed for CTF players. This step will make you understand the CTF environment. I was able to get a list of machines from my colleague &lt;a href=&quot;&quot;&gt;Pratik Jadhav&lt;/a&gt;. Following is the list of machines I solved before enrolling for OSCP:&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Basics of CTF&lt;/strong&gt;: Once done with the above, I decided to understand the structure of &lt;code class=&quot;highlighter-rouge&quot;&gt;CTF&lt;/code&gt; and how different scenarios and exploit environment are developed for CTF players. This step will make you understand the CTF environment. I was able to get a list of machines from my colleague &lt;a href=&quot;&quot;&gt;Pratik Jadhav&lt;/a&gt;. Following is the list of machines I solved before enrolling for OSCP:&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -141,32 +139,28 @@
 
   
 &lt;/table&gt;
+&lt;p&gt;Out of the above, I was able to understand and solve &lt;code class=&quot;highlighter-rouge&quot;&gt;10-12 machines&lt;/code&gt;. 
+The entire step took around &lt;code class=&quot;highlighter-rouge&quot;&gt;13 days&lt;/code&gt; to conclude.&lt;/p&gt;
 
-&lt;p&gt;Out of the above, I was able to understand and solve 15 machines.&lt;/p&gt;
-
-&lt;p&gt;The entire step took around 15-20 days to concluded.&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
 &lt;p id=&quot;Post-Enrollment-Phase&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2 id=&quot;post-enrollment-phase&quot;&gt;Post-Enrollment Phase&lt;/h2&gt;
 
-&lt;p&gt;Once you have thoroughly followed the steps in Pre-Enrollment Phase, I can assure you are ready to enroll for OSCP labs. I followed the above and purchassed OSCP labs (60 days).&lt;/p&gt;
+&lt;p&gt;Once you have thoroughly followed the steps in &lt;code class=&quot;highlighter-rouge&quot;&gt;Pre-Enrollment Phase&lt;/code&gt;, I can assure you are ready to enroll for OSCP labs. I followed the above and purchassed OSCP labs (60 days).&lt;/p&gt;
 
-&lt;p&gt;On purchasing the labs, you get a buffer of a week or so before the lab access gets started. As walkthroughs of machines mentioned in Pre-Enrollment Phase were available online, to test my pentesting knowledge, I started solving &lt;a href=&quot;https://www.hackthebox.eu/&quot;&gt;HackTheBox&lt;/a&gt; machines. I was able to solve 2-3 easy machines during the buffer period (Without any hint).&lt;/p&gt;
+&lt;p&gt;On purchasing the labs, you get a buffer of a week or so before the lab access gets started. As walkthroughs of machines mentioned in Pre-Enrollment Phase were available online, to test my pentesting knowledge, I started solving &lt;a href=&quot;https://www.hackthebox.eu/&quot;&gt;HackTheBox&lt;/a&gt; machines. I was able to solve &lt;code class=&quot;highlighter-rouge&quot;&gt;2-3 easy machines&lt;/code&gt; during the buffer period (Without any hint).&lt;/p&gt;
 
-&lt;p&gt;Once the labs access is started, you get study materials with respect to OSCP (pdf and videos). I highly recommend you’all to finish the pdf/videos as soon as possible. I mostly finished the study material during my fillers time. For instance, I read the study material while tarveling, lunch, coffee breaks and more. This not only helped me to understand the core of approach but strengthen the basic.&lt;/p&gt;
+&lt;p&gt;Once the labs access is started, you get study materials with respect to OSCP (pdf and videos). I highly recommend you’all to finish the pdf/videos as soon as possible. I mostly finished the study material during my fillers time. For instance, I read the study material while traveling, lunch, coffee breaks and more. This not only helped me to understand the core of approach but strengthen the basic.&lt;/p&gt;
 
-&lt;p&gt;In the 60 days of access, I was able to solve around 35 machines. In the given period of time, I would ask to ones appearing for OSCP to solve atleast 30 machines.&lt;/p&gt;
+&lt;p&gt;In the 60 days of access, I was able to solve around &lt;code class=&quot;highlighter-rouge&quot;&gt;35 machines&lt;/code&gt;. In the given period of time, I would ask the ones appearing for OSCP to solve atleast &lt;code class=&quot;highlighter-rouge&quot;&gt;30 machines&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt; &lt;/p&gt;
 &lt;p id=&quot;Pre-Examination Phase&quot;&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;h2 id=&quot;pre-examination-phase&quot;&gt;Pre-Examination Phase&lt;/h2&gt;
 
-&lt;p&gt;Once the Lab access is over, make sure you set an exam date 14 days post the lab access get expired. Exam date can be selected anytime once the lab access is provided.&lt;/p&gt;
+&lt;p&gt;Once the Lab access is over, make sure you set an exam date atleast &lt;code class=&quot;highlighter-rouge&quot;&gt;14 days&lt;/code&gt; post to expiration of lab access. Exam date can be selected anytime once the lab access is provided.&lt;/p&gt;
 
-&lt;p&gt;As mentioned above, I got a buffer of 14 days post lab access expired. During this phase, the very first I practiced &lt;code class=&quot;highlighter-rouge&quot;&gt;Buffer OverFlow&lt;/code&gt;. There are lot of online open sources tools where one can practice &lt;code class=&quot;highlighter-rouge&quot;&gt;Buffer OverFlow&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As mentioned above, I got a buffer of 14 days post lab access expired. During this phase, the very first thing I practiced &lt;code class=&quot;highlighter-rouge&quot;&gt;Buffer OverFlow&lt;/code&gt;. There are lot of online open sources softwares where one can practice &lt;code class=&quot;highlighter-rouge&quot;&gt;Buffer OverFlow&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Following is the list of software to practive Buffer OverFlow&lt;/p&gt;
 &lt;ul&gt;
@@ -178,7 +172,7 @@
 
 &lt;p&gt;Concept of Buffer OverFlow with good hands-on will take 3-4 days.&lt;/p&gt;
 
-&lt;p&gt;Post Buffer Overflow, we can again finish off the remainder machines which were listed in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Pre-Enrollment Phase&lt;/code&gt;. Along with that we can make notes of all possible methods/steps discovered by you while practing lab machines.&lt;/p&gt;
+&lt;p&gt;Post Buffer Overflow, we can again continue solving the remainder machines which were listed in the &lt;a href=&quot;&quot;&gt;Pre-Enrollment Phase&lt;/a&gt;. Along with that we can make notes of all possible methods/steps discovered by you while practing lab machines.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -236,7 +230,9 @@
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;p&gt;It is roughly going to take 3 months of preparation and appearing for OSCP certification. Candidates following these schedule are requested to sincerly follow the TimeTable given above. For any doubts/queries, you can contact me from &lt;a href=&quot;https://rajatrao-13.github.io//about#/&quot;&gt;About-Me&lt;/a&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;OSCP&quot;]" /><summary type="html">Offensive Security Certified Professional (OSCP) is a foundational course of Offensive Security. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</summary></entry><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
+&lt;p&gt;It is roughly going to take 3 months of preparation and appearing for OSCP certification. Candidates following these schedule are requested to sincerly follow the TimeTable given above. For any doubts/queries, you can contact me from &lt;a href=&quot;https://rajatrao-13.github.io//about#/&quot;&gt;About-Me&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from the above steps, I recommend you’all to watch one video per day of &lt;a href=&quot;https://www.youtube.com/playlist?list=PLidcsTyj9JXK-fnabFLVEvHinQ14Jy5tf&quot;&gt;Ippsec&lt;/a&gt;&lt;/p&gt;</content><author><name>Rajat Rao</name></author><category term="[&quot;OSCP&quot;]" /><summary type="html">Offensive Security Certified Professional (OSCP) is a foundational course of Offensive Security. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</summary></entry><entry><title type="html">HackTheBox ServMon Writeup</title><link href="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/" rel="alternate" type="text/html" title="HackTheBox ServMon Writeup" /><published>2020-06-21T15:22:20+05:30</published><updated>2020-06-21T15:22:20+05:30</updated><id>http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon</id><content type="html" xml:base="http://localhost:4000/htb/2020/06/21/HackTheBox-ServMon/">&lt;h2 id=&quot;brief&quot;&gt;Brief&lt;/h2&gt;
 &lt;p&gt;    On enumerating different services of &lt;code class=&quot;highlighter-rouge&quot;&gt;ServMon&lt;/code&gt; machine, we were able to find few confidentail files from &lt;code class=&quot;highlighter-rouge&quot;&gt;FTP&lt;/code&gt; service which disclosed a hint saying that a file consisting of passwords being stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; users desktop. On exploring port 80, we were able to discover a Network Surveillance Management Software i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;NVMS-1000&lt;/code&gt;. Assessing the software, it was vulnerable to &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory Traversal&lt;/code&gt; vulnerability which helped us to conquer the &lt;code class=&quot;highlighter-rouge&quot;&gt;Passwords.txt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan's&lt;/code&gt; desktop by using exploit available on exploit-db.As we have got a list of passsword and two usersnames ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Nathan&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Nadine&lt;/code&gt; ), we try to brute force the available &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; service on target machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;Hydra&lt;/code&gt;. Brute Forcing helped us to find credentails of &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; and taking leverage of it, we ssh’ed to the machine using &lt;code class=&quot;highlighter-rouge&quot;&gt;nadine&lt;/code&gt; cracked password and get &lt;code class=&quot;highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;. Once we got the local access, enumeration helped us to find &lt;code class=&quot;highlighter-rouge&quot;&gt;NSClient++&lt;/code&gt; running and on exploitation of it using publicly available script, we were able to get maximum level of privelege and get &lt;code class=&quot;highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
