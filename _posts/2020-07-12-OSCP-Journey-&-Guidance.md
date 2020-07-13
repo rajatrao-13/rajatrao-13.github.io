@@ -2,10 +2,10 @@
 layout: post
 title: OSCP Journey & Guidance
 author: Rajat Rao
-date: '2020-06-23 14:35:23 +0530'
+date: '2020-07-12 14:35:23 +0530'
 category:
         - OSCP
-summary: Beginners guide to mobile security (Android).
+summary: OSCP Journey & Guidance
 thumbnail: /assets/img/posts/OSCP.png
 ---
 
