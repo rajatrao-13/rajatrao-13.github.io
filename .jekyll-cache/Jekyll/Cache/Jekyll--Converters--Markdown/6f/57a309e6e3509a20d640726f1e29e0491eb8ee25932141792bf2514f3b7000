@@ -1,4 +1,4 @@
-I"ê'<p><strong>Offensive Security Certified Professional (OSCP)</strong> is a foundational course of <strong>Offensive Security</strong>. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</p>
+I"è'<p><strong>Offensive Security Certified Professional (OSCP)</strong> is a foundational course of <strong>Offensive Security</strong>. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)</p>
 
 <p>Speaking about my OSCP journey, I received my OSCP certificate in November 2019 and I was able to clear it in my second attempt. A lot of miscalculaltions,  improper time management, inadequate pentesting environment lead me to failure as well as success. Not only OSCP helped me in honing my Pentesting Skills but also attributes such time-management, never-give up attitude and most importantly, PATIENCE.</p>
 
@@ -8,7 +8,7 @@
 
 <p><code class="highlighter-rouge">1)Certification Process</code>: Virtual labs are assigned to you once you have bought the labs package to practice your skills and once the period is completed, you are asked to set a date for examination. The OSCP exam is 24-hour time limit and consists of a hands-on penetration test in Offensive Securityâ€™s isolated VPN network with a procture monitoring your work throughout the examination. Youâ€™ll receive the connection pages few minutes prior the examination which you have no prior knowledge or exposure. Post the exam, 24-hour time is alloted to for creaating and submitting the report.</p>
 
-<p><code class="highlighter-rouge">2)Labs</code>: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentestig skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.</p>
+<p><code class="highlighter-rouge">2)Labs</code>: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentesting skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.</p>
 
 <p>Below is my 3 months journey of OSCP preparation. I segregated into 3 parts as follows:</p>
 
@@ -28,7 +28,7 @@
 
 <h2 id="pre-enrollment-phase">Pre-Enrollment Phase</h2>
 
-<p>Prior enrolling for OSCP, I had decided to clear out my the very basic of Pentesting. In order to acheive that, I focused on the following things</p>
+<p>Prior enrolling for OSCP, I had decided to clear out the very basic of Pentesting. In order to acheive that, I focused on the following things</p>
 
 <ul>
   <li>
@@ -146,7 +146,7 @@ The entire step took around <code class="highlighter-rouge">13 days</code> to co
 
 <h2 id="post-enrollment-phase">Post-Enrollment Phase</h2>
 
-<p>Once you have thoroughly followed the steps in <code class="highlighter-rouge">Pre-Enrollment Phase</code>, I can assure you are ready to enroll for OSCP labs. I followed the above and purchassed OSCP labs (60 days).</p>
+<p>Once you have thoroughly followed the steps in <code class="highlighter-rouge">Pre-Enrollment Phase</code>, I can assure you are ready to enroll for OSCP labs. I followed the above and purchased OSCP labs (60 days).</p>
 
 <p>On purchasing the labs, you get a buffer of a week or so before the lab access gets started. As walkthroughs of machines mentioned in Pre-Enrollment Phase were available online, to test my pentesting knowledge, I started solving <a href="https://www.hackthebox.eu/">HackTheBox</a> machines. I was able to solve <code class="highlighter-rouge">2-3 easy machines</code> during the buffer period (Without any hint).</p>
 
@@ -234,5 +234,5 @@ The entire step took around <code class="highlighter-rouge">13 days</code> to co
 
 <p>Apart from the above steps, I recommend youâ€™all to watch one video per day of <a href="https://www.youtube.com/playlist?list=PLidcsTyj9JXK-fnabFLVEvHinQ14Jy5tf">Ippsec</a></p>
 
-<p>I dedicate my certificate and this post to my mentor, <a href="https://www.linkedin.com/in/vk12122">Vijay Kumar</a> who introducted me to Pentesting, CTF platform <a href="https://www.linkedin.com/in/pradnyapatil603">Pradnya Patil</a> for supporting and solving all the doubts I have had throughout my journey and <a href="">Avadhut Bambarkar</a> for guiding me for examination and suggestions.</p>
+<p>I dedicate my certificate and this post to my mentor, <a href="https://www.linkedin.com/in/vk12122">Vijay Kumar</a> who introducted me to Pentesting, CTF platform, <a href="https://www.linkedin.com/in/pradnyapatil603">Pradnya Patil</a> for supporting and solving all the doubts I have had throughout my journey and <a href="">Avadhut Bambarkar</a> for guiding me for examination and suggestions.</p>
 :ET

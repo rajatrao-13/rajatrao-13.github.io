@@ -19,7 +19,7 @@ Enough about my part, getting to the main part i.e OSCP Guidance and Schedule. B
 
 `1)Certification Process`: Virtual labs are assigned to you once you have bought the labs package to practice your skills and once the period is completed, you are asked to set a date for examination. The OSCP exam is 24-hour time limit and consists of a hands-on penetration test in Offensive Security's isolated VPN network with a procture monitoring your work throughout the examination. You'll receive the connection pages few minutes prior the examination which you have no prior knowledge or exposure. Post the exam, 24-hour time is alloted to for creaating and submitting the report. 
 
-`2)Labs`: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentestig skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.
+`2)Labs`: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentesting skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.
 
 Below is my 3 months journey of OSCP preparation. I segregated into 3 parts as follows:
 
@@ -33,7 +33,7 @@ Below is my 3 months journey of OSCP preparation. I segregated into 3 parts as f
 
 ## Pre-Enrollment Phase
 
-Prior enrolling for OSCP, I had decided to clear out my the very basic of Pentesting. In order to acheive that, I focused on the following things
+Prior enrolling for OSCP, I had decided to clear out the very basic of Pentesting. In order to acheive that, I focused on the following things
 
 - **Linux Basics (Temrinal command usage)**: One needs to have a good hands on experience on `Linux operating system`. To get familiar with the commands and working of Kali linux, I practiced challenges provided over [Bandit Overthewire](https://overthewire.org/wargames/bandit/). There are a total of `34 levels` and I set a deadline of `7 days` to finish. This will not only help you to make you familiar with terminal commands but also help one to learn security concepts.
 
@@ -146,7 +146,7 @@ The entire step took around `13 days` to conclude.
 
 ## Post-Enrollment Phase
 
-Once you have thoroughly followed the steps in `Pre-Enrollment Phase`, I can assure you are ready to enroll for OSCP labs. I followed the above and purchassed OSCP labs (60 days). 
+Once you have thoroughly followed the steps in `Pre-Enrollment Phase`, I can assure you are ready to enroll for OSCP labs. I followed the above and purchased OSCP labs (60 days). 
 
 On purchasing the labs, you get a buffer of a week or so before the lab access gets started. As walkthroughs of machines mentioned in Pre-Enrollment Phase were available online, to test my pentesting knowledge, I started solving [HackTheBox](https://www.hackthebox.eu/) machines. I was able to solve `2-3 easy machines` during the buffer period (Without any hint). 
 

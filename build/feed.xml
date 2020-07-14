@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-13T21:33:30+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/07/12/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-07-12T14:35:23+05:30</published><updated>2020-07-12T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/07/12/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/07/12/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-14T12:43:59+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rajat.Rao</title><subtitle>Hi, My name is Rajat Rao. The blog focuses on security reseach and writeupss.</subtitle><author><name>Rajat Rao</name></author><entry><title type="html">OSCP Journey &amp;amp; Guidance</title><link href="http://localhost:4000/oscp/2020/07/12/OSCP-Journey-&-Guidance/" rel="alternate" type="text/html" title="OSCP Journey &amp; Guidance" /><published>2020-07-12T14:35:23+05:30</published><updated>2020-07-12T14:35:23+05:30</updated><id>http://localhost:4000/oscp/2020/07/12/OSCP-Journey-&amp;-Guidance</id><content type="html" xml:base="http://localhost:4000/oscp/2020/07/12/OSCP-Journey-&amp;-Guidance/">&lt;p&gt;&lt;strong&gt;Offensive Security Certified Professional (OSCP)&lt;/strong&gt; is a foundational course of &lt;strong&gt;Offensive Security&lt;/strong&gt;. This post is for the target audience who are unsure about enrolling for OSCP certfication, guidance for OSCP preparation, a dedicated schedule to prerpare for OSCP (Yes! even for newbies)&lt;/p&gt;
 
 &lt;p&gt;Speaking about my OSCP journey, I received my OSCP certificate in November 2019 and I was able to clear it in my second attempt. A lot of miscalculaltions,  improper time management, inadequate pentesting environment lead me to failure as well as success. Not only OSCP helped me in honing my Pentesting Skills but also attributes such time-management, never-give up attitude and most importantly, PATIENCE.&lt;/p&gt;
 
@@ -8,7 +8,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1)Certification Process&lt;/code&gt;: Virtual labs are assigned to you once you have bought the labs package to practice your skills and once the period is completed, you are asked to set a date for examination. The OSCP exam is 24-hour time limit and consists of a hands-on penetration test in Offensive Security’s isolated VPN network with a procture monitoring your work throughout the examination. You’ll receive the connection pages few minutes prior the examination which you have no prior knowledge or exposure. Post the exam, 24-hour time is alloted to for creaating and submitting the report.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2)Labs&lt;/code&gt;: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentestig skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2)Labs&lt;/code&gt;: Virtual labs are a dedicated lab consisting of a network of machines where one can practice/hone their pentesting skills. One can access these labs with the help VPN connectivity provided once you have paid for labs and time-frame of the labs depends upon the package you have dediced.&lt;/p&gt;
 
 &lt;p&gt;Below is my 3 months journey of OSCP preparation. I segregated into 3 parts as follows:&lt;/p&gt;
 
@@ -28,7 +28,7 @@
 
 &lt;h2 id=&quot;pre-enrollment-phase&quot;&gt;Pre-Enrollment Phase&lt;/h2&gt;
 
-&lt;p&gt;Prior enrolling for OSCP, I had decided to clear out my the very basic of Pentesting. In order to acheive that, I focused on the following things&lt;/p&gt;
+&lt;p&gt;Prior enrolling for OSCP, I had decided to clear out the very basic of Pentesting. In order to acheive that, I focused on the following things&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -146,7 +146,7 @@ The entire step took around &lt;code class=&quot;highlighter-rouge&quot;&gt;13 d
 
 &lt;h2 id=&quot;post-enrollment-phase&quot;&gt;Post-Enrollment Phase&lt;/h2&gt;
 
-&lt;p&gt;Once you have thoroughly followed the steps in &lt;code class=&quot;highlighter-rouge&quot;&gt;Pre-Enrollment Phase&lt;/code&gt;, I can assure you are ready to enroll for OSCP labs. I followed the above and purchassed OSCP labs (60 days).&lt;/p&gt;
+&lt;p&gt;Once you have thoroughly followed the steps in &lt;code class=&quot;highlighter-rouge&quot;&gt;Pre-Enrollment Phase&lt;/code&gt;, I can assure you are ready to enroll for OSCP labs. I followed the above and purchased OSCP labs (60 days).&lt;/p&gt;
 
 &lt;p&gt;On purchasing the labs, you get a buffer of a week or so before the lab access gets started. As walkthroughs of machines mentioned in Pre-Enrollment Phase were available online, to test my pentesting knowledge, I started solving &lt;a href=&quot;https://www.hackthebox.eu/&quot;&gt;HackTheBox&lt;/a&gt; machines. I was able to solve &lt;code class=&quot;highlighter-rouge&quot;&gt;2-3 easy machines&lt;/code&gt; during the buffer period (Without any hint).&lt;/p&gt;
 
